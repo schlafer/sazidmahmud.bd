@@ -51,7 +51,7 @@ If a reboot was unavoidable and your system no longer boots, head in with the Ar
 
 ##### Filesystem corrupted due to power failure, etc?
 Use `fsck` to check and repair.
-- fsck -a` will automatically repair.
+- `fsck -a` will automatically repair.
 - If `fsck` cannot find an external journal, umount, write a new journal with `tune2fs -j/dev/partition`, and then run `fsck -p /dev/partition`
 
 #### (c) pls help nothing works!

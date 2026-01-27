@@ -42,7 +42,7 @@ params:
   profileMode:
     enabled: true
     title: "Sazid Mahmud"
-    subtitle: "Tricking rocks into thinking."
+    subtitle: "Tricking rocks into thinking"
     imageUrl: "/images/myprofile.png"
     imageWidth: 140
     imageHeight: 140
@@ -50,8 +50,8 @@ params:
 
   # Disable home blog feed (landing page only)
   homeInfoParams:
-    Title: "Hi there \U0001F44B"
-    Content: Welcome to my blog
+    Title: ""
+    Content: ""
 
   socialIcons:
     - name: mail
