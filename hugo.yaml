@@ -1,0 +1,86 @@
+baseURL: "https://sazidmahmud.bd/"
+title: "Sazid Mahmud"
+pagination:
+  pagerSize: 10
+theme: PaperMod
+
+enableEmoji: true
+enableRobotsTXT: true
+
+minify:
+  disableXML: true
+  minifyOutput: true
+
+params:
+  env: production
+  title: "Sazid Mahmud"
+  description: "Backend Engineering, System Design, Web Security."
+  keywords: [Blog, Projects, Engineering]
+  author: "Sazid Mahmud"
+  DateFormat: "Jan 2, 2006"
+  disableScrollToTop: false
+  defaultTheme: auto
+  disableThemeToggle: false
+  ShowRssButtonInSectionTermList: true
+  favicon:
+    ico: "/favicon/favicon.ico"
+    png32: "/favicon/favicon-32x32.png"
+    png16: "/favicon/favicon-16x16.png"
+    apple: "/favicon/apple-touch-icon.png"
+
+  # Global UI
+  ShowReadingTime: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowWordCount: true
+  ShowCodeCopyButtons: true
+  comments: false
+
+  # --------
+  # LANDING PAGE (Profile Mode)
+  # --------
+  profileMode:
+    enabled: true
+    title: "Sazid Mahmud"
+    subtitle: "Tricking rocks into thinking."
+    imageUrl: "/images/myprofile.png"
+    imageWidth: 140
+    imageHeight: 140
+    imageTitle: "Profile picture"
+
+  # Disable home blog feed (landing page only)
+  homeInfoParams:
+    Title: "Hi there \U0001F44B"
+    Content: Welcome to my blog
+
+  socialIcons:
+    - name: mail
+      url: "mailto:sazid@sazidmahmud.bd"
+    - name: github
+      url: "https://github.com/schlafer"
+    - name: x
+      url: "https://x.com/_schlafer"
+    - name: linkedin
+      url: "https://linkedin.com/in/sazid-mahmud-eee"
+
+menu:
+  main:
+    - identifier: blog
+      name: Blog
+      url: /posts/
+      weight: 10
+    - identifier: projects
+      name: Projects
+      url: /projects/
+      weight: 20
+    - identifier: about
+      name: About
+      url: /about/
+      weight: 30
+
+# Syntax highlighting
+pygmentsUseClasses: true
+markup:
+  highlight:
+    noClasses: false
+
