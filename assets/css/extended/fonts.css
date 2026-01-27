@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Iosevka:wght@400;500;600;700&display=swap');
 
 body,
-.post-content {
-  font-family: 'Space Mono', ui-monospace, monospace;
+.post-content
+.page.content {
+  font-family: 'Iosevka', ui-monospace, monospace;
 }
 
