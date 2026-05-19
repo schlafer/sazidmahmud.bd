@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Projects on Sazid Mahmud</title>
+    <link>https://sazidmahmud.bd/projects/</link>
+    <description>Recent content in Projects on Sazid Mahmud</description>
+    <generator>Hugo -- 0.161.1</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 26 Jan 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://sazidmahmud.bd/projects/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Projects I am working on</title>
+      <link>https://sazidmahmud.bd/projects/1-wip/</link>
+      <pubDate>Mon, 26 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>https://sazidmahmud.bd/projects/1-wip/</guid>
+      <description>&lt;p&gt;Work-in-Progress. I will showcase my notable projects over here. All codes will be self hosted at my forgejo instance.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

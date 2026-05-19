@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Sazid Mahmud</title>
+    <link>https://sazidmahmud.bd/</link>
+    <description>Recent content on Sazid Mahmud</description>
+    <generator>Hugo -- 0.161.1</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 11 Apr 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://sazidmahmud.bd/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Farming, a delusion all engineers share</title>
+      <link>https://sazidmahmud.bd/posts/6-farming-a-delusion-all-engineers-share/</link>
+      <pubDate>Sat, 11 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://sazidmahmud.bd/posts/6-farming-a-delusion-all-engineers-share/</guid>
+      <description>&lt;p&gt;Every engineer I had talked to, have one thing common in them; all of them want to take up farming as a hobby turned into profession at some point in their life. Be it software, semiconductor or electrical, no matter what their field of engineering is, all of them have this latent desire to take up farming as a job and leave their field for good.&lt;/p&gt;
+&lt;p&gt;Now is this a delusion? In short Yes. Most engineers are not rightly fitted for the physical workload of farming. They are daydreaming about the outcome not the tasks you need to do to get to that point. Farming takes tremendous toll on the physique. The risks involved are real. Especially dealing with livestock (no rollback!)&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>AI Isn’t Improving - We’re Just Calling It More Often</title>
+      <link>https://sazidmahmud.bd/posts/5-ai-isnt-improving---were-just-calling-it-more-often/</link>
+      <pubDate>Mon, 30 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>https://sazidmahmud.bd/posts/5-ai-isnt-improving---were-just-calling-it-more-often/</guid>
+      <description>&lt;p&gt;A noticeable trend in software right now is teams rushing to build systems around agents, RAG, MCP, and similar patterns; especially within ecosystems like Claude.&lt;/p&gt;
+&lt;p&gt;They’re often framed as productivity or automation gains. But if you look at the architecture, they don’t reduce reliance on LLMs; they deepen it.&lt;/p&gt;
+&lt;p&gt;Agents, for example, don’t simply “automate” tasks. They decompose a single request into multiple steps: planning, tool selection, execution, and iteration. What could have been one model call often becomes several.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Unconventional conventions in Programming</title>
+      <link>https://sazidmahmud.bd/posts/4-unconventional-conventions-in-programming/</link>
+      <pubDate>Mon, 23 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>https://sazidmahmud.bd/posts/4-unconventional-conventions-in-programming/</guid>
+      <description>&lt;p&gt;Most programming advice sounds a little detached from real world scenarios, a bit too clean, well structured. But in real world we see a repeated pattern of systems failing, user behavior introducing unpredictable bugs etc. If you&amp;rsquo;ve spent some time shipping software, you start to notice these different set of principles emerge. Not always taught first hand but implied with intent.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;logs--code&#34;&gt;Logs &amp;gt; Code&lt;/h3&gt;
+&lt;p&gt;Your code will break. Not &amp;ldquo;if&amp;rdquo; but &lt;em&gt;when&lt;/em&gt;. And when it does, you will not be sitting comfortably inside your IDE with a debugger attached. You&amp;rsquo;ll be staring at a production issue with incomplete information with elevated cortisol level. &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Projects I am working on</title>
+      <link>https://sazidmahmud.bd/projects/1-wip/</link>
+      <pubDate>Mon, 26 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>https://sazidmahmud.bd/projects/1-wip/</guid>
+      <description>&lt;p&gt;Work-in-Progress. I will showcase my notable projects over here. All codes will be self hosted at my forgejo instance.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Troubleshooting arch-btw!</title>
+      <link>https://sazidmahmud.bd/posts/3-archlinux-troubleshooting/</link>
+      <pubDate>Thu, 13 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>https://sazidmahmud.bd/posts/3-archlinux-troubleshooting/</guid>
+      <description>An article about troubleshooting Arch Linux</description>
+    </item>
+    <item>
+      <title>Mise-en-place</title>
+      <link>https://sazidmahmud.bd/posts/2-mise-en-place/</link>
+      <pubDate>Tue, 28 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://sazidmahmud.bd/posts/2-mise-en-place/</guid>
+      <description>&lt;h3 id=&#34;mise-en-place-meez-ahn-plahs---mise&#34;&gt;Mise-en-place (MEEZ ahn plahs) - &lt;code&gt;mise&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;The idea behind using it is to standardize development environment for everyone working in the team. Furthermore, we need different versions of tools with different projects. Mise takes care of that.&lt;/p&gt;
+&lt;p&gt;Mise is a unified tool and task management solution that simplifies the process of installing and managing tools for different projects. It supports various backends for tool installation and allows users to define tasks with custom scripts.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Zoxide, the navigation solution</title>
+      <link>https://sazidmahmud.bd/posts/1-zoxide-the-navigation-solution/</link>
+      <pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://sazidmahmud.bd/posts/1-zoxide-the-navigation-solution/</guid>
+      <description>&lt;h3 id=&#34;zoxide---z&#34;&gt;Zoxide - &lt;code&gt;z&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;This has completely replaced &lt;code&gt;cd&lt;/code&gt; command for me.&lt;/p&gt;
+&lt;p&gt;It&amp;rsquo;s fast and remembers your previous visit to directories, ranking them by visit frequency.&lt;/p&gt;
+&lt;p&gt;You can jump to any previously visited directory without explicitly specifying the path to it like &lt;code&gt;z dir&lt;/code&gt;, where directory can look something like /home/user/&amp;hellip;./dir.&lt;/p&gt;
+&lt;p&gt;If you have jumped enough times you don&amp;rsquo;t even need to write the full directory name.&lt;/p&gt;
+&lt;p&gt;There is also an interactive selection using &lt;code&gt;fzf&lt;/code&gt;, so you can filter out similar named directories, &lt;code&gt;zi app&lt;/code&gt; will list out all the projects that include an &amp;ldquo;/app&amp;rdquo; directory.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>About</title>
+      <link>https://sazidmahmud.bd/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sazidmahmud.bd/about/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;m Sazid, a Backend Developer based in &lt;a href=&#34;https://maps.app.goo.gl/KDFTxoMJjRvDwsfKA&#34;&gt;Dhaka, Bangladesh&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Professionally I trick rocks into thinking (or perhaps they trick me?).&lt;/p&gt;
+&lt;p&gt;Academically I have a Bachelors degree in Electrical and Electronic Engineering.&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;m mostly working with web backend and server-side solutions.&lt;/p&gt;
+&lt;p&gt;Hobbies include but not limited to - lifting weights, over-network
+engineer my homelab, chilling at the beach etc.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;If you have any questions or want to chat about any of the &lt;a href=&#34;https://sazidmahmud.bd/posts/&#34;&gt;topics&lt;/a&gt; here, feel free to &lt;a href=&#34;mailto:sazid@sazidmahmud.bd&#34;&gt;reach&lt;/a&gt; out &amp;#x2764;&amp;#xfe0f;&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
