@@ -55,7 +55,7 @@ params:
 
   socialIcons:
     - name: mail
-      url: "mailto:sazid@sazidmahmud.bd"
+      url: "mailto:info@sazidmahmud.bd"
     - name: github
       url: "https://github.com/schlafer"
     - name: x
@@ -83,4 +83,3 @@ pygmentsUseClasses: true
 markup:
   highlight:
     noClasses: false
-

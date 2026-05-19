@@ -8,4 +8,4 @@ showReadingTime: true
 showSummary: true
 showComments: false
 ---
-This is a Work-in-Progress. I will showcase my finished projects over here.
+Work-in-Progress. I will showcase my notable projects over here. All codes will be self hosted at my forgejo instance.
