@@ -1,0 +1,9 @@
+name = "sazidmahmud"
+compatibility_date = "2026-05-20"
+
+[build]
+command = ""
+
+[assets]
+directory = "./public"
+not_found_handling = "404-page"
