@@ -6,8 +6,16 @@
     <description>Recent content in Blog on Sazid Mahmud</description>
     <generator>Hugo -- 0.161.1</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 11 Apr 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 21 Jun 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://sazidmahmud.bd/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>An audience for suffering</title>
+      <link>https://sazidmahmud.bd/posts/7-an-audience-for-suffering/</link>
+      <pubDate>Sun, 21 Jun 2026 00:00:00 +0000</pubDate>
+      <guid>https://sazidmahmud.bd/posts/7-an-audience-for-suffering/</guid>
+      <description>&lt;p&gt;The crowning achievement of Terry A. Davis was &lt;em&gt;TempleOS&lt;/em&gt;, an operating system he spent years building almost entirely on his own before his tragic death in 2018. From a purely technical perspective, TempleOS is a fascinating mixture of impressive accomplishments and notable limitations.&lt;/p&gt;
+&lt;p&gt;On one hand, it achieved something many operating system developers aspire to: it was capable of compiling itself. TempleOS was written in Terry&amp;rsquo;s own custom programming language, HolyC, and included its own editor, compiler, interpreter, and even a collection of original games. These are significant accomplishments for any solo developer.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Farming, a delusion all engineers share</title>
       <link>https://sazidmahmud.bd/posts/6-farming-a-delusion-all-engineers-share/</link>
