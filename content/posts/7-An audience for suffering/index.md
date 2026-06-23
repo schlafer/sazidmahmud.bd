@@ -8,6 +8,7 @@ showReadingTime: true
 showSummary: true
 showComments: false
 ---
+![Terry A. Davis](images/terry.jpg)
 The crowning achievement of Terry A. Davis was *TempleOS*, an operating system he spent years building almost entirely on his own before his tragic death in 2018. From a purely technical perspective, TempleOS is a fascinating mixture of impressive accomplishments and notable limitations.
 
 On one hand, it achieved something many operating system developers aspire to: it was capable of compiling itself. TempleOS was written in Terry's own custom programming language, HolyC, and included its own editor, compiler, interpreter, and even a collection of original games. These are significant accomplishments for any solo developer.
@@ -35,6 +36,7 @@ TempleOS is certainly an unusual and memorable piece of software. But when I thi
 In the end, I cannot help wishing that Terry had been granted something the internet rarely offers: the chance to be left alone.
 
 ---
+![Kent Overstreet](images/kent.webp)
 
 The masterwork of Kent Overstreet is *bcachefs*, a copy-on-write filesystem for Linux designed to compete with established projects such as Btrfs and ZFS. Kent first made his mark on the Linux storage ecosystem with the creation of bcache around 2013. Building on that foundation, he began work on bcachefs in 2015, embarking on what would become a decade-long effort to build a next-generation filesystem from the ground up.
 
