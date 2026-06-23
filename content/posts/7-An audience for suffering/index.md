@@ -84,7 +84,7 @@ The burden falls especially heavily on neurodivergent and queer people, who ofte
 
 This is the part that troubles me most.
 
-Time and again, I see people whom I otherwise respect—people I consider thoughtful, principled, and empathetic—joining in rituals of gossip, ridicule, and voyeurism when someone else's mental health crisis becomes visible. Once a person's behavior becomes strange enough, offensive enough, or embarrassing enough, concern often gives way to fascination. Their suffering becomes a topic of discussion, a source of entertainment, or a morality play for others to perform in.
+Time and again, I see people whom I otherwise respect, people I consider thoughtful, principled, and empathetic, joining in rituals of gossip, ridicule, and voyeurism when someone else's mental health crisis becomes visible. Once a person's behavior becomes strange enough, offensive enough, or embarrassing enough, concern often gives way to fascination. Their suffering becomes a topic of discussion, a source of entertainment, or a morality play for others to perform in.
 
 I do not think this is healthy, and I do not think it is kind.
 
