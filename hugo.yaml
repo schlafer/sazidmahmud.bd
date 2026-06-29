@@ -78,6 +78,8 @@ params:
       url: "https://x.com/_schlafer"
     - name: linkedin
       url: "https://linkedin.com/in/sazid-mahmud-eee"
+    - name: mastodon
+      url: "https://mastodon.social/@schlafer"
 
 menu:
   main:
