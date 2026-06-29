@@ -2,7 +2,7 @@ name = "website"
 compatibility_date = "2026-05-20"
 
 [build]
-command = ""
+command = "hugo --minify"
 
 [assets]
 directory = "./public"

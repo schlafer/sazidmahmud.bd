@@ -2,11 +2,7 @@
 layout: page
 title: "An audience for suffering"
 date: 2026-06-21
-showAuthor: true
-showDate: true
-showReadingTime: true
-showSummary: true
-showComments: false
+tags: [mental-health, internet-culture, philosophy]
 ---
 ![Terry A. Davis](images/terry.jpg)
 The crowning achievement of Terry A. Davis was *TempleOS*, an operating system he spent years building almost entirely on his own before his tragic death in 2018. From a purely technical perspective, TempleOS is a fascinating mixture of impressive accomplishments and notable limitations.

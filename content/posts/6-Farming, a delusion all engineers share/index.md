@@ -2,11 +2,7 @@
 layout: page
 title: "Farming, a delusion all engineers share"
 date: 2026-04-11
-showAuthor: true
-showDate: true
-showReadingTime: true
-showSummary: true
-showComments: false
+tags: [engineering-culture, philosophy]
 ---
 Every engineer I had talked to, have one thing common in them; all of them want to take up farming as a hobby turned into profession at some point in their life. Be it software, semiconductor or electrical, no matter what their field of engineering is, all of them have this latent desire to take up farming as a job and leave their field for good. 
 

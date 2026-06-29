@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Command-Line on Sazid Mahmud</title>
+    <link>https://sazidmahmud.bd/tags/command-line/</link>
+    <description>Recent content in Command-Line on Sazid Mahmud</description>
+    <generator>Hugo -- 0.161.1</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 16 Oct 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://sazidmahmud.bd/tags/command-line/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Zoxide, the navigation solution</title>
+      <link>https://sazidmahmud.bd/posts/1-zoxide-the-navigation-solution/</link>
+      <pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://sazidmahmud.bd/posts/1-zoxide-the-navigation-solution/</guid>
+      <description>&lt;h3 id=&#34;zoxide---z&#34;&gt;Zoxide - &lt;code&gt;z&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;This has completely replaced &lt;code&gt;cd&lt;/code&gt; command for me.&lt;/p&gt;
+&lt;p&gt;It&amp;rsquo;s fast and remembers your previous visit to directories, ranking them by visit frequency.&lt;/p&gt;
+&lt;p&gt;You can jump to any previously visited directory without explicitly specifying the path to it like &lt;code&gt;z dir&lt;/code&gt;, where directory can look something like /home/user/&amp;hellip;./dir.&lt;/p&gt;
+&lt;p&gt;If you have jumped enough times you don&amp;rsquo;t even need to write the full directory name.&lt;/p&gt;
+&lt;p&gt;There is also an interactive selection using &lt;code&gt;fzf&lt;/code&gt;, so you can filter out similar named directories, &lt;code&gt;zi app&lt;/code&gt; will list out all the projects that include an &amp;ldquo;/app&amp;rdquo; directory.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -5,13 +5,11 @@ hidemeta: true
 ShowBreadCrumbs: false
 showtoc: false
 ---
-I'm Sazid, a Backend Developer based in [Dhaka, Bangladesh](https://maps.app.goo.gl/KDFTxoMJjRvDwsfKA).
+I'm Sazid, an Engineer based in [Dhaka, Bangladesh](https://maps.app.goo.gl/KDFTxoMJjRvDwsfKA).
 
-Professionally I trick rocks into thinking (or perhaps they trick me?).
+Professionally I trick rocks into thinking (or perhaps they trick me into thinking?).
 
-Academically I have a Bachelors degree in Electrical and Electronic Engineering.
-
-I'm mostly working with web backend and server-side solutions.
+I have a Bachelors degree in Electrical and Electronic Engineering.
 
 Hobbies include but not limited to - lifting weights, over-network 
 engineer my homelab, chilling at the beach etc.
@@ -27,24 +25,24 @@ Started out this blog to document my journey of giving life meaning.
 Why I bothered myself with a personal website? Why not just write on social media?
 
 [This post explains it well.](https://matthiasott.com/notes/simple-truths-about-personal-websites)
-### Preference of Tools
+<!-- ### Preference of Tools -->
 
-#### Programming / Scripting Languages
+<!-- #### Programming / Scripting Languages -->
 
-[Golang](https://go.dev/) &bull; [Python](https://www.python.org/) &bull; [Bash](https://www.gnu.org/software/bash/)
+<!-- [Golang](https://go.dev/) &bull; [Python](https://www.python.org/) &bull; [Bash](https://www.gnu.org/software/bash/) -->
 
-#### Operating Systems
+<!-- #### Operating Systems -->
 
-[Arch](https://archlinux.org/) &bull; [Debian](https://www.debian.org/) &bull; [Windows](https://www.microsoft.com/en-us/windows) 
+<!-- [Arch](https://archlinux.org/) &bull; [Debian](https://www.debian.org/) -->
 
-#### Monitoring and Observability
+<!-- #### Monitoring and Observability -->
 
-[Prometheus](https://grafana.com/oss/prometheus/) &bull; [Grafana](https://grafana.com/)
+<!-- [Prometheus](https://grafana.com/oss/prometheus/) &bull; [Grafana](https://grafana.com/) -->
 
-#### Database
+<!-- #### Database -->
 
-[PostgreSQL](https://www.postgresql.org/) &bull; [Redis](https://redis.io/)
+<!-- [PostgreSQL](https://www.postgresql.org/) &bull; [Redis](https://redis.io/) -->
 
-#### Other Tools
+<!-- #### Other Tools -->
 
-[Docker](https://www.docker.com/) &bull; [Git](https://git-scm.com/) &bull; [Linear](https://linear.app/) &bull; [Postman](https://www.postman.com/) &bull; [Bruno](https://www.usebruno.com/)
+<!-- [Docker](https://www.docker.com/) &bull; [Git](https://git-scm.com/) &bull; [Postman](https://www.postman.com/) -->

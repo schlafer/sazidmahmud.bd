@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Programming on Sazid Mahmud</title>
+    <link>https://sazidmahmud.bd/tags/programming/</link>
+    <description>Recent content in Programming on Sazid Mahmud</description>
+    <generator>Hugo -- 0.161.1</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 23 Mar 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://sazidmahmud.bd/tags/programming/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Unconventional conventions in Programming</title>
+      <link>https://sazidmahmud.bd/posts/4-unconventional-conventions-in-programming/</link>
+      <pubDate>Mon, 23 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>https://sazidmahmud.bd/posts/4-unconventional-conventions-in-programming/</guid>
+      <description>&lt;p&gt;Most programming advice sounds a little detached from real world scenarios, a bit too clean, well structured. But in real world we see a repeated pattern of systems failing, user behavior introducing unpredictable bugs etc. If you&amp;rsquo;ve spent some time shipping software, you start to notice these different set of principles emerge. Not always taught first hand but implied with intent.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;logs--code&#34;&gt;Logs &amp;gt; Code&lt;/h3&gt;
+&lt;p&gt;Your code will break. Not &amp;ldquo;if&amp;rdquo; but &lt;em&gt;when&lt;/em&gt;. And when it does, you will not be sitting comfortably inside your IDE with a debugger attached. You&amp;rsquo;ll be staring at a production issue with incomplete information with elevated cortisol level. &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

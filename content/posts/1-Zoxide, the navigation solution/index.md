@@ -2,11 +2,7 @@
 layout: page
 title: "Zoxide, the navigation solution"
 date: 2025-10-16
-showAuthor: true
-showDate: true
-showReadingTime: true
-showSummary: true
-showComments: false
+tags: [tools, command-line, productivity]
 ---
 
 ### Zoxide - `z` 

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Ai on Sazid Mahmud</title>
+    <link>https://sazidmahmud.bd/tags/ai/</link>
+    <description>Recent content in Ai on Sazid Mahmud</description>
+    <generator>Hugo -- 0.161.1</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 30 Mar 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://sazidmahmud.bd/tags/ai/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AI Isn’t Improving - We’re Just Calling It More Often</title>
+      <link>https://sazidmahmud.bd/posts/5-ai-isnt-improving---were-just-calling-it-more-often/</link>
+      <pubDate>Mon, 30 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>https://sazidmahmud.bd/posts/5-ai-isnt-improving---were-just-calling-it-more-often/</guid>
+      <description>&lt;p&gt;A noticeable trend in software right now is teams rushing to build systems around agents, RAG, MCP, and similar patterns; especially within ecosystems like Claude.&lt;/p&gt;
+&lt;p&gt;They’re often framed as productivity or automation gains. But if you look at the architecture, they don’t reduce reliance on LLMs; they deepen it.&lt;/p&gt;
+&lt;p&gt;Agents, for example, don’t simply “automate” tasks. They decompose a single request into multiple steps: planning, tool selection, execution, and iteration. What could have been one model call often becomes several.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

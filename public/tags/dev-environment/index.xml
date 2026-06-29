@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Dev-Environment on Sazid Mahmud</title>
+    <link>https://sazidmahmud.bd/tags/dev-environment/</link>
+    <description>Recent content in Dev-Environment on Sazid Mahmud</description>
+    <generator>Hugo -- 0.161.1</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 28 Oct 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://sazidmahmud.bd/tags/dev-environment/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mise-en-place</title>
+      <link>https://sazidmahmud.bd/posts/2-mise-en-place/</link>
+      <pubDate>Tue, 28 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://sazidmahmud.bd/posts/2-mise-en-place/</guid>
+      <description>&lt;h3 id=&#34;mise-en-place-meez-ahn-plahs---mise&#34;&gt;Mise-en-place (MEEZ ahn plahs) - &lt;code&gt;mise&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;The idea behind using it is to standardize development environment for everyone working in the team. Furthermore, we need different versions of tools with different projects. Mise takes care of that.&lt;/p&gt;
+&lt;p&gt;Mise is a unified tool and task management solution that simplifies the process of installing and managing tools for different projects. It supports various backends for tool installation and allows users to define tasks with custom scripts.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

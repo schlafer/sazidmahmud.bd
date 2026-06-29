@@ -3,12 +3,8 @@ layout: page
 title: "Troubleshooting arch-btw!"
 date: 2025-11-13
 thumbnail: "images/archlinux.png"
-showAuthor: true
-showDate: true
-showReadingTime: true
-showSummary: true
 summary: "An article about troubleshooting Arch Linux"
-showComments: false
+tags: [arch-linux, troubleshooting, linux]
 showTableOfContents: true
 ---
 ![arch-btw](images/archlinux.png)

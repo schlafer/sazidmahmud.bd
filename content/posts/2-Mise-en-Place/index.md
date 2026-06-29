@@ -2,11 +2,7 @@
 layout: page
 title: "Mise-en-place"
 date: 2025-10-28
-showAuthor: true
-showDate: true
-showReadingTime: true
-showSummary: true
-showComments: false
+tags: [tools, dev-environment, productivity]
 ---
 
 ### Mise-en-place (MEEZ ahn plahs) - `mise`

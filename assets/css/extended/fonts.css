@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Iosevka:wght@400;500;600;700&display=swap');
 
 body,
-.post-content
+.post-content,
 .page.content {
   font-family: 'Iosevka', ui-monospace, monospace;
 }

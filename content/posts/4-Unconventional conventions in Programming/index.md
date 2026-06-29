@@ -2,11 +2,7 @@
 layout: page
 title: "Unconventional conventions in Programming"
 date: 2026-03-23
-showAuthor: true
-showDate: true
-showReadingTime: true
-showSummary: true
-showComments: false
+tags: [programming, engineering, best-practices]
 ---
 Most programming advice sounds a little detached from real world scenarios, a bit too clean, well structured. But in real world we see a repeated pattern of systems failing, user behavior introducing unpredictable bugs etc. If you've spent some time shipping software, you start to notice these different set of principles emerge. Not always taught first hand but implied with intent.
 

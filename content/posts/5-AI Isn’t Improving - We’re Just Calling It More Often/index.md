@@ -2,11 +2,7 @@
 layout: page
 title: "AI Isn’t Improving - We’re Just Calling It More Often"
 date: 2026-03-30
-showAuthor: true
-showDate: true
-showReadingTime: true
-showSummary: true
-showComments: false
+tags: [ai, llm, software-engineering]
 ---
 A noticeable trend in software right now is teams rushing to build systems around agents, RAG, MCP, and similar patterns; especially within ecosystems like Claude.
 

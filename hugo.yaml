@@ -11,22 +11,31 @@ minify:
   disableXML: true
   minifyOutput: true
 
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+
 params:
   env: production
   title: "Sazid Mahmud"
   description: "Backend Engineering, System Design, Web Security."
-  keywords: [Blog, Projects, Engineering]
+  keywords: [Backend, Golang, System Design, Arch Linux, Programming]
   author: "Sazid Mahmud"
   DateFormat: "Jan 2, 2006"
   disableScrollToTop: false
   defaultTheme: auto
   disableThemeToggle: false
   ShowRssButtonInSectionTermList: true
+  ShowReadingProgress: true
+  ShowShareButtons: true
   favicon:
-    ico: "/favicon/favicon.ico"
-    png32: "/favicon/favicon-32x32.png"
-    png16: "/favicon/favicon-16x16.png"
-    apple: "/favicon/apple-touch-icon.png"
+    ico: "/favicon.ico"
+    svg: "/favicon.svg"
+    png32: "/favicon-32x32.png"
+    png16: "/favicon-16x16.png"
+    apple: "/apple-touch-icon.png"
 
   # Global UI
   ShowReadingTime: true
@@ -35,6 +44,13 @@ params:
   ShowWordCount: true
   ShowCodeCopyButtons: true
   comments: false
+
+  # Global post defaults (can be overridden per-post)
+  showAuthor: true
+  showDate: true
+  showReadingTime: true
+  showSummary: true
+  showComments: false
 
   # --------
   # LANDING PAGE (Profile Mode)
@@ -77,6 +93,14 @@ menu:
       name: About
       url: /about/
       weight: 30
+    - identifier: search
+      name: Search
+      url: /search/
+      weight: 40
+    - identifier: archives
+      name: Archives
+      url: /archives/
+      weight: 50
 
 # Syntax highlighting
 pygmentsUseClasses: true
