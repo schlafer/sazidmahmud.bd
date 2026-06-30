@@ -14,7 +14,7 @@ I have a Bachelors degree in Electrical and Electronic Engineering.
 Hobbies include but not limited to - lifting weights, over-network 
 engineer my homelab, chilling at the beach etc.
 
-__If you have any questions or want to chat about any of the [topics](/posts/) here, feel free to [reach](mailto:sazid@sazidmahmud.bd) out :heart:__
+__If you have any questions or want to chat about any of the [topics](/posts/) here, feel free to [reach](mailto:info@sazidmahmud.bd) out :heart:__
 
 ### About This Website
 
