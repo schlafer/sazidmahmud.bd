@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "The Imposter Inside"
-date: 2026-07-05
+date: 2026-07-04
 tags: [mental-health, perfectionism, philosophy]
 ---
 

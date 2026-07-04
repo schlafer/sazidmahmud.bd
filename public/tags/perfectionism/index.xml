@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Mental-Health on Sazid Mahmud</title>
-    <link>https://sazidmahmud.bd/tags/mental-health/</link>
-    <description>Recent content in Mental-Health on Sazid Mahmud</description>
+    <title>Perfectionism on Sazid Mahmud</title>
+    <link>https://sazidmahmud.bd/tags/perfectionism/</link>
+    <description>Recent content in Perfectionism on Sazid Mahmud</description>
     <generator>Hugo -- 0.162.0</generator>
     <language>en</language>
     <lastBuildDate>Sat, 04 Jul 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://sazidmahmud.bd/tags/mental-health/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://sazidmahmud.bd/tags/perfectionism/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>The Imposter Inside</title>
       <link>https://sazidmahmud.bd/posts/8-the-imposter-inside/</link>
@@ -16,15 +16,6 @@
       <description>&lt;p&gt;&lt;img alt=&#34;Imposter Syndrome&#34; loading=&#34;lazy&#34; src=&#34;https://sazidmahmud.bd/posts/8-the-imposter-inside/images/imposter.webp&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;the-illusion-of-being-a-fraud&#34;&gt;The Illusion of Being a Fraud&lt;/h2&gt;
 &lt;p&gt;Feeling like a fraud is, above all, a matter of perception. It is about how you imagine others interpret your abilities, your intentions, and your worth. You begin to believe that every action is being observed, every word evaluated, every decision quietly measured against some invisible standard. You assume that people are searching for flaws, waiting for the moment you make a mistake. That mistake becomes terrifying because, in your mind, it does more than reveal an error. It reveals &lt;em&gt;you&lt;/em&gt;. It confirms the suspicion you have carried all along—that you never truly belonged, that your achievements were accidental, and that sooner or later everyone will discover the truth. You fear that once the illusion is broken, everything you have built will come crashing down.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>An audience for suffering</title>
-      <link>https://sazidmahmud.bd/posts/7-an-audience-for-suffering/</link>
-      <pubDate>Sun, 21 Jun 2026 00:00:00 +0000</pubDate>
-      <guid>https://sazidmahmud.bd/posts/7-an-audience-for-suffering/</guid>
-      <description>&lt;p&gt;&lt;img alt=&#34;Terry A. Davis&#34; loading=&#34;lazy&#34; src=&#34;https://sazidmahmud.bd/posts/7-an-audience-for-suffering/images/terry.jpg&#34;&gt;
-The crowning achievement of Terry A. Davis was &lt;em&gt;TempleOS&lt;/em&gt;, an operating system he spent years building almost entirely on his own before his tragic death in 2018. From a purely technical perspective, TempleOS is a fascinating mixture of impressive accomplishments and notable limitations.&lt;/p&gt;
-&lt;p&gt;On one hand, it achieved something many operating system developers aspire to: it was capable of compiling itself. TempleOS was written in Terry&amp;rsquo;s own custom programming language, HolyC, and included its own editor, compiler, interpreter, and even a collection of original games. These are significant accomplishments for any solo developer.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
