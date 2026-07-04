@@ -2,10 +2,10 @@
 layout: page
 title: "When Excellence Becomes Obsession"
 date: 2026-07-04
-tags: [mental-health, internet-culture, philosophy]
+tags: [mental-health, perfectionism, philosophy]
 ---
 
-![Impostor-Syndrome](images/impostor.webp)
+![Impostor Syndrome](images/impostor.webp)
 
 ### The Illusion of Being a Fraud
 
@@ -143,7 +143,7 @@ More often than not, the honest answer is this:
 
 Far less than you think. And certainly not enough to justify sacrificing your curiosity, your creativity, or your willingness to keep contributing.
 
-### The Ideal as Compass, Not judge
+### The Ideal as Compass, Not Judge
 
 Another way to loosen the grip of impostor syndrome is to rethink the relationship between the ideal and the actual.
 
