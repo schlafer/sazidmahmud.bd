@@ -4,7 +4,7 @@
     <title>Command-Line on Sazid Mahmud</title>
     <link>https://sazidmahmud.bd/tags/command-line/</link>
     <description>Recent content in Command-Line on Sazid Mahmud</description>
-    <generator>Hugo -- 0.162.0</generator>
+    <generator>Hugo -- 0.164.0</generator>
     <language>en</language>
     <lastBuildDate>Thu, 16 Oct 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://sazidmahmud.bd/tags/command-line/index.xml" rel="self" type="application/rss+xml" />
@@ -18,7 +18,35 @@
 &lt;p&gt;It&amp;rsquo;s fast and remembers your previous visit to directories, ranking them by visit frequency.&lt;/p&gt;
 &lt;p&gt;You can jump to any previously visited directory without explicitly specifying the path to it like &lt;code&gt;z dir&lt;/code&gt;, where directory can look something like /home/user/&amp;hellip;./dir.&lt;/p&gt;
 &lt;p&gt;If you have jumped enough times you don&amp;rsquo;t even need to write the full directory name.&lt;/p&gt;
-&lt;p&gt;There is also an interactive selection using &lt;code&gt;fzf&lt;/code&gt;, so you can filter out similar named directories, &lt;code&gt;zi app&lt;/code&gt; will list out all the projects that include an &amp;ldquo;/app&amp;rdquo; directory.&lt;/p&gt;</description>
+&lt;p&gt;There is also an interactive selection using &lt;code&gt;fzf&lt;/code&gt;, so you can filter out similar named directories, &lt;code&gt;zi app&lt;/code&gt; will list out all the projects that include an &amp;ldquo;/app&amp;rdquo; directory.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;z foo&lt;/code&gt; - cd into highest ranked directory matching foo.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;z foo bar&lt;/code&gt; - cd into highest ranked directory matching foo and bar.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;z foo /&lt;/code&gt; - cd into a subdirectory starting with foo.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;z ~/foo&lt;/code&gt; - z also works like a regular cd command.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;z foo/&lt;/code&gt; - cd into relative path.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;z ..&lt;/code&gt; - cd one level up.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;z -&lt;/code&gt; - cd into previous directory.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;zi foo&lt;/code&gt; - cd with interactive selection (using fzf).&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;z foo&amp;lt;SPACE&amp;gt;&amp;lt;TAB&amp;gt;&lt;/code&gt; - show interactive completions (zoxide v0.8.0+, bash 4.4+/fish/zsh only).&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/ajeetdsouza/zoxide&#34;&gt;Try it!&lt;/a&gt;&lt;/p&gt;
+</description>
+      <content:encoded><![CDATA[<h3 id="zoxide---z">Zoxide - <code>z</code></h3>
+<p>This has completely replaced <code>cd</code> command for me.</p>
+<p>It&rsquo;s fast and remembers your previous visit to directories, ranking them by visit frequency.</p>
+<p>You can jump to any previously visited directory without explicitly specifying the path to it like <code>z dir</code>, where directory can look something like /home/user/&hellip;./dir.</p>
+<p>If you have jumped enough times you don&rsquo;t even need to write the full directory name.</p>
+<p>There is also an interactive selection using <code>fzf</code>, so you can filter out similar named directories, <code>zi app</code> will list out all the projects that include an &ldquo;/app&rdquo; directory.</p>
+<p><code>z foo</code> - cd into highest ranked directory matching foo.</p>
+<p><code>z foo bar</code> - cd into highest ranked directory matching foo and bar.</p>
+<p><code>z foo /</code> - cd into a subdirectory starting with foo.</p>
+<p><code>z ~/foo</code> - z also works like a regular cd command.</p>
+<p><code>z foo/</code> - cd into relative path.</p>
+<p><code>z ..</code> - cd one level up.</p>
+<p><code>z -</code> - cd into previous directory.</p>
+<p><code>zi foo</code> - cd with interactive selection (using fzf).</p>
+<p><code>z foo&lt;SPACE&gt;&lt;TAB&gt;</code> - show interactive completions (zoxide v0.8.0+, bash 4.4+/fish/zsh only).</p>
+<p><a href="https://github.com/ajeetdsouza/zoxide">Try it!</a></p>
+]]></content:encoded>
     </item>
   </channel>
 </rss>

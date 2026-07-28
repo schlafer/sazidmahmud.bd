@@ -4,7 +4,7 @@
     <title>Projects on Sazid Mahmud</title>
     <link>https://sazidmahmud.bd/projects/</link>
     <description>Recent content in Projects on Sazid Mahmud</description>
-    <generator>Hugo -- 0.162.0</generator>
+    <generator>Hugo -- 0.164.0</generator>
     <language>en</language>
     <lastBuildDate>Mon, 26 Jan 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://sazidmahmud.bd/projects/index.xml" rel="self" type="application/rss+xml" />
@@ -13,7 +13,10 @@
       <link>https://sazidmahmud.bd/projects/1-wip/</link>
       <pubDate>Mon, 26 Jan 2026 00:00:00 +0000</pubDate>
       <guid>https://sazidmahmud.bd/projects/1-wip/</guid>
-      <description>&lt;p&gt;Work-in-Progress. I will showcase my notable projects over here. All codes will be self hosted at my forgejo instance.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Work-in-Progress. I will showcase my notable projects over here. All codes will be self hosted at my forgejo instance.&lt;/p&gt;
+</description>
+      <content:encoded><![CDATA[<p>Work-in-Progress. I will showcase my notable projects over here. All codes will be self hosted at my forgejo instance.</p>
+]]></content:encoded>
     </item>
   </channel>
 </rss>

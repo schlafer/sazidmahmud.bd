@@ -4,7 +4,7 @@
     <title>Best-Practices on Sazid Mahmud</title>
     <link>https://sazidmahmud.bd/tags/best-practices/</link>
     <description>Recent content in Best-Practices on Sazid Mahmud</description>
-    <generator>Hugo -- 0.162.0</generator>
+    <generator>Hugo -- 0.164.0</generator>
     <language>en</language>
     <lastBuildDate>Mon, 23 Mar 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://sazidmahmud.bd/tags/best-practices/index.xml" rel="self" type="application/rss+xml" />
@@ -16,7 +16,67 @@
       <description>&lt;p&gt;Most programming advice sounds a little detached from real world scenarios, a bit too clean, well structured. But in real world we see a repeated pattern of systems failing, user behavior introducing unpredictable bugs etc. If you&amp;rsquo;ve spent some time shipping software, you start to notice these different set of principles emerge. Not always taught first hand but implied with intent.&lt;/p&gt;
 &lt;hr&gt;
 &lt;h3 id=&#34;logs--code&#34;&gt;Logs &amp;gt; Code&lt;/h3&gt;
-&lt;p&gt;Your code will break. Not &amp;ldquo;if&amp;rdquo; but &lt;em&gt;when&lt;/em&gt;. And when it does, you will not be sitting comfortably inside your IDE with a debugger attached. You&amp;rsquo;ll be staring at a production issue with incomplete information with elevated cortisol level. &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;</description>
+&lt;p&gt;Your code will break. Not &amp;ldquo;if&amp;rdquo; but &lt;em&gt;when&lt;/em&gt;. And when it does, you will not be sitting comfortably inside your IDE with a debugger attached. You&amp;rsquo;ll be staring at a production issue with incomplete information with elevated cortisol level. &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;Here logs can become your savior. Well-placed, meaningful logs turn chaos into science. Without them, you&amp;rsquo;re guessing. With them, you&amp;rsquo;re diagnosing. &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;The difference is hours or even days of wasted effort. If you had to choose between slightly cleaner code and better observability, pick observability. Clean code doesn&amp;rsquo;t help you when you can&amp;rsquo;t see what&amp;rsquo;s going wrong.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;users---breaker-of-things&#34;&gt;Users - Breaker of things&lt;/h3&gt;
+&lt;p&gt;Developers tend to test for what &lt;em&gt;should&lt;/em&gt; happen. Users &lt;strong&gt;specialize&lt;/strong&gt; in discovering what shouldn&amp;rsquo;t. They will input unexpected values, click things out of order, reload at the worst moment, and combine actions in ways you never considered. Not because they&amp;rsquo;re malicious but because reality is often messy. &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;Edge cases aren&amp;rsquo;t edge cases in production. They&amp;rsquo;re inevitable. &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;So stop thinking in terms of &amp;ldquo;valid input&amp;rdquo;. Start thinking in terms of &amp;ldquo;how does this fail safely?&amp;rdquo; Because it will fail.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;technical-debt-is-a-tool&#34;&gt;Technical Debt is a Tool&lt;/h3&gt;
+&lt;p&gt;There&amp;rsquo;s a lot of moral language around technical debt as if writing imperfect code is some kind of failure. &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;It&amp;rsquo;s not. &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;It&amp;rsquo;s a trade-off (like everything else in engineering). &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;When you&amp;rsquo;re validating an idea, speed matters more than perfection. Shipping something rough but functional teaches you more than polishing something no one uses. &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;The key is &lt;em&gt;intentional&lt;/em&gt; debt. &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;Take shortcuts when you need momentum. But be honest about it. Document it. And only pay it back when the feature proves it deserves long-term investment. Premature perfection is just procrastination in disguise.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;naming-is-hard&#34;&gt;Naming is Hard&lt;/h3&gt;
+&lt;p&gt;It sounds trivial. Until you&amp;rsquo;ve worked in a codebase where nothing makes sense. Bad names don&amp;rsquo;t just confuse you today. They compound. And over time, that friction becomes real cost. A well-named variable or function removes the need for comments. A poorly named one creates endless questions. &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;Take the extra minute to name things properly. Future you and everyone else will thank you ❤️&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;local--production&#34;&gt;Local != Production&lt;/h3&gt;
+&lt;p&gt;You&amp;rsquo;re local environment is controlled, predictable, and forgiving. Production is none of those things. Locally, you don&amp;rsquo;t have real traffic spikes, network latency, race conditions, or partial failures. Everything feels smooth until it isn&amp;rsquo;t. This gap is where many bugs are born. &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;Respect the difference. Test with real-world conditions when possible. Use staging environments. Simulate load. &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;Because &amp;ldquo;Zit werks on my machine&amp;rdquo; is not going to cut it when the stakes are real.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;final-thoughts&#34;&gt;Final Thoughts&lt;/h3&gt;
+&lt;p&gt;Programming isn’t just about writing code. It’s about dealing with uncertainty, trade-offs, and imperfect conditions. If you internalize these principles, you stop chasing the illusion of perfect systems and start building resilient ones instead. And that shift? That’s where &lt;em&gt;real&lt;/em&gt; engineering begins.&lt;/p&gt;
+</description>
+      <content:encoded><![CDATA[<p>Most programming advice sounds a little detached from real world scenarios, a bit too clean, well structured. But in real world we see a repeated pattern of systems failing, user behavior introducing unpredictable bugs etc. If you&rsquo;ve spent some time shipping software, you start to notice these different set of principles emerge. Not always taught first hand but implied with intent.</p>
+<hr>
+<h3 id="logs--code">Logs &gt; Code</h3>
+<p>Your code will break. Not &ldquo;if&rdquo; but <em>when</em>. And when it does, you will not be sitting comfortably inside your IDE with a debugger attached. You&rsquo;ll be staring at a production issue with incomplete information with elevated cortisol level. <!-- raw HTML omitted --></p>
+<p>Here logs can become your savior. Well-placed, meaningful logs turn chaos into science. Without them, you&rsquo;re guessing. With them, you&rsquo;re diagnosing. <!-- raw HTML omitted --></p>
+<p>The difference is hours or even days of wasted effort. If you had to choose between slightly cleaner code and better observability, pick observability. Clean code doesn&rsquo;t help you when you can&rsquo;t see what&rsquo;s going wrong.</p>
+<hr>
+<h3 id="users---breaker-of-things">Users - Breaker of things</h3>
+<p>Developers tend to test for what <em>should</em> happen. Users <strong>specialize</strong> in discovering what shouldn&rsquo;t. They will input unexpected values, click things out of order, reload at the worst moment, and combine actions in ways you never considered. Not because they&rsquo;re malicious but because reality is often messy. <!-- raw HTML omitted --></p>
+<p>Edge cases aren&rsquo;t edge cases in production. They&rsquo;re inevitable. <!-- raw HTML omitted --></p>
+<p>So stop thinking in terms of &ldquo;valid input&rdquo;. Start thinking in terms of &ldquo;how does this fail safely?&rdquo; Because it will fail.</p>
+<hr>
+<h3 id="technical-debt-is-a-tool">Technical Debt is a Tool</h3>
+<p>There&rsquo;s a lot of moral language around technical debt as if writing imperfect code is some kind of failure. <!-- raw HTML omitted --></p>
+<p>It&rsquo;s not. <!-- raw HTML omitted --></p>
+<p>It&rsquo;s a trade-off (like everything else in engineering). <!-- raw HTML omitted --></p>
+<p>When you&rsquo;re validating an idea, speed matters more than perfection. Shipping something rough but functional teaches you more than polishing something no one uses. <!-- raw HTML omitted --></p>
+<p>The key is <em>intentional</em> debt. <!-- raw HTML omitted --></p>
+<p>Take shortcuts when you need momentum. But be honest about it. Document it. And only pay it back when the feature proves it deserves long-term investment. Premature perfection is just procrastination in disguise.</p>
+<hr>
+<h3 id="naming-is-hard">Naming is Hard</h3>
+<p>It sounds trivial. Until you&rsquo;ve worked in a codebase where nothing makes sense. Bad names don&rsquo;t just confuse you today. They compound. And over time, that friction becomes real cost. A well-named variable or function removes the need for comments. A poorly named one creates endless questions. <!-- raw HTML omitted --></p>
+<p>Take the extra minute to name things properly. Future you and everyone else will thank you ❤️</p>
+<hr>
+<h3 id="local--production">Local != Production</h3>
+<p>You&rsquo;re local environment is controlled, predictable, and forgiving. Production is none of those things. Locally, you don&rsquo;t have real traffic spikes, network latency, race conditions, or partial failures. Everything feels smooth until it isn&rsquo;t. This gap is where many bugs are born. <!-- raw HTML omitted --></p>
+<p>Respect the difference. Test with real-world conditions when possible. Use staging environments. Simulate load. <!-- raw HTML omitted --></p>
+<p>Because &ldquo;Zit werks on my machine&rdquo; is not going to cut it when the stakes are real.</p>
+<hr>
+<h3 id="final-thoughts">Final Thoughts</h3>
+<p>Programming isn’t just about writing code. It’s about dealing with uncertainty, trade-offs, and imperfect conditions. If you internalize these principles, you stop chasing the illusion of perfect systems and start building resilient ones instead. And that shift? That’s where <em>real</em> engineering begins.</p>
+]]></content:encoded>
     </item>
   </channel>
 </rss>

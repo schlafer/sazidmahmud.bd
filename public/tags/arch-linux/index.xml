@@ -4,7 +4,7 @@
     <title>Arch-Linux on Sazid Mahmud</title>
     <link>https://sazidmahmud.bd/tags/arch-linux/</link>
     <description>Recent content in Arch-Linux on Sazid Mahmud</description>
-    <generator>Hugo -- 0.162.0</generator>
+    <generator>Hugo -- 0.164.0</generator>
     <language>en</language>
     <lastBuildDate>Thu, 13 Nov 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://sazidmahmud.bd/tags/arch-linux/index.xml" rel="self" type="application/rss+xml" />
@@ -13,7 +13,160 @@
       <link>https://sazidmahmud.bd/posts/3-archlinux-troubleshooting/</link>
       <pubDate>Thu, 13 Nov 2025 00:00:00 +0000</pubDate>
       <guid>https://sazidmahmud.bd/posts/3-archlinux-troubleshooting/</guid>
-      <description>An article about troubleshooting Arch Linux</description>
+      <description>&lt;p&gt;&lt;img alt=&#34;arch-btw&#34; loading=&#34;lazy&#34; src=&#34;https://sazidmahmud.bd/posts/3-archlinux-troubleshooting/images/archlinux.png&#34;&gt;
+ALWAYS read error messages and logs fully.
+They probably contain the solution to your problem!!
+Remember: there can be unintended consequences to any system changes you make.
+&lt;a href=&#34;https://wiki.archlinux.org/&#34;&gt;ArchWiki&lt;/a&gt; troubleshooting sections explain everything here in greater depth!&lt;/p&gt;
+&lt;h3 id=&#34;if-you-are-unable-to-boot&#34;&gt;If you are unable to BOOT:&lt;/h3&gt;
+&lt;h4 id=&#34;a-cant-even-get-to-grub&#34;&gt;(a) Can&amp;rsquo;t even get to GRUB&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.supergrubdisk.org/super-grub2-disk/&#34;&gt;SUPERGRUB&lt;/a&gt; - will detect boot entries and allow you to boot manually
+Or, boot to the Arch ISO, mount partitions, and &lt;code&gt;arch-chroot /mnt&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;If you can&amp;rsquo;t find the issue, reinstall GRUB, and ensure your configuration is updated.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;grub-install --target&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;x86_64-efi --efi-directory&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;/boot --bootloader-id&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;GRUB
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;grub-mkconfig -o /boot/grub/grub.cfg
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;All else fails? You can try a different &lt;a href=&#34;https://wiki.archlinux.org/title/Arch_boot_process#Boot_loader&#34;&gt;bootloader&lt;/a&gt;, ex. &lt;a href=&#34;https://www.rodsbooks.com/refind/&#34;&gt;Refind&lt;/a&gt;
+There are some situations where an alternate program may be the most effective solution.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;b-grub-shows-up-butkernel-or-initramfs-is-missing&#34;&gt;(b) GRUB shows up, but…Kernel or initramfs is missing?&lt;/h4&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;Try regenerating the initramfs: &lt;code&gt;mkinitcpio -P&lt;/code&gt;
+mkinitcpio is a Bash script to create an initial ramdisk environment.
+It is run automatically on every kernel update with a pacman hook.&lt;/li&gt;
+&lt;li&gt;Reinstall: &lt;code&gt;pacman -S linux linux-firmware&lt;/code&gt; or the kernel you are using.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;interrupted-mid-upgrade&#34;&gt;Interrupted mid-upgrade?&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;DO NOT REBOOT!!&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Check &lt;code&gt;/var/log/pacman.log&lt;/code&gt; and replicate the upgrade exactly.
+If a reboot was unavoidable and your system no longer boots, head in with the Arch ISO, mount partitions, chroot, and replicate the upgrade exactly.&lt;/p&gt;
+&lt;h5 id=&#34;filesystem-not-found-or-drive-is-read-only&#34;&gt;Filesystem not found, or drive is read-only?&lt;/h5&gt;
+&lt;ol start=&#34;6&#34;&gt;
+&lt;li&gt;Boot into the Arch ISO, mount partitions, and &lt;code&gt;arch-chroot /mnt&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Check your fstab! &lt;code&gt;/etc/fstab&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;genfstab -U /mnt &amp;gt;&amp;gt; /mnt/etc/fstab&lt;/code&gt; will generate with UUIDs&lt;/li&gt;
+&lt;li&gt;For read/write issues,&amp;ldquo;rw,relatime&amp;rdquo; are set on that partition&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h5 id=&#34;filesystem-corrupted-due-to-power-failure-etc&#34;&gt;Filesystem corrupted due to power failure, etc?&lt;/h5&gt;
+&lt;p&gt;Use &lt;code&gt;fsck&lt;/code&gt; to check and repair.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;fsck -a&lt;/code&gt; will automatically repair.&lt;/li&gt;
+&lt;li&gt;If &lt;code&gt;fsck&lt;/code&gt; cannot find an external journal, umount, write a new journal with &lt;code&gt;tune2fs -j/dev/partition&lt;/code&gt;, and then run &lt;code&gt;fsck -p /dev/partition&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;c-pls-help-nothing-works&#34;&gt;(c) pls help nothing works!&lt;/h4&gt;
+&lt;p&gt;If your partitions are separated, you can easily reinstall your system on your root partition, without touching home.
+If they aren&amp;rsquo;t separated, you can still reinstall, but ensure you&amp;rsquo;ve backed up all files.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;ALWAYS ensure you have backed up any important data before clearing or changing partitions&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;To save a copy of your currently installed package list:
+10. &lt;code&gt;yay -Qq &amp;gt; packages_list&lt;/code&gt;
+11. Reinstall (re-pacstrap, etc) from the &lt;a href=&#34;https://wiki.archlinux.org/title/Installation_guide&#34;&gt;installation guide&lt;/a&gt;
+12. Reinstall &lt;a href=&#34;https://aur.archlinux.org/packages/yay&#34;&gt;yay&lt;/a&gt;
+13. &lt;code&gt;yay -S $(cat packages_list)&lt;/code&gt;
+This is also helpful if you want to set up a new system with the same packages as your current.&lt;/p&gt;
+&lt;h3 id=&#34;pacman-and-package-issues&#34;&gt;Pacman and package issues:&lt;/h3&gt;
+&lt;h4 id=&#34;recent-news-update-your-etcpacmanconf&#34;&gt;Recent &lt;a href=&#34;https://archlinux.org/news/cleaning-up-old-repositories/&#34;&gt;news&lt;/a&gt;: update your &lt;code&gt;/etc/pacman.conf&lt;/code&gt;&lt;/h4&gt;
+&lt;p&gt;Remove all references to [community], [community-testing], [testing], [testing-debug], [staging], and [staging-debug] in your &lt;code&gt;/etc/pacman.conf&lt;/code&gt; as these old repositories were recently fully removed.&lt;/p&gt;
+&lt;h4 id=&#34;running-out-of-space-on-root-partition&#34;&gt;Running out of space on root partition?&lt;/h4&gt;
+&lt;p&gt;Clear your package cache: &lt;code&gt;sudo pacman -Sc&lt;/code&gt; or &lt;code&gt;-Scc&lt;/code&gt;
+You can also set up pacman hooks to do this automatically.&lt;/p&gt;
+&lt;h4 id=&#34;havent-updated-in-a-while-and-getting-signature-errors&#34;&gt;Haven&amp;rsquo;t updated in a while and getting signature errors?&lt;/h4&gt;
+&lt;p&gt;Update the keyring first: &lt;code&gt;pacman -Sy --needed archlinux-keyring &amp;amp;&amp;amp; pacman -Su&lt;/code&gt;&lt;/p&gt;
+&lt;h4 id=&#34;mirror-related-errors&#34;&gt;Mirror-related errors?&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Re-sync your mirrors with &lt;a href=&#34;https://wiki.archlinux.org/title/Reflector&#34;&gt;reflector&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;reflector --latest 10 --sort rate --save /etc/pacman.d/mirrorlist&lt;/code&gt;
+If you can&amp;rsquo;t use pacman to get reflector due to mirrors not working, download the tar.gz manually, and then use &lt;code&gt;pacman -U &amp;lt;file path&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;unable-to-lock-database-error&#34;&gt;Unable to lock database error&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;The lock file prevents two instances of pacman from running at once, but if pacman is interrupted while changing the database, the old file remains.
+&lt;code&gt;rm /var/lib/pacman/db.lck&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;manually-reinstall-pacman&#34;&gt;Manually reinstall pacman&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Install the statically compiled version &lt;a href=&#34;https://aur.archlinux.org/packages/pacman-static&#34;&gt;pacman-static&lt;/a&gt;
+Or, boot into the Arch ISO and reinstall&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+      <content:encoded><![CDATA[<p><img alt="arch-btw" loading="lazy" src="/posts/3-archlinux-troubleshooting/images/archlinux.png">
+ALWAYS read error messages and logs fully.
+They probably contain the solution to your problem!!
+Remember: there can be unintended consequences to any system changes you make.
+<a href="https://wiki.archlinux.org/">ArchWiki</a> troubleshooting sections explain everything here in greater depth!</p>
+<h3 id="if-you-are-unable-to-boot">If you are unable to BOOT:</h3>
+<h4 id="a-cant-even-get-to-grub">(a) Can&rsquo;t even get to GRUB</h4>
+<ol>
+<li><a href="https://www.supergrubdisk.org/super-grub2-disk/">SUPERGRUB</a> - will detect boot entries and allow you to boot manually
+Or, boot to the Arch ISO, mount partitions, and <code>arch-chroot /mnt</code></li>
+<li>If you can&rsquo;t find the issue, reinstall GRUB, and ensure your configuration is updated.</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">grub-install --target<span class="o">=</span>x86_64-efi --efi-directory<span class="o">=</span>/boot --bootloader-id<span class="o">=</span>GRUB
+</span></span><span class="line"><span class="cl">grub-mkconfig -o /boot/grub/grub.cfg
+</span></span></code></pre></div><ol start="3">
+<li>All else fails? You can try a different <a href="https://wiki.archlinux.org/title/Arch_boot_process#Boot_loader">bootloader</a>, ex. <a href="https://www.rodsbooks.com/refind/">Refind</a>
+There are some situations where an alternate program may be the most effective solution.</li>
+</ol>
+<h4 id="b-grub-shows-up-butkernel-or-initramfs-is-missing">(b) GRUB shows up, but…Kernel or initramfs is missing?</h4>
+<ol start="4">
+<li>Try regenerating the initramfs: <code>mkinitcpio -P</code>
+mkinitcpio is a Bash script to create an initial ramdisk environment.
+It is run automatically on every kernel update with a pacman hook.</li>
+<li>Reinstall: <code>pacman -S linux linux-firmware</code> or the kernel you are using.</li>
+</ol>
+<h4 id="interrupted-mid-upgrade">Interrupted mid-upgrade?</h4>
+<p><strong>DO NOT REBOOT!!</strong></p>
+<p>Check <code>/var/log/pacman.log</code> and replicate the upgrade exactly.
+If a reboot was unavoidable and your system no longer boots, head in with the Arch ISO, mount partitions, chroot, and replicate the upgrade exactly.</p>
+<h5 id="filesystem-not-found-or-drive-is-read-only">Filesystem not found, or drive is read-only?</h5>
+<ol start="6">
+<li>Boot into the Arch ISO, mount partitions, and <code>arch-chroot /mnt</code></li>
+<li>Check your fstab! <code>/etc/fstab</code></li>
+<li><code>genfstab -U /mnt &gt;&gt; /mnt/etc/fstab</code> will generate with UUIDs</li>
+<li>For read/write issues,&ldquo;rw,relatime&rdquo; are set on that partition</li>
+</ol>
+<h5 id="filesystem-corrupted-due-to-power-failure-etc">Filesystem corrupted due to power failure, etc?</h5>
+<p>Use <code>fsck</code> to check and repair.</p>
+<ul>
+<li><code>fsck -a</code> will automatically repair.</li>
+<li>If <code>fsck</code> cannot find an external journal, umount, write a new journal with <code>tune2fs -j/dev/partition</code>, and then run <code>fsck -p /dev/partition</code></li>
+</ul>
+<h4 id="c-pls-help-nothing-works">(c) pls help nothing works!</h4>
+<p>If your partitions are separated, you can easily reinstall your system on your root partition, without touching home.
+If they aren&rsquo;t separated, you can still reinstall, but ensure you&rsquo;ve backed up all files.</p>
+<p><strong>ALWAYS ensure you have backed up any important data before clearing or changing partitions</strong></p>
+<p>To save a copy of your currently installed package list:
+10. <code>yay -Qq &gt; packages_list</code>
+11. Reinstall (re-pacstrap, etc) from the <a href="https://wiki.archlinux.org/title/Installation_guide">installation guide</a>
+12. Reinstall <a href="https://aur.archlinux.org/packages/yay">yay</a>
+13. <code>yay -S $(cat packages_list)</code>
+This is also helpful if you want to set up a new system with the same packages as your current.</p>
+<h3 id="pacman-and-package-issues">Pacman and package issues:</h3>
+<h4 id="recent-news-update-your-etcpacmanconf">Recent <a href="https://archlinux.org/news/cleaning-up-old-repositories/">news</a>: update your <code>/etc/pacman.conf</code></h4>
+<p>Remove all references to [community], [community-testing], [testing], [testing-debug], [staging], and [staging-debug] in your <code>/etc/pacman.conf</code> as these old repositories were recently fully removed.</p>
+<h4 id="running-out-of-space-on-root-partition">Running out of space on root partition?</h4>
+<p>Clear your package cache: <code>sudo pacman -Sc</code> or <code>-Scc</code>
+You can also set up pacman hooks to do this automatically.</p>
+<h4 id="havent-updated-in-a-while-and-getting-signature-errors">Haven&rsquo;t updated in a while and getting signature errors?</h4>
+<p>Update the keyring first: <code>pacman -Sy --needed archlinux-keyring &amp;&amp; pacman -Su</code></p>
+<h4 id="mirror-related-errors">Mirror-related errors?</h4>
+<ul>
+<li>Re-sync your mirrors with <a href="https://wiki.archlinux.org/title/Reflector">reflector</a></li>
+<li><code>reflector --latest 10 --sort rate --save /etc/pacman.d/mirrorlist</code>
+If you can&rsquo;t use pacman to get reflector due to mirrors not working, download the tar.gz manually, and then use <code>pacman -U &lt;file path&gt;</code></li>
+</ul>
+<h4 id="unable-to-lock-database-error">Unable to lock database error</h4>
+<ul>
+<li>The lock file prevents two instances of pacman from running at once, but if pacman is interrupted while changing the database, the old file remains.
+<code>rm /var/lib/pacman/db.lck</code></li>
+</ul>
+<h4 id="manually-reinstall-pacman">Manually reinstall pacman</h4>
+<ul>
+<li>Install the statically compiled version <a href="https://aur.archlinux.org/packages/pacman-static">pacman-static</a>
+Or, boot into the Arch ISO and reinstall</li>
+</ul>
+]]></content:encoded>
     </item>
   </channel>
 </rss>

@@ -4,7 +4,7 @@
     <title>Dev-Environment on Sazid Mahmud</title>
     <link>https://sazidmahmud.bd/tags/dev-environment/</link>
     <description>Recent content in Dev-Environment on Sazid Mahmud</description>
-    <generator>Hugo -- 0.162.0</generator>
+    <generator>Hugo -- 0.164.0</generator>
     <language>en</language>
     <lastBuildDate>Tue, 28 Oct 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://sazidmahmud.bd/tags/dev-environment/index.xml" rel="self" type="application/rss+xml" />
@@ -15,7 +15,38 @@
       <guid>https://sazidmahmud.bd/posts/2-mise-en-place/</guid>
       <description>&lt;h3 id=&#34;mise-en-place-meez-ahn-plahs---mise&#34;&gt;Mise-en-place (MEEZ ahn plahs) - &lt;code&gt;mise&lt;/code&gt;&lt;/h3&gt;
 &lt;p&gt;The idea behind using it is to standardize development environment for everyone working in the team. Furthermore, we need different versions of tools with different projects. Mise takes care of that.&lt;/p&gt;
-&lt;p&gt;Mise is a unified tool and task management solution that simplifies the process of installing and managing tools for different projects. It supports various backends for tool installation and allows users to define tasks with custom scripts.&lt;/p&gt;</description>
+&lt;p&gt;Mise is a unified tool and task management solution that simplifies the process of installing and managing tools for different projects. It supports various backends for tool installation and allows users to define tasks with custom scripts.&lt;/p&gt;
+&lt;p&gt;It can be used in both local development environments and CI/CD pipelines, serving as a single source of truth for tool versions and task flows.&lt;/p&gt;
+&lt;p&gt;It serves as an excellent alternative to &lt;code&gt;make&lt;/code&gt;, &lt;code&gt;tfenv&lt;/code&gt;, &lt;code&gt;direnv&lt;/code&gt;, and whatever-else-env.&lt;/p&gt;
+&lt;p&gt;Tired of writing boilerplate code to install necessary tools for pipelines? With &lt;code&gt;.mise.toml&lt;/code&gt;, why not use &lt;code&gt;mise install&lt;/code&gt; in pipelines too? Install mise in advance or use the Docker image &lt;code&gt;jdxcode/mise&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;There’s no need to track tool versions separately for development environments and CI anymore. You no longer need to remember to update tool versions in different places to prevent any issues. Mise serves as a single source of truth.&lt;/p&gt;
+&lt;p&gt;If you use a similar task flow in CI as you do locally, you can run the same mise tasks there too. If not, you can use &lt;a href=&#34;https://mise.jdx.dev/profiles.html&#34;&gt;mise profiles&lt;/a&gt; to define CI tasks. Bonus: you can easily use it locally to debug pipeline issues.&lt;/p&gt;
+&lt;p&gt;See the &lt;a href=&#34;https://mise.jdx.dev/tips-and-tricks.html#ci-cd&#34;&gt;docs&lt;/a&gt; for a GitHub Actions example.&lt;/p&gt;
+&lt;h6 id=&#34;some-tips&#34;&gt;Some tips&lt;/h6&gt;
+&lt;ol&gt;
+&lt;li&gt;Place &lt;code&gt;.mise.toml&lt;/code&gt; in the root of your Git repository to define tools and tasks for the entire repository.&lt;/li&gt;
+&lt;li&gt;If a repository contains several different projects (like a monorepo), keep common items (like pre-commit tools) in the root config and project-specific items in the project directories.&lt;/li&gt;
+&lt;li&gt;Use your own &lt;code&gt;~/.config/mise/config.toml&lt;/code&gt; for personal automation tasks.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href=&#34;https://mise.jdx.dev/&#34;&gt;Try it!&lt;/a&gt;&lt;/p&gt;
+</description>
+      <content:encoded><![CDATA[<h3 id="mise-en-place-meez-ahn-plahs---mise">Mise-en-place (MEEZ ahn plahs) - <code>mise</code></h3>
+<p>The idea behind using it is to standardize development environment for everyone working in the team. Furthermore, we need different versions of tools with different projects. Mise takes care of that.</p>
+<p>Mise is a unified tool and task management solution that simplifies the process of installing and managing tools for different projects. It supports various backends for tool installation and allows users to define tasks with custom scripts.</p>
+<p>It can be used in both local development environments and CI/CD pipelines, serving as a single source of truth for tool versions and task flows.</p>
+<p>It serves as an excellent alternative to <code>make</code>, <code>tfenv</code>, <code>direnv</code>, and whatever-else-env.</p>
+<p>Tired of writing boilerplate code to install necessary tools for pipelines? With <code>.mise.toml</code>, why not use <code>mise install</code> in pipelines too? Install mise in advance or use the Docker image <code>jdxcode/mise</code>.</p>
+<p>There’s no need to track tool versions separately for development environments and CI anymore. You no longer need to remember to update tool versions in different places to prevent any issues. Mise serves as a single source of truth.</p>
+<p>If you use a similar task flow in CI as you do locally, you can run the same mise tasks there too. If not, you can use <a href="https://mise.jdx.dev/profiles.html">mise profiles</a> to define CI tasks. Bonus: you can easily use it locally to debug pipeline issues.</p>
+<p>See the <a href="https://mise.jdx.dev/tips-and-tricks.html#ci-cd">docs</a> for a GitHub Actions example.</p>
+<h6 id="some-tips">Some tips</h6>
+<ol>
+<li>Place <code>.mise.toml</code> in the root of your Git repository to define tools and tasks for the entire repository.</li>
+<li>If a repository contains several different projects (like a monorepo), keep common items (like pre-commit tools) in the root config and project-specific items in the project directories.</li>
+<li>Use your own <code>~/.config/mise/config.toml</code> for personal automation tasks.</li>
+</ol>
+<p><a href="https://mise.jdx.dev/">Try it!</a></p>
+]]></content:encoded>
     </item>
   </channel>
 </rss>
