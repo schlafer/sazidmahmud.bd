@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Markdown on Sazid Mahmud</title>
+    <link>https://sazidmahmud.bd/tags/markdown/</link>
+    <description>Recent content in Markdown on Sazid Mahmud</description>
+    <generator>Hugo -- 0.164.0</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 05 Aug 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://sazidmahmud.bd/tags/markdown/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Markdown tweak for Emacs</title>
+      <link>https://sazidmahmud.bd/posts/9-markdown-tweak-for-emacs/</link>
+      <pubDate>Wed, 05 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>https://sazidmahmud.bd/posts/9-markdown-tweak-for-emacs/</guid>
+      <description>&lt;p&gt;I am a soft wrapping guy when it comes to editing markdown files.
+If you&amp;rsquo;re using Evil mode in your Emacs like me, the normal j and k commands move by logical lines, not visual (wrapped) lines. I didn&amp;rsquo;t want to use gj and gk to move by visual lines like vim. I wanted 5j/5k to move five logical lines while plain j/k moves one visual line. So added a little tweak to my config.el file:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-elisp&#34; data-lang=&#34;elisp&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;after!&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;evil&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;evil-define-motion&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;my/evil-next-line&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;count&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nb&#34;&gt;:type&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;line&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;count&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;evil-next-line&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;count&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;evil-next-visual-line&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)))&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;evil-define-motion&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;my/evil-previous-line&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;count&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nb&#34;&gt;:type&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;line&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;count&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;evil-previous-line&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;count&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;evil-previous-visual-line&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)))&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;map!&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;:n&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;j&amp;#34;&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;#&amp;#39;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;my/evil-next-line&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;nb&#34;&gt;:n&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;k&amp;#34;&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;#&amp;#39;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;my/evil-previous-line&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;I only use it to skim through long text lines. To jump edit I use &lt;code&gt;Avy&lt;/code&gt; package which comes by default with latest Doom Emacs.
+&lt;img alt=&#34;Avy&#34; loading=&#34;lazy&#34; src=&#34;https://sazidmahmud.bd/posts/9-markdown-tweak-for-emacs/images/avy.gif&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Pressing &lt;code&gt;g s SPC&lt;/code&gt; starts a jump to the next occurrence of a space character. Since every word is separated by spaces, it becomes an easy way to jump around the visible text.&lt;/p&gt;
+</description>
+      <content:encoded><![CDATA[<p>I am a soft wrapping guy when it comes to editing markdown files.
+If you&rsquo;re using Evil mode in your Emacs like me, the normal j and k commands move by logical lines, not visual (wrapped) lines. I didn&rsquo;t want to use gj and gk to move by visual lines like vim. I wanted 5j/5k to move five logical lines while plain j/k moves one visual line. So added a little tweak to my config.el file:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-elisp" data-lang="elisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">after!</span> <span class="nv">evil</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">evil-define-motion</span> <span class="nv">my/evil-next-line</span> <span class="p">(</span><span class="nv">count</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">:type</span> <span class="nv">line</span>
+</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="nb">if</span> <span class="nv">count</span>
+</span></span><span class="line"><span class="cl">        <span class="p">(</span><span class="nv">evil-next-line</span> <span class="nv">count</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="p">(</span><span class="nv">evil-next-visual-line</span> <span class="mi">1</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">evil-define-motion</span> <span class="nv">my/evil-previous-line</span> <span class="p">(</span><span class="nv">count</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">:type</span> <span class="nv">line</span>
+</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="nb">if</span> <span class="nv">count</span>
+</span></span><span class="line"><span class="cl">        <span class="p">(</span><span class="nv">evil-previous-line</span> <span class="nv">count</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="p">(</span><span class="nv">evil-previous-visual-line</span> <span class="mi">1</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">map!</span> <span class="nb">:n</span> <span class="s">&#34;j&#34;</span> <span class="nf">#&#39;</span><span class="nv">my/evil-next-line</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">:n</span> <span class="s">&#34;k&#34;</span> <span class="nf">#&#39;</span><span class="nv">my/evil-previous-line</span><span class="p">))</span>
+</span></span></code></pre></div><p>I only use it to skim through long text lines. To jump edit I use <code>Avy</code> package which comes by default with latest Doom Emacs.
+<img alt="Avy" loading="lazy" src="/posts/9-markdown-tweak-for-emacs/images/avy.gif"></p>
+<p>Pressing <code>g s SPC</code> starts a jump to the next occurrence of a space character. Since every word is separated by spaces, it becomes an easy way to jump around the visible text.</p>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>
