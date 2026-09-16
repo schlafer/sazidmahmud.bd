@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://sazidmahmud.bd/projects/1-mini-fm/</loc>
+    <lastmod>2026-09-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://sazidmahmud.bd/projects/</loc>
+    <lastmod>2026-09-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://sazidmahmud.bd/</loc>
+    <lastmod>2026-09-16T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://sazidmahmud.bd/posts/</loc>
     <lastmod>2026-08-05T00:00:00+00:00</lastmod>
   </url><url>
@@ -12,9 +21,6 @@
     <lastmod>2026-08-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://sazidmahmud.bd/posts/9-markdown-tweak-for-emacs/</loc>
-    <lastmod>2026-08-05T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://sazidmahmud.bd/</loc>
     <lastmod>2026-08-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://sazidmahmud.bd/tags/</loc>
@@ -70,12 +76,6 @@
   </url><url>
     <loc>https://sazidmahmud.bd/posts/4-unconventional-conventions-in-programming/</loc>
     <lastmod>2026-03-23T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://sazidmahmud.bd/projects/</loc>
-    <lastmod>2026-01-26T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://sazidmahmud.bd/projects/1-wip/</loc>
-    <lastmod>2026-01-26T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://sazidmahmud.bd/tags/arch-linux/</loc>
     <lastmod>2025-11-13T00:00:00+00:00</lastmod>

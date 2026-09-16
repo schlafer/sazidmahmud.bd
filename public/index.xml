@@ -4,10 +4,34 @@
     <title>Sazid Mahmud</title>
     <link>https://sazidmahmud.bd/</link>
     <description>Recent content on Sazid Mahmud</description>
-    <generator>Hugo -- 0.164.0</generator>
+    <generator>Hugo -- 0.165.0</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 05 Aug 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 16 Sep 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://sazidmahmud.bd/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>mini-fm</title>
+      <link>https://sazidmahmud.bd/projects/1-mini-fm/</link>
+      <pubDate>Wed, 16 Sep 2026 00:00:00 +0000</pubDate>
+      <guid>https://sazidmahmud.bd/projects/1-mini-fm/</guid>
+      <description>&lt;h2 id=&#34;mini-fm&#34;&gt;mini-fm&lt;/h2&gt;
+&lt;p&gt;&lt;img alt=&#34;mini-fm&#34; loading=&#34;lazy&#34; src=&#34;https://sazidmahmud.bd/projects/1-mini-fm/images/mini-fm.gif&#34;&gt;
+I’ve always liked doing as much as possible from the terminal, but I wanted a file manager that matched the way I actually work. Instead of trying to configure an existing one until it felt right, I decided to build my own.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;mini-fm&lt;/strong&gt; is my small, keyboard-driven file manager for the terminal, written in Go. It started as a simple experiment and gradually turned into a proper little tool that I use for navigating files, opening things in my editor, searching through directories, and handling everyday file operations.&lt;/p&gt;
+&lt;p&gt;I wanted the interface to stay simple and fast. There’s no configuration file to maintain and no complicated setup. You launch it and start using it. Along the way, I added things I personally find useful, like fuzzy filtering, multi-select, inline rename and copy, shell commands, syntax-highlighted text previews, directory previews, and image previews through the Kitty graphics protocol.&lt;/p&gt;
+&lt;p&gt;The project has also been a nice excuse to learn more about &lt;strong&gt;Go and terminal UI development&lt;/strong&gt;. A lot of the fun has been in figuring out the small details that you normally don&amp;rsquo;t think about when using a finished application: handling files safely, integrating with &lt;code&gt;$EDITOR&lt;/code&gt;, dealing with terminal capabilities, and making keyboard-driven interactions feel natural.&lt;/p&gt;
+&lt;p&gt;It’s still a work in progress, but that’s part of the point. I’m building it around my own workflow and using it as a place to experiment, learn, and slowly turn those experiments into something useful.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Source:&lt;/strong&gt; &lt;a href=&#34;https://github.com/schlafer/mini-fm&#34;&gt;GitHub&lt;/a&gt;&lt;/p&gt;
+</description>
+      <content:encoded><![CDATA[<h2 id="mini-fm">mini-fm</h2>
+<p><img alt="mini-fm" loading="lazy" src="/projects/1-mini-fm/images/mini-fm.gif">
+I’ve always liked doing as much as possible from the terminal, but I wanted a file manager that matched the way I actually work. Instead of trying to configure an existing one until it felt right, I decided to build my own.</p>
+<p><strong>mini-fm</strong> is my small, keyboard-driven file manager for the terminal, written in Go. It started as a simple experiment and gradually turned into a proper little tool that I use for navigating files, opening things in my editor, searching through directories, and handling everyday file operations.</p>
+<p>I wanted the interface to stay simple and fast. There’s no configuration file to maintain and no complicated setup. You launch it and start using it. Along the way, I added things I personally find useful, like fuzzy filtering, multi-select, inline rename and copy, shell commands, syntax-highlighted text previews, directory previews, and image previews through the Kitty graphics protocol.</p>
+<p>The project has also been a nice excuse to learn more about <strong>Go and terminal UI development</strong>. A lot of the fun has been in figuring out the small details that you normally don&rsquo;t think about when using a finished application: handling files safely, integrating with <code>$EDITOR</code>, dealing with terminal capabilities, and making keyboard-driven interactions feel natural.</p>
+<p>It’s still a work in progress, but that’s part of the point. I’m building it around my own workflow and using it as a place to experiment, learn, and slowly turn those experiments into something useful.</p>
+<p><strong>Source:</strong> <a href="https://github.com/schlafer/mini-fm">GitHub</a></p>
+]]></content:encoded>
+    </item>
     <item>
       <title>Markdown tweak for Emacs</title>
       <link>https://sazidmahmud.bd/posts/9-markdown-tweak-for-emacs/</link>
@@ -383,16 +407,6 @@ The crowning achievement of Terry A. Davis was <em>TempleOS</em>, an operating s
 ]]></content:encoded>
     </item>
     <item>
-      <title>Projects I am working on</title>
-      <link>https://sazidmahmud.bd/projects/1-wip/</link>
-      <pubDate>Mon, 26 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://sazidmahmud.bd/projects/1-wip/</guid>
-      <description>&lt;p&gt;Work-in-Progress. I will showcase my notable projects over here. All codes will be self hosted at my forgejo instance.&lt;/p&gt;
-</description>
-      <content:encoded><![CDATA[<p>Work-in-Progress. I will showcase my notable projects over here. All codes will be self hosted at my forgejo instance.</p>
-]]></content:encoded>
-    </item>
-    <item>
       <title>Troubleshooting arch-btw!</title>
       <link>https://sazidmahmud.bd/posts/3-archlinux-troubleshooting/</link>
       <pubDate>Thu, 13 Nov 2025 00:00:00 +0000</pubDate>
@@ -645,7 +659,7 @@ Or, boot into the Arch ISO and reinstall</li>
 &lt;p&gt;The confidence of curiosity ensures I learn what I need to figure things out.&lt;/p&gt;
 &lt;p&gt;Why I bothered myself with a personal website? Why not just write on social media?&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://matthiasott.com/notes/simple-truths-about-personal-websites&#34;&gt;This post explains it well.&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;For business inquiry or discussing any of the &lt;a href=&#34;https://sazidmahmud.bd/posts/&#34;&gt;topics&lt;/a&gt; here, feel free to &lt;a href=&#34;mailto:info@sazidmahmud.bd&#34;&gt;reach&lt;/a&gt; out &amp;#x2764;&amp;#xfe0f;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;For consultancy or discussing any of the &lt;a href=&#34;https://sazidmahmud.bd/posts/&#34;&gt;topics&lt;/a&gt; here, feel free to &lt;a href=&#34;mailto:info@sazidmahmud.bd&#34;&gt;reach&lt;/a&gt; out &amp;#x2764;&amp;#xfe0f;&lt;/em&gt;&lt;/p&gt;
 </description>
       <content:encoded><![CDATA[<p>I&rsquo;m Sazid, a Software Engineer based in <a href="https://maps.app.goo.gl/KDFTxoMJjRvDwsfKA">Dhaka, Bangladesh</a>.</p>
 <p>Professionally I trick rocks into thinking (or perhaps they trick me into thinking?).</p>
@@ -655,7 +669,7 @@ Or, boot into the Arch ISO and reinstall</li>
 <p>The confidence of curiosity ensures I learn what I need to figure things out.</p>
 <p>Why I bothered myself with a personal website? Why not just write on social media?</p>
 <p><a href="https://matthiasott.com/notes/simple-truths-about-personal-websites">This post explains it well.</a></p>
-<p><em>For business inquiry or discussing any of the <a href="/posts/">topics</a> here, feel free to <a href="mailto:info@sazidmahmud.bd">reach</a> out &#x2764;&#xfe0f;</em></p>
+<p><em>For consultancy or discussing any of the <a href="/posts/">topics</a> here, feel free to <a href="mailto:info@sazidmahmud.bd">reach</a> out &#x2764;&#xfe0f;</em></p>
 ]]></content:encoded>
     </item>
   </channel>
