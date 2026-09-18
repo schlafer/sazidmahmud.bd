@@ -97,7 +97,7 @@ menu:
       weight: 30
     - identifier: resume
       name: Resume
-      url: /resume.pdf
+      url: /sazidmahmud.pdf
       weight: 35
     - identifier: search
       name: Search

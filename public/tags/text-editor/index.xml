@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Text-Editor on Sazid Mahmud</title>
-    <link>http://localhost:1313/tags/text-editor/</link>
+    <link>https://sazidmahmud.bd/tags/text-editor/</link>
     <description>Recent content in Text-Editor on Sazid Mahmud</description>
     <generator>Hugo -- 0.165.0</generator>
     <language>en</language>
     <lastBuildDate>Wed, 05 Aug 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/text-editor/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://sazidmahmud.bd/tags/text-editor/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Markdown tweak for Emacs</title>
-      <link>http://localhost:1313/posts/9-markdown-tweak-for-emacs/</link>
+      <link>https://sazidmahmud.bd/posts/9-markdown-tweak-for-emacs/</link>
       <pubDate>Wed, 05 Aug 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/9-markdown-tweak-for-emacs/</guid>
+      <guid>https://sazidmahmud.bd/posts/9-markdown-tweak-for-emacs/</guid>
       <description>&lt;p&gt;I am a soft wrapping guy when it comes to editing markdown files.
 If you&amp;rsquo;re using Evil mode in your Emacs like me, the normal j and k commands move by logical lines, not visual (wrapped) lines. I didn&amp;rsquo;t want to use gj and gk to move by visual lines like vim. I wanted 5j/5k to move five logical lines while plain j/k moves one visual line. So added a little tweak to my config.el file:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-elisp&#34; data-lang=&#34;elisp&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;after!&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;evil&lt;/span&gt;
@@ -31,7 +31,7 @@ If you&amp;rsquo;re using Evil mode in your Emacs like me, the normal j and k co
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;map!&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;:n&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;j&amp;#34;&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;#&amp;#39;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;my/evil-next-line&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;nb&#34;&gt;:n&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;k&amp;#34;&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;#&amp;#39;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;my/evil-previous-line&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;I only use it to skim through long text lines. To jump edit I use &lt;code&gt;Avy&lt;/code&gt; package which comes by default with latest Doom Emacs.
-&lt;img alt=&#34;Avy&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/posts/9-markdown-tweak-for-emacs/images/avy.gif&#34;&gt;&lt;/p&gt;
+&lt;img alt=&#34;Avy&#34; loading=&#34;lazy&#34; src=&#34;https://sazidmahmud.bd/posts/9-markdown-tweak-for-emacs/images/avy.gif&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Pressing &lt;code&gt;g s SPC&lt;/code&gt; starts a jump to the next occurrence of a space character. Since every word is separated by spaces, it becomes an easy way to jump around the visible text.&lt;/p&gt;
 </description>
       <content:encoded><![CDATA[<p>I am a soft wrapping guy when it comes to editing markdown files.

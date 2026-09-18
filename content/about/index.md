@@ -8,7 +8,7 @@ showtoc: false
 
 I'm Sazid, a Software Engineer based in [Dhaka, Bangladesh](https://maps.app.goo.gl/KDFTxoMJjRvDwsfKA).
 
-<!-- My [resume](/resume.pdf) is available for download. -->
+<!-- My [resume](/sazidmahmud.pdf) is available for download. -->
 
 Professionally I trick rocks into thinking (or perhaps they trick me into thinking?).
 
