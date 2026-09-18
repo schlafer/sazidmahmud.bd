@@ -95,6 +95,10 @@ menu:
       name: About
       url: /about/
       weight: 30
+    - identifier: resume
+      name: Resume
+      url: /resume.pdf
+      weight: 35
     - identifier: search
       name: Search
       url: /search/
