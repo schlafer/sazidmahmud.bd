@@ -91,22 +91,27 @@ menu:
       name: Projects
       url: /projects/
       weight: 20
-    - identifier: about
-      name: About
-      url: /about/
+    - identifier: publications
+      name: Publications
+      url: /publications/
       weight: 30
     - identifier: resume
       name: Resume
       url: /sazidmahmud.pdf
-      weight: 35
-    - identifier: search
-      name: Search
-      url: /search/
       weight: 40
-    - identifier: archives
-      name: Archives
-      url: /archives/
+    - identifier: about
+      name: About
+      url: /about/
       weight: 50
+
+    # - identifier: search
+    #   name: Search
+    #   url: /search/
+    #   weight: 60
+    # - identifier: archives
+    #   name: Archives
+    #   url: /archives/
+    #   weight: 70
 
 # Syntax highlighting
 pygmentsUseClasses: true

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Publications on Sazid Mahmud</title>
+    <link>https://sazidmahmud.bd/publications/</link>
+    <description>Recent content in Publications on Sazid Mahmud</description>
+    <generator>Hugo -- 0.165.0</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 01 Oct 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://sazidmahmud.bd/publications/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A consumer-friendly demand side management technique for residential loads supported by two stage Genetic Algorithm-based optimization</title>
+      <link>https://sazidmahmud.bd/publications/1-dsm-genetic-algorithm/</link>
+      <pubDate>Sat, 01 Oct 2022 00:00:00 +0000</pubDate>
+      <guid>https://sazidmahmud.bd/publications/1-dsm-genetic-algorithm/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;2022 Global Energy Conference (GEC)&lt;/strong&gt;, pp. 229–234. · &lt;a href=&#34;https://ieeexplore.ieee.org/document/9986733&#34;&gt;IEEE Xplore&lt;/a&gt; · &lt;a href=&#34;https://doi.org/10.1109/GEC55014.2022.9986733&#34;&gt;DOI&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Abstract.&lt;/strong&gt; Demand side management (DSM) ensures dynamic energy management of the utility by enabling customers to make early decisions about their daily energy usage. In DSM, the objective is to reduce the peak to average ratio (PAR) value by flattening the load curve to provide exemptions from enhancing generation transmission units by the utility. In this paper, a Genetic Algorithm (GA) optimization-based DSM technique for residential users is proposed to attain a flattened daily load curve. It incorporates two-stage optimization by GA in determining the near-optimum load data set to be allocated in each slot by shifting some non-essential loads to a lower-demand time slot. Consumer comfort is prioritized while shifting the loads from a time slot to a new slot to attain lower PAR. The simulation outcomes from the test case scenario show that the PAR is reduced by about 40% by applying the proposed DSM.&lt;/p&gt;
+</description>
+      <content:encoded><![CDATA[<p><strong>2022 Global Energy Conference (GEC)</strong>, pp. 229–234. · <a href="https://ieeexplore.ieee.org/document/9986733">IEEE Xplore</a> · <a href="https://doi.org/10.1109/GEC55014.2022.9986733">DOI</a></p>
+<p><strong>Abstract.</strong> Demand side management (DSM) ensures dynamic energy management of the utility by enabling customers to make early decisions about their daily energy usage. In DSM, the objective is to reduce the peak to average ratio (PAR) value by flattening the load curve to provide exemptions from enhancing generation transmission units by the utility. In this paper, a Genetic Algorithm (GA) optimization-based DSM technique for residential users is proposed to attain a flattened daily load curve. It incorporates two-stage optimization by GA in determining the near-optimum load data set to be allocated in each slot by shifting some non-essential loads to a lower-demand time slot. Consumer comfort is prioritized while shifting the loads from a time slot to a new slot to attain lower PAR. The simulation outcomes from the test case scenario show that the PAR is reduced by about 40% by applying the proposed DSM.</p>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>

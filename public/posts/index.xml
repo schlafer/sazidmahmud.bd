@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Blog on Sazid Mahmud</title>
-    <link>http://localhost:1313/posts/</link>
+    <link>https://sazidmahmud.bd/posts/</link>
     <description>Recent content in Blog on Sazid Mahmud</description>
     <generator>Hugo -- 0.165.0</generator>
     <language>en</language>
     <lastBuildDate>Wed, 05 Aug 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://sazidmahmud.bd/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Markdown tweak for Emacs</title>
-      <link>http://localhost:1313/posts/9-markdown-tweak-for-emacs/</link>
+      <link>https://sazidmahmud.bd/posts/9-markdown-tweak-for-emacs/</link>
       <pubDate>Wed, 05 Aug 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/9-markdown-tweak-for-emacs/</guid>
+      <guid>https://sazidmahmud.bd/posts/9-markdown-tweak-for-emacs/</guid>
       <description>&lt;p&gt;I am a soft wrapping guy when it comes to editing markdown files.
 If you&amp;rsquo;re using Evil mode in your Emacs like me, the normal j and k commands move by logical lines, not visual (wrapped) lines. I didn&amp;rsquo;t want to use gj and gk to move by visual lines like vim. I wanted 5j/5k to move five logical lines while plain j/k moves one visual line. So added a little tweak to my config.el file:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-elisp&#34; data-lang=&#34;elisp&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;after!&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;evil&lt;/span&gt;
@@ -31,7 +31,7 @@ If you&amp;rsquo;re using Evil mode in your Emacs like me, the normal j and k co
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;map!&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;:n&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;j&amp;#34;&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;#&amp;#39;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;my/evil-next-line&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;nb&#34;&gt;:n&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;k&amp;#34;&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;#&amp;#39;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;my/evil-previous-line&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;I only use it to skim through long text lines. To jump edit I use &lt;code&gt;Avy&lt;/code&gt; package which comes by default with latest Doom Emacs.
-&lt;img alt=&#34;Avy&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/posts/9-markdown-tweak-for-emacs/images/avy.gif&#34;&gt;&lt;/p&gt;
+&lt;img alt=&#34;Avy&#34; loading=&#34;lazy&#34; src=&#34;https://sazidmahmud.bd/posts/9-markdown-tweak-for-emacs/images/avy.gif&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Pressing &lt;code&gt;g s SPC&lt;/code&gt; starts a jump to the next occurrence of a space character. Since every word is separated by spaces, it becomes an easy way to jump around the visible text.&lt;/p&gt;
 </description>
       <content:encoded><![CDATA[<p>I am a soft wrapping guy when it comes to editing markdown files.
@@ -58,10 +58,10 @@ If you&rsquo;re using Evil mode in your Emacs like me, the normal j and k comman
     </item>
     <item>
       <title>The Imposter Inside</title>
-      <link>http://localhost:1313/posts/8-the-imposter-inside/</link>
+      <link>https://sazidmahmud.bd/posts/8-the-imposter-inside/</link>
       <pubDate>Sat, 04 Jul 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/8-the-imposter-inside/</guid>
-      <description>&lt;p&gt;&lt;img alt=&#34;Imposter Syndrome&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/posts/8-the-imposter-inside/images/imposter.webp&#34;&gt;&lt;/p&gt;
+      <guid>https://sazidmahmud.bd/posts/8-the-imposter-inside/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;Imposter Syndrome&#34; loading=&#34;lazy&#34; src=&#34;https://sazidmahmud.bd/posts/8-the-imposter-inside/images/imposter.webp&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;the-illusion-of-being-a-fraud&#34;&gt;The Illusion of Being a Fraud&lt;/h2&gt;
 &lt;p&gt;Feeling like a fraud is, above all, a matter of perception. It is about how you imagine others interpret your abilities, your intentions, and your worth. You begin to believe that every action is being observed, every word evaluated, every decision quietly measured against some invisible standard. You assume that people are searching for flaws, waiting for the moment you make a mistake. That mistake becomes terrifying because, in your mind, it does more than reveal an error. It reveals &lt;em&gt;you&lt;/em&gt;. It confirms the suspicion you have carried all along—that you never truly belonged, that your achievements were accidental, and that sooner or later everyone will discover the truth. You fear that once the illusion is broken, everything you have built will come crashing down.&lt;/p&gt;
 &lt;p&gt;Yet this drama unfolds almost entirely within the confines of your own mind. Rarely do people accuse you of being a fraud, or scrutinize your every movement with the intensity you imagine. There may have been isolated moments of criticism or failure that planted the seed of doubt, but isolated moments are not reliable evidence of a permanent condition. If, on the other hand, your belief stems from sustained abuse or humiliation, then the issue is no longer merely impostor syndrome—it is &lt;em&gt;trauma&lt;/em&gt;, and trauma is a different matter altogether. If your struggle is simply the persistent conviction that you are inadequate, then your mind may be transforming a small uncertainty into an overwhelming catastrophe, mistaking a passing shadow for a permanent darkness.&lt;/p&gt;
@@ -162,10 +162,10 @@ If you&rsquo;re using Evil mode in your Emacs like me, the normal j and k comman
     </item>
     <item>
       <title>An audience for suffering</title>
-      <link>http://localhost:1313/posts/7-an-audience-for-suffering/</link>
+      <link>https://sazidmahmud.bd/posts/7-an-audience-for-suffering/</link>
       <pubDate>Sun, 21 Jun 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/7-an-audience-for-suffering/</guid>
-      <description>&lt;p&gt;&lt;img alt=&#34;Terry A. Davis&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/posts/7-an-audience-for-suffering/images/terry.jpg&#34;&gt;
+      <guid>https://sazidmahmud.bd/posts/7-an-audience-for-suffering/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;Terry A. Davis&#34; loading=&#34;lazy&#34; src=&#34;https://sazidmahmud.bd/posts/7-an-audience-for-suffering/images/terry.jpg&#34;&gt;
 The crowning achievement of Terry A. Davis was &lt;em&gt;TempleOS&lt;/em&gt;, an operating system he spent years building almost entirely on his own before his tragic death in 2018. From a purely technical perspective, TempleOS is a fascinating mixture of impressive accomplishments and notable limitations.&lt;/p&gt;
 &lt;p&gt;On one hand, it achieved something many operating system developers aspire to: it was capable of compiling itself. TempleOS was written in Terry&amp;rsquo;s own custom programming language, HolyC, and included its own editor, compiler, interpreter, and even a collection of original games. These are significant accomplishments for any solo developer.&lt;/p&gt;
 &lt;p&gt;On the other hand, TempleOS falls short of many hobbyist operating systems in terms of overall sophistication and technical depth. Compared to some of the more advanced projects in the hobby OS community, it occupies a relatively modest place. It is neither a revolutionary technical marvel nor an amateur experiment, it sits somewhere in between.&lt;/p&gt;
@@ -180,7 +180,7 @@ The crowning achievement of Terry A. Davis was &lt;em&gt;TempleOS&lt;/em&gt;, an
 &lt;p&gt;TempleOS is certainly an unusual and memorable piece of software. But when I think about Terry Davis, I find it difficult to celebrate the attention it brought him. Too often, public fascination seemed to worsen the very struggles that made the story compelling in the first place.&lt;/p&gt;
 &lt;p&gt;In the end, I cannot help wishing that Terry had been granted something the internet rarely offers: the chance to be left alone.&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;&lt;img alt=&#34;Kent Overstreet&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/posts/7-an-audience-for-suffering/images/kent.webp&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;Kent Overstreet&#34; loading=&#34;lazy&#34; src=&#34;https://sazidmahmud.bd/posts/7-an-audience-for-suffering/images/kent.webp&#34;&gt;&lt;/p&gt;
 &lt;p&gt;The masterwork of Kent Overstreet is &lt;em&gt;bcachefs&lt;/em&gt;, a copy-on-write filesystem for Linux designed to compete with established projects such as Btrfs and ZFS. Kent first made his mark on the Linux storage ecosystem with the creation of bcache around 2013. Building on that foundation, he began work on bcachefs in 2015, embarking on what would become a decade-long effort to build a next-generation filesystem from the ground up.&lt;/p&gt;
 &lt;p&gt;The project consumed much of Kent&amp;rsquo;s professional life. He left his position at Google to focus on it, eventually supporting himself largely through community funding. For years, bcachefs represented not merely a software project, but the central work of his career, a technical vision pursued with unusual persistence and personal sacrifice.&lt;/p&gt;
 &lt;p&gt;Kent has also earned a reputation for being difficult to collaborate with, even within the Linux kernel community, a space hardly known for gentle personalities. Throughout the development of bcachefs, he frequently found himself at odds with other kernel developers over process, quality standards, and interpersonal conduct. These conflicts became a recurring feature of the project&amp;rsquo;s history.&lt;/p&gt;
@@ -264,9 +264,9 @@ The crowning achievement of Terry A. Davis was <em>TempleOS</em>, an operating s
     </item>
     <item>
       <title>Farming, a delusion all engineers share</title>
-      <link>http://localhost:1313/posts/6-farming-a-delusion-all-engineers-share/</link>
+      <link>https://sazidmahmud.bd/posts/6-farming-a-delusion-all-engineers-share/</link>
       <pubDate>Sat, 11 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/6-farming-a-delusion-all-engineers-share/</guid>
+      <guid>https://sazidmahmud.bd/posts/6-farming-a-delusion-all-engineers-share/</guid>
       <description>&lt;p&gt;Every engineer I had talked to, have one thing common in them; all of them want to take up farming as a hobby turned into profession at some point in their life. Be it software, semiconductor or electrical, no matter what their field of engineering is, all of them have this latent desire to take up farming as a job and leave their field for good.&lt;/p&gt;
 &lt;p&gt;Now is this a delusion? In short Yes. Most engineers are not rightly fitted for the physical workload of farming. They are daydreaming about the outcome not the tasks you need to do to get to that point. Farming takes tremendous toll on the physique. The risks involved are real. Especially dealing with livestock (no rollback!)&lt;/p&gt;
 &lt;p&gt;So from where this universal delusion emerge? Isolation. Most engineering jobs are memory intensive as well as hard on the human psyche. Engineers mostly work in workstations in a cubicle. Most of the socializing is about meetings, deadlines and layoffs. Engineers have become modern day equivalent of slaves, where their whole existence is measured through their productivity. This sense of alienation results in yearning for something more fulfilling as humans.&lt;/p&gt;
@@ -286,9 +286,9 @@ The crowning achievement of Terry A. Davis was <em>TempleOS</em>, an operating s
     </item>
     <item>
       <title>AI Isn’t Improving - We’re Just Calling It More Often</title>
-      <link>http://localhost:1313/posts/5-ai-isnt-improving---were-just-calling-it-more-often/</link>
+      <link>https://sazidmahmud.bd/posts/5-ai-isnt-improving---were-just-calling-it-more-often/</link>
       <pubDate>Mon, 30 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/5-ai-isnt-improving---were-just-calling-it-more-often/</guid>
+      <guid>https://sazidmahmud.bd/posts/5-ai-isnt-improving---were-just-calling-it-more-often/</guid>
       <description>&lt;p&gt;A noticeable trend in software right now is teams rushing to build systems around agents, RAG, MCP, and similar patterns; especially within ecosystems like Claude.&lt;/p&gt;
 &lt;p&gt;They’re often framed as productivity or automation gains. But if you look at the architecture, they don’t reduce reliance on LLMs; they deepen it.&lt;/p&gt;
 &lt;p&gt;Agents, for example, don’t simply “automate” tasks. They decompose a single request into multiple steps: planning, tool selection, execution, and iteration. What could have been one model call often becomes several.&lt;/p&gt;
@@ -314,9 +314,9 @@ The crowning achievement of Terry A. Davis was <em>TempleOS</em>, an operating s
     </item>
     <item>
       <title>Unconventional conventions in Programming</title>
-      <link>http://localhost:1313/posts/4-unconventional-conventions-in-programming/</link>
+      <link>https://sazidmahmud.bd/posts/4-unconventional-conventions-in-programming/</link>
       <pubDate>Mon, 23 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/4-unconventional-conventions-in-programming/</guid>
+      <guid>https://sazidmahmud.bd/posts/4-unconventional-conventions-in-programming/</guid>
       <description>&lt;p&gt;Most programming advice sounds a little detached from real world scenarios, a bit too clean, well structured. But in real world we see a repeated pattern of systems failing, user behavior introducing unpredictable bugs etc. If you&amp;rsquo;ve spent some time shipping software, you start to notice these different set of principles emerge. Not always taught first hand but implied with intent.&lt;/p&gt;
 &lt;hr&gt;
 &lt;h3 id=&#34;logs--code&#34;&gt;Logs &amp;gt; Code&lt;/h3&gt;
@@ -384,10 +384,10 @@ The crowning achievement of Terry A. Davis was <em>TempleOS</em>, an operating s
     </item>
     <item>
       <title>Troubleshooting arch-btw!</title>
-      <link>http://localhost:1313/posts/3-archlinux-troubleshooting/</link>
+      <link>https://sazidmahmud.bd/posts/3-archlinux-troubleshooting/</link>
       <pubDate>Thu, 13 Nov 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/3-archlinux-troubleshooting/</guid>
-      <description>&lt;p&gt;&lt;img alt=&#34;arch-btw&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/posts/3-archlinux-troubleshooting/images/archlinux.png&#34;&gt;
+      <guid>https://sazidmahmud.bd/posts/3-archlinux-troubleshooting/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;arch-btw&#34; loading=&#34;lazy&#34; src=&#34;https://sazidmahmud.bd/posts/3-archlinux-troubleshooting/images/archlinux.png&#34;&gt;
 ALWAYS read error messages and logs fully.
 They probably contain the solution to your problem!!
 Remember: there can be unintended consequences to any system changes you make.
@@ -544,9 +544,9 @@ Or, boot into the Arch ISO and reinstall</li>
     </item>
     <item>
       <title>Mise-en-place</title>
-      <link>http://localhost:1313/posts/2-mise-en-place/</link>
+      <link>https://sazidmahmud.bd/posts/2-mise-en-place/</link>
       <pubDate>Tue, 28 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2-mise-en-place/</guid>
+      <guid>https://sazidmahmud.bd/posts/2-mise-en-place/</guid>
       <description>&lt;h3 id=&#34;mise-en-place-meez-ahn-plahs---mise&#34;&gt;Mise-en-place (MEEZ ahn plahs) - &lt;code&gt;mise&lt;/code&gt;&lt;/h3&gt;
 &lt;p&gt;The idea behind using it is to standardize development environment for everyone working in the team. Furthermore, we need different versions of tools with different projects. Mise takes care of that.&lt;/p&gt;
 &lt;p&gt;Mise is a unified tool and task management solution that simplifies the process of installing and managing tools for different projects. It supports various backends for tool installation and allows users to define tasks with custom scripts.&lt;/p&gt;
@@ -584,9 +584,9 @@ Or, boot into the Arch ISO and reinstall</li>
     </item>
     <item>
       <title>Zoxide, the navigation solution</title>
-      <link>http://localhost:1313/posts/1-zoxide-the-navigation-solution/</link>
+      <link>https://sazidmahmud.bd/posts/1-zoxide-the-navigation-solution/</link>
       <pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/1-zoxide-the-navigation-solution/</guid>
+      <guid>https://sazidmahmud.bd/posts/1-zoxide-the-navigation-solution/</guid>
       <description>&lt;h3 id=&#34;zoxide---z&#34;&gt;Zoxide - &lt;code&gt;z&lt;/code&gt;&lt;/h3&gt;
 &lt;p&gt;This has completely replaced &lt;code&gt;cd&lt;/code&gt; command for me.&lt;/p&gt;
 &lt;p&gt;It&amp;rsquo;s fast and remembers your previous visit to directories, ranking them by visit frequency.&lt;/p&gt;

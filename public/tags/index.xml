@@ -2,157 +2,164 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Tags on Sazid Mahmud</title>
-    <link>http://localhost:1313/tags/</link>
+    <link>https://sazidmahmud.bd/tags/</link>
     <description>Recent content in Tags on Sazid Mahmud</description>
     <generator>Hugo -- 0.165.0</generator>
     <language>en</language>
     <lastBuildDate>Wed, 05 Aug 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://sazidmahmud.bd/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Emacs</title>
-      <link>http://localhost:1313/tags/emacs/</link>
+      <link>https://sazidmahmud.bd/tags/emacs/</link>
       <pubDate>Wed, 05 Aug 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/emacs/</guid>
+      <guid>https://sazidmahmud.bd/tags/emacs/</guid>
       <description></description>
     </item>
     <item>
       <title>Markdown</title>
-      <link>http://localhost:1313/tags/markdown/</link>
+      <link>https://sazidmahmud.bd/tags/markdown/</link>
       <pubDate>Wed, 05 Aug 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/markdown/</guid>
+      <guid>https://sazidmahmud.bd/tags/markdown/</guid>
       <description></description>
     </item>
     <item>
       <title>Text-Editor</title>
-      <link>http://localhost:1313/tags/text-editor/</link>
+      <link>https://sazidmahmud.bd/tags/text-editor/</link>
       <pubDate>Wed, 05 Aug 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/text-editor/</guid>
+      <guid>https://sazidmahmud.bd/tags/text-editor/</guid>
       <description></description>
     </item>
     <item>
       <title>Mental-Health</title>
-      <link>http://localhost:1313/tags/mental-health/</link>
+      <link>https://sazidmahmud.bd/tags/mental-health/</link>
       <pubDate>Sat, 04 Jul 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/mental-health/</guid>
+      <guid>https://sazidmahmud.bd/tags/mental-health/</guid>
       <description></description>
     </item>
     <item>
       <title>Perfectionism</title>
-      <link>http://localhost:1313/tags/perfectionism/</link>
+      <link>https://sazidmahmud.bd/tags/perfectionism/</link>
       <pubDate>Sat, 04 Jul 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/perfectionism/</guid>
+      <guid>https://sazidmahmud.bd/tags/perfectionism/</guid>
       <description></description>
     </item>
     <item>
       <title>Philosophy</title>
-      <link>http://localhost:1313/tags/philosophy/</link>
+      <link>https://sazidmahmud.bd/tags/philosophy/</link>
       <pubDate>Sat, 04 Jul 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/philosophy/</guid>
+      <guid>https://sazidmahmud.bd/tags/philosophy/</guid>
       <description></description>
     </item>
     <item>
       <title>Internet-Culture</title>
-      <link>http://localhost:1313/tags/internet-culture/</link>
+      <link>https://sazidmahmud.bd/tags/internet-culture/</link>
       <pubDate>Sun, 21 Jun 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/internet-culture/</guid>
+      <guid>https://sazidmahmud.bd/tags/internet-culture/</guid>
       <description></description>
     </item>
     <item>
       <title>Engineering-Culture</title>
-      <link>http://localhost:1313/tags/engineering-culture/</link>
+      <link>https://sazidmahmud.bd/tags/engineering-culture/</link>
       <pubDate>Sat, 11 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/engineering-culture/</guid>
+      <guid>https://sazidmahmud.bd/tags/engineering-culture/</guid>
       <description></description>
     </item>
     <item>
       <title>Ai</title>
-      <link>http://localhost:1313/tags/ai/</link>
+      <link>https://sazidmahmud.bd/tags/ai/</link>
       <pubDate>Mon, 30 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/ai/</guid>
+      <guid>https://sazidmahmud.bd/tags/ai/</guid>
       <description></description>
     </item>
     <item>
       <title>Llm</title>
-      <link>http://localhost:1313/tags/llm/</link>
+      <link>https://sazidmahmud.bd/tags/llm/</link>
       <pubDate>Mon, 30 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/llm/</guid>
+      <guid>https://sazidmahmud.bd/tags/llm/</guid>
       <description></description>
     </item>
     <item>
       <title>Software-Engineering</title>
-      <link>http://localhost:1313/tags/software-engineering/</link>
+      <link>https://sazidmahmud.bd/tags/software-engineering/</link>
       <pubDate>Mon, 30 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/software-engineering/</guid>
+      <guid>https://sazidmahmud.bd/tags/software-engineering/</guid>
       <description></description>
     </item>
     <item>
       <title>Best-Practices</title>
-      <link>http://localhost:1313/tags/best-practices/</link>
+      <link>https://sazidmahmud.bd/tags/best-practices/</link>
       <pubDate>Mon, 23 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/best-practices/</guid>
+      <guid>https://sazidmahmud.bd/tags/best-practices/</guid>
       <description></description>
     </item>
     <item>
       <title>Engineering</title>
-      <link>http://localhost:1313/tags/engineering/</link>
+      <link>https://sazidmahmud.bd/tags/engineering/</link>
       <pubDate>Mon, 23 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/engineering/</guid>
+      <guid>https://sazidmahmud.bd/tags/engineering/</guid>
       <description></description>
     </item>
     <item>
       <title>Programming</title>
-      <link>http://localhost:1313/tags/programming/</link>
+      <link>https://sazidmahmud.bd/tags/programming/</link>
       <pubDate>Mon, 23 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/programming/</guid>
+      <guid>https://sazidmahmud.bd/tags/programming/</guid>
       <description></description>
     </item>
     <item>
       <title>Arch-Linux</title>
-      <link>http://localhost:1313/tags/arch-linux/</link>
+      <link>https://sazidmahmud.bd/tags/arch-linux/</link>
       <pubDate>Thu, 13 Nov 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/arch-linux/</guid>
+      <guid>https://sazidmahmud.bd/tags/arch-linux/</guid>
       <description></description>
     </item>
     <item>
       <title>Linux</title>
-      <link>http://localhost:1313/tags/linux/</link>
+      <link>https://sazidmahmud.bd/tags/linux/</link>
       <pubDate>Thu, 13 Nov 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/linux/</guid>
+      <guid>https://sazidmahmud.bd/tags/linux/</guid>
       <description></description>
     </item>
     <item>
       <title>Troubleshooting</title>
-      <link>http://localhost:1313/tags/troubleshooting/</link>
+      <link>https://sazidmahmud.bd/tags/troubleshooting/</link>
       <pubDate>Thu, 13 Nov 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/troubleshooting/</guid>
+      <guid>https://sazidmahmud.bd/tags/troubleshooting/</guid>
       <description></description>
     </item>
     <item>
       <title>Dev-Environment</title>
-      <link>http://localhost:1313/tags/dev-environment/</link>
+      <link>https://sazidmahmud.bd/tags/dev-environment/</link>
       <pubDate>Tue, 28 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/dev-environment/</guid>
+      <guid>https://sazidmahmud.bd/tags/dev-environment/</guid>
       <description></description>
     </item>
     <item>
       <title>Productivity</title>
-      <link>http://localhost:1313/tags/productivity/</link>
+      <link>https://sazidmahmud.bd/tags/productivity/</link>
       <pubDate>Tue, 28 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/productivity/</guid>
+      <guid>https://sazidmahmud.bd/tags/productivity/</guid>
       <description></description>
     </item>
     <item>
       <title>Tools</title>
-      <link>http://localhost:1313/tags/tools/</link>
+      <link>https://sazidmahmud.bd/tags/tools/</link>
       <pubDate>Tue, 28 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/tools/</guid>
+      <guid>https://sazidmahmud.bd/tags/tools/</guid>
       <description></description>
     </item>
     <item>
       <title>Command-Line</title>
-      <link>http://localhost:1313/tags/command-line/</link>
+      <link>https://sazidmahmud.bd/tags/command-line/</link>
       <pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/command-line/</guid>
+      <guid>https://sazidmahmud.bd/tags/command-line/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Conference</title>
+      <link>https://sazidmahmud.bd/tags/conference/</link>
+      <pubDate>Sat, 01 Oct 2022 00:00:00 +0000</pubDate>
+      <guid>https://sazidmahmud.bd/tags/conference/</guid>
       <description></description>
     </item>
   </channel>
