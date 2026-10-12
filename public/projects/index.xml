@@ -6,8 +6,30 @@
     <description>Recent content in Projects on Sazid Mahmud</description>
     <generator>Hugo -- 0.165.0</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 16 Sep 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 12 Oct 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://sazidmahmud.bd/projects/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ezpass</title>
+      <link>https://sazidmahmud.bd/projects/2-ezpass/</link>
+      <pubDate>Mon, 12 Oct 2026 00:00:00 +0000</pubDate>
+      <guid>https://sazidmahmud.bd/projects/2-ezpass/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;ezpass&#34; loading=&#34;lazy&#34; src=&#34;https://sazidmahmud.bd/projects/2-ezpass/images/ezpass.png&#34;&gt;
+I wanted a simple way to generate strong passwords directly from my terminal, without depending on a bulky application or extra tools. So I built &lt;strong&gt;ezpass&lt;/strong&gt;, a small password generator written in Go.&lt;/p&gt;
+&lt;p&gt;It generates cryptographically secure passwords with customizable lengths and character sets, but I wanted to go a little further than that. You can also generate memorable, Diceware-style passphrases, avoid confusing characters like &lt;code&gt;0&lt;/code&gt; and &lt;code&gt;O&lt;/code&gt;, copy passwords straight to your clipboard, and check their estimated strength and entropy.&lt;/p&gt;
+&lt;p&gt;One thing I particularly like about this project is that it stays lightweight. It uses Go&amp;rsquo;s standard library without external dependencies, works nicely with shell scripts and pipelines, and can even be imported as a package into other Go projects. The goal was to make something practical that fits naturally into a terminal-based workflow.&lt;/p&gt;
+&lt;p&gt;Building &lt;code&gt;ezpass&lt;/code&gt; has been a good exercise in thinking beyond just making something work. It gave me a chance to explore cryptographic randomness, password entropy, command-line interface design, and the little details that make a developer tool convenient to use.&lt;/p&gt;
+&lt;p&gt;It&amp;rsquo;s a small project, but that&amp;rsquo;s exactly what I wanted: a focused utility that solves a real problem without getting in the way.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Source:&lt;/strong&gt; &lt;a href=&#34;https://github.com/schlafer/ezpass&#34;&gt;GitHub&lt;/a&gt;&lt;/p&gt;
+</description>
+      <content:encoded><![CDATA[<p><img alt="ezpass" loading="lazy" src="/projects/2-ezpass/images/ezpass.png">
+I wanted a simple way to generate strong passwords directly from my terminal, without depending on a bulky application or extra tools. So I built <strong>ezpass</strong>, a small password generator written in Go.</p>
+<p>It generates cryptographically secure passwords with customizable lengths and character sets, but I wanted to go a little further than that. You can also generate memorable, Diceware-style passphrases, avoid confusing characters like <code>0</code> and <code>O</code>, copy passwords straight to your clipboard, and check their estimated strength and entropy.</p>
+<p>One thing I particularly like about this project is that it stays lightweight. It uses Go&rsquo;s standard library without external dependencies, works nicely with shell scripts and pipelines, and can even be imported as a package into other Go projects. The goal was to make something practical that fits naturally into a terminal-based workflow.</p>
+<p>Building <code>ezpass</code> has been a good exercise in thinking beyond just making something work. It gave me a chance to explore cryptographic randomness, password entropy, command-line interface design, and the little details that make a developer tool convenient to use.</p>
+<p>It&rsquo;s a small project, but that&rsquo;s exactly what I wanted: a focused utility that solves a real problem without getting in the way.</p>
+<p><strong>Source:</strong> <a href="https://github.com/schlafer/ezpass">GitHub</a></p>
+]]></content:encoded>
+    </item>
     <item>
       <title>mini-fm</title>
       <link>https://sazidmahmud.bd/projects/1-mini-fm/</link>
