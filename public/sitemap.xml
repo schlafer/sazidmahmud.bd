@@ -2,17 +2,32 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://sazidmahmud.bd/posts/</loc>
+    <lastmod>2026-10-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://sazidmahmud.bd/</loc>
+    <lastmod>2026-10-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://sazidmahmud.bd/tags/</loc>
+    <lastmod>2026-10-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://sazidmahmud.bd/posts/10-the-swiss-army-knife-on-your-keychain-why-medicat-usb-is-a-lifesaver/</loc>
+    <lastmod>2026-10-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://sazidmahmud.bd/tags/tools/</loc>
+    <lastmod>2026-10-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://sazidmahmud.bd/tags/troubleshooting/</loc>
+    <lastmod>2026-10-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://sazidmahmud.bd/tags/windows/</loc>
+    <lastmod>2026-10-12T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://sazidmahmud.bd/projects/1-mini-fm/</loc>
     <lastmod>2026-09-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://sazidmahmud.bd/projects/</loc>
     <lastmod>2026-09-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://sazidmahmud.bd/</loc>
-    <lastmod>2026-09-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://sazidmahmud.bd/posts/</loc>
-    <lastmod>2026-08-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://sazidmahmud.bd/tags/emacs/</loc>
     <lastmod>2026-08-05T00:00:00+00:00</lastmod>
@@ -21,9 +36,6 @@
     <lastmod>2026-08-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://sazidmahmud.bd/posts/9-markdown-tweak-for-emacs/</loc>
-    <lastmod>2026-08-05T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://sazidmahmud.bd/tags/</loc>
     <lastmod>2026-08-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://sazidmahmud.bd/tags/text-editor/</loc>
@@ -83,9 +95,6 @@
     <loc>https://sazidmahmud.bd/tags/linux/</loc>
     <lastmod>2025-11-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://sazidmahmud.bd/tags/troubleshooting/</loc>
-    <lastmod>2025-11-13T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://sazidmahmud.bd/posts/3-archlinux-troubleshooting/</loc>
     <lastmod>2025-11-13T00:00:00+00:00</lastmod>
   </url><url>
@@ -96,9 +105,6 @@
     <lastmod>2025-10-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://sazidmahmud.bd/tags/productivity/</loc>
-    <lastmod>2025-10-28T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://sazidmahmud.bd/tags/tools/</loc>
     <lastmod>2025-10-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://sazidmahmud.bd/tags/command-line/</loc>
