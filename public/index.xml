@@ -63,8 +63,7 @@
       <link>https://sazidmahmud.bd/projects/1-mini-fm/</link>
       <pubDate>Wed, 16 Sep 2026 00:00:00 +0000</pubDate>
       <guid>https://sazidmahmud.bd/projects/1-mini-fm/</guid>
-      <description>&lt;h2 id=&#34;mini-fm&#34;&gt;mini-fm&lt;/h2&gt;
-&lt;p&gt;&lt;img alt=&#34;mini-fm&#34; loading=&#34;lazy&#34; src=&#34;https://sazidmahmud.bd/projects/1-mini-fm/images/mini-fm.gif&#34;&gt;
+      <description>&lt;p&gt;&lt;img alt=&#34;mini-fm&#34; loading=&#34;lazy&#34; src=&#34;https://sazidmahmud.bd/projects/1-mini-fm/images/mini-fm.gif&#34;&gt;
 I’ve always liked doing as much as possible from the terminal, but I wanted a file manager that matched the way I actually work. Instead of trying to configure an existing one until it felt right, I decided to build my own.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;mini-fm&lt;/strong&gt; is my small, keyboard-driven file manager for the terminal, written in Go. It started as a simple experiment and gradually turned into a proper little tool that I use for navigating files, opening things in my editor, searching through directories, and handling everyday file operations.&lt;/p&gt;
 &lt;p&gt;I wanted the interface to stay simple and fast. There’s no configuration file to maintain and no complicated setup. You launch it and start using it. Along the way, I added things I personally find useful, like fuzzy filtering, multi-select, inline rename and copy, shell commands, syntax-highlighted text previews, directory previews, and image previews through the Kitty graphics protocol.&lt;/p&gt;
@@ -72,8 +71,7 @@ I’ve always liked doing as much as possible from the terminal, but I wanted a 
 &lt;p&gt;It’s still a work in progress, but that’s part of the point. I’m building it around my own workflow and using it as a place to experiment, learn, and slowly turn those experiments into something useful.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Source:&lt;/strong&gt; &lt;a href=&#34;https://github.com/schlafer/mini-fm&#34;&gt;GitHub&lt;/a&gt;&lt;/p&gt;
 </description>
-      <content:encoded><![CDATA[<h2 id="mini-fm">mini-fm</h2>
-<p><img alt="mini-fm" loading="lazy" src="/projects/1-mini-fm/images/mini-fm.gif">
+      <content:encoded><![CDATA[<p><img alt="mini-fm" loading="lazy" src="/projects/1-mini-fm/images/mini-fm.gif">
 I’ve always liked doing as much as possible from the terminal, but I wanted a file manager that matched the way I actually work. Instead of trying to configure an existing one until it felt right, I decided to build my own.</p>
 <p><strong>mini-fm</strong> is my small, keyboard-driven file manager for the terminal, written in Go. It started as a simple experiment and gradually turned into a proper little tool that I use for navigating files, opening things in my editor, searching through directories, and handling everyday file operations.</p>
 <p>I wanted the interface to stay simple and fast. There’s no configuration file to maintain and no complicated setup. You launch it and start using it. Along the way, I added things I personally find useful, like fuzzy filtering, multi-select, inline rename and copy, shell commands, syntax-highlighted text previews, directory previews, and image previews through the Kitty graphics protocol.</p>

@@ -7,7 +7,6 @@ showReadingTime: true
 showSummary: true
 showComments: false
 ---
-## mini-fm
 
 ![mini-fm](images/mini-fm.gif)
 I’ve always liked doing as much as possible from the terminal, but I wanted a file manager that matched the way I actually work. Instead of trying to configure an existing one until it felt right, I decided to build my own.
