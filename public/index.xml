@@ -754,5 +754,21 @@ Or, boot into the Arch ISO and reinstall</li>
 <p><em>For consultancy or discussing any of the <a href="/posts/">topics</a> here, feel free to <a href="mailto:info@sazidmahmud.bd">reach</a> out &#x2764;&#xfe0f;</em></p>
 ]]></content:encoded>
     </item>
+    <item>
+      <title>Resume</title>
+      <link>https://sazidmahmud.bd/resume/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sazidmahmud.bd/resume/</guid>
+      <description>&lt;figure class=&#34;pdf-embed&#34;&gt;
+  &lt;iframe src=&#34;https://sazidmahmud.bd/sazidmahmud.pdf&#34; title=&#34;Sazid Mahmud — Resume&#34; loading=&#34;lazy&#34;&gt;&lt;/iframe&gt;
+  &lt;figcaption&gt;&lt;a href=&#34;https://sazidmahmud.bd/sazidmahmud.pdf&#34; download&gt;Download Sazid Mahmud — Resume&lt;/a&gt;&lt;/figcaption&gt;
+&lt;/figure&gt;
+</description>
+      <content:encoded><![CDATA[<figure class="pdf-embed">
+  <iframe src="/sazidmahmud.pdf" title="Sazid Mahmud — Resume" loading="lazy"></iframe>
+  <figcaption><a href="/sazidmahmud.pdf" download>Download Sazid Mahmud — Resume</a></figcaption>
+</figure>
+]]></content:encoded>
+    </item>
   </channel>
 </rss>

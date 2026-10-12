@@ -1,0 +1,6 @@
+{{- $src := .Get "src" | default (.Get 0) -}}
+{{- $title := .Get "title" | default "PDF" -}}
+<figure class="pdf-embed">
+  <iframe src="{{ $src | relURL }}" title="{{ $title }}" loading="lazy"></iframe>
+  <figcaption><a href="{{ $src | relURL }}" download>Download {{ $title }}</a></figcaption>
+</figure>
