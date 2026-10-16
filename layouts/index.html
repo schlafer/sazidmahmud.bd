@@ -1,0 +1,62 @@
+{{ define "main" }}
+<section class="hero">
+  <div class="hero-profile">
+    <img src="{{ site.Params.avatar | default "/images/myprofile.png" | relURL }}" alt="{{ site.Params.author }}" class="hero-avatar" width="110" height="110">
+    <div class="hero-content">
+      <h1 class="hero-name">{{ site.Params.author }}</h1>
+      <p class="hero-tagline">{{ site.Params.tagline }}</p>
+      <p class="hero-pitch">{{ site.Params.pitch }}</p>
+      {{ partial "social-icons.html" . }}
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- Recent Writing Section -->
+<section class="home-section">
+  <div class="section-header">
+    <h2 class="section-title">Writing</h2>
+    <a href="{{ "/posts/" | relURL }}" class="section-more-link">All writing &rarr;</a>
+  </div>
+  <div class="post-list">
+    {{- $posts := where site.RegularPages "Section" "posts" -}}
+    {{- range first 5 $posts }}
+    <div class="post-row">
+      <div class="post-row-left">
+        <a href="{{ .RelPermalink }}" class="post-row-title">{{ .Title }}</a>
+      </div>
+      <div class="post-row-meta">{{ .Date.Format "Jan 2, 2006" }} &middot; {{ .ReadingTime }} min</div>
+    </div>
+    {{- end }}
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- Featured Projects Section -->
+<section class="home-section">
+  <div class="section-header">
+    <h2 class="section-title">Selected Work</h2>
+    <a href="{{ "/projects/" | relURL }}" class="section-more-link">All projects &rarr;</a>
+  </div>
+  <div class="project-grid">
+    {{- $projects := where site.RegularPages "Section" "projects" -}}
+    {{- range first 4 $projects }}
+    <a href="{{ .RelPermalink }}" class="project-card">
+      <div class="project-card-header">
+        <h3 class="project-card-title">{{ .Title }}</h3>
+        <p class="project-card-desc">{{ .Summary | plainify | truncate 130 }}</p>
+      </div>
+      <div class="project-tags">
+        {{- range .Params.tags }}
+        <span class="project-tag">{{ . }}</span>
+        {{- else }}
+        <span class="project-tag">Project</span>
+        {{- end }}
+      </div>
+    </a>
+    {{- end }}
+  </div>
+</section>
+{{ end }}
