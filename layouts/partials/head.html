@@ -1,243 +1,54 @@
-{{- /* Project override of themes/PaperMod/layouts/partials/head.html.
-       Copied verbatim from the theme's copy at blob 565709b4, with one change:
-       the favicon block. Hugo gives no config switch to suppress the upstream
-       icon tags, so they have to be replaced rather than extended. Re-sync by
-       hand whenever themes/PaperMod is updated — check with
-       `git log --oneline themes/PaperMod/layouts/partials/head.html`. */ -}}
 <meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-{{- if hugo.IsProduction | or (eq site.Params.env "production") | and (ne .Params.robotsNoIndex true) }}
 <meta name="robots" content="index, follow">
-{{- else }}
-<meta name="robots" content="noindex, nofollow">
+
+<title>{{ if .IsHome }}{{ site.Title }} — {{ site.Params.headline | default site.Params.tagline }}{{ else }}{{ if .Title }}{{ .Title }} | {{ end }}{{ site.Title }}{{ end }}</title>
+
+{{- with .Description | default site.Params.description }}
+<meta name="description" content="{{ . }}">
 {{- end }}
 
-{{- /* Title */}}
-<title>{{ if .IsHome }}{{ else }}{{ if .Title }}{{ .Title }} | {{ end }}{{ end }}{{ site.Title }}</title>
+<meta name="author" content="{{ site.Params.author | default site.Title }}">
+<link rel="canonical" href="{{ .Permalink }}">
+<link rel="me" href="https://mastodon.social/@schlafer">
 
-{{- /* Meta */}}
-{{- if .IsHome }}
-{{ with site.Params.keywords -}}<meta name="keywords" content="{{- range $i, $e := . }}{{ if $i }}, {{ end }}{{ $e }}{{ end }}">{{ end }}
-{{- else }}
-<meta name="keywords" content="{{ if .Params.keywords -}}
-    {{- range $i, $e := .Params.keywords }}{{ if $i }}, {{ end }}{{ $e }}{{ end }} {{- else }}
-    {{- range $i, $e := .Params.tags }}{{ if $i }}, {{ end }}{{ $e }}{{ end }} {{- end -}}">
-{{- end }}
-<meta name="description" content="{{- with .Description }}{{ . }}{{- else }}{{- if or .IsPage .IsSection}}
-    {{- .Summary | default (printf "%s - %s" .Title  site.Title) }}{{- else }}
-    {{- with site.Params.description }}{{ . }}{{- end }}{{- end }}{{- end -}}">
-<meta name="author" content="{{ (partial "author.html" . ) }}">
-<link rel="canonical" href="{{ if .Params.canonicalURL -}} {{ trim .Params.canonicalURL " " }} {{- else -}} {{ .Permalink }} {{- end }}">
-{{- if site.Params.analytics.google.SiteVerificationTag }}
-<meta name="google-site-verification" content="{{ site.Params.analytics.google.SiteVerificationTag }}">
-{{- end }}
-{{- if site.Params.analytics.yandex.SiteVerificationTag }}
-<meta name="yandex-verification" content="{{ site.Params.analytics.yandex.SiteVerificationTag }}">
-{{- end }}
-{{- if site.Params.analytics.bing.SiteVerificationTag }}
-<meta name="msvalidate.01" content="{{ site.Params.analytics.bing.SiteVerificationTag }}">
-{{- end }}
-{{- if site.Params.analytics.naver.SiteVerificationTag }}
-<meta name="naver-site-verification" content="{{ site.Params.analytics.naver.SiteVerificationTag }}">
-{{- end }}
+<!-- OpenGraph / Twitter -->
+<meta property="og:title" content="{{ .Title | default site.Title }}">
+<meta property="og:description" content="{{ .Description | default site.Params.description }}">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:site_name" content="{{ site.Title }}">
+<meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="{{ .Title | default site.Title }}">
+<meta name="twitter:description" content="{{ .Description | default site.Params.description }}">
 
-{{- /* Styles */}}
-
-{{- /* includes */}}
-{{- $includes := slice }}
-{{- $includes = $includes | append (" " | resources.FromString "assets/css/includes-blank.css")}}
-
-{{- if not (eq site.Params.assets.disableScrollBarStyle true) }}
-    {{- $ScrollStyle := (resources.Get "css/includes/scroll-bar.css") }}
-    {{- $includes = (append $ScrollStyle $includes) }}
-{{- end }}
-
-{{- $includes_all := $includes | resources.Concat "assets/css/includes.css" }}
-
-{{- $theme_vars := (resources.Get "css/core/theme-vars.css") }}
-{{- $reset := (resources.Get "css/core/reset.css") }}
-{{- $media := (resources.Get "css/core/zmedia.css") }}
-{{- $license_css := (resources.Get "css/core/license.css") }}
-{{- $common := (resources.Match "css/common/*.css") | resources.Concat "assets/css/common.css" }}
-
-{{- /* markup.highlight.noClasses should be set to `false` */}}
-{{- $chroma_styles := (resources.Get "css/includes/chroma-styles.css") }}
-{{- $chroma_mod := (resources.Get "css/includes/chroma-mod.css") }}
-
-{{- /* order is important */}}
-{{- $core := (slice $theme_vars $reset $common $chroma_styles $chroma_mod $includes_all $media) | resources.Concat "assets/css/core.css" | resources.Minify }}
-{{- $extended := (resources.Match "css/extended/*.css") | resources.Concat "assets/css/extended.css" | resources.Minify }}
-
-{{- /* bundle all required css */}}
-{{- /* Add extended css after theme style */ -}}
-{{- $stylesheet := (slice $license_css $core $extended) | resources.Concat "assets/css/stylesheet.css"  }}
-
-{{- if not site.Params.assets.disableFingerprinting }}
-{{- $stylesheet := $stylesheet | fingerprint }}
-<link crossorigin="anonymous" href="{{ $stylesheet.RelPermalink }}" integrity="{{ $stylesheet.Data.Integrity }}" rel="preload stylesheet" as="style">
-{{- else }}
-<link crossorigin="anonymous" href="{{ $stylesheet.RelPermalink }}" rel="preload stylesheet" as="style">
-{{- end }}
-
-{{- /* Search */}}
-{{- if (eq .Layout `search`) -}}
-<link crossorigin="anonymous" rel="preload" as="fetch" href="../index.json">
-{{- $fastsearch := resources.Get "js/fastsearch.js" | js.Build (dict "params" (dict "fuseOpts" site.Params.fuseOpts)) | resources.Minify }}
-{{- $fusejs := resources.Get "js/fuse.basic.min.js" }}
-{{- $license_js := resources.Get "js/license.js" }}
-{{- if not site.Params.assets.disableFingerprinting }}
-{{- $search := (slice $fusejs $license_js $fastsearch ) | resources.Concat "assets/js/search.js" | fingerprint }}
-<script defer crossorigin="anonymous" src="{{ $search.RelPermalink }}" integrity="{{ $search.Data.Integrity }}"></script>
-{{- else }}
-{{- $search := (slice $fusejs $fastsearch ) | resources.Concat "assets/js/search.js" }}
-<script defer crossorigin="anonymous" src="{{ $search.RelPermalink }}"></script>
-{{- end }}
-{{- end -}}
-
-{{- /* Favicons.
-       Each href carries ?v=<first 12 chars of the file's MD5>. Browsers and CDNs
-       cache favicons hard, and an unchanged URL means they keep serving the old
-       bytes even though the file on disk changed. Hashing the contents into the
-       URL makes every icon change visible to the cache. Filenames come from
-       params.assets.* so the paths stay configurable; add a size to $sizes to
-       publish another PNG. */}}
+<!-- Favicons with content hashes -->
 {{- $sizes := slice 16 32 48 64 72 96 128 144 152 192 256 512 }}
-{{- $icons := dict }}
 {{- range $s := $sizes }}
-    {{- $name := printf "favicon-%dx%d.png" $s $s }}
-    {{- with readFile (path.Join "static" $name) }}
-        {{- $icons = merge $icons (dict $name (printf "/%s?v=%s" $name (substr (crypto.MD5 .) 0 12))) }}
-    {{- end }}
+  {{- $name := printf "favicon-%dx%d.png" $s $s }}
+  {{- with readFile (path.Join "static" $name) }}
+<link rel="icon" type="image/png" sizes="{{ $s }}x{{ $s }}" href="{{ printf "/%s?v=%s" $name (substr (crypto.MD5 .) 0 12) | absURL }}">
+  {{- end }}
 {{- end }}
-{{- range $p := slice
-    (site.Params.assets.favicon | default "favicon.ico")
-    (site.Params.assets.apple_touch_icon | default "apple-touch-icon.png")
-    (site.Params.assets.safari_pinned_tab | default "safari-pinned-tab.svg") }}
-    {{- $name := path.Base $p }}
-    {{- with readFile (path.Join "static" $p) }}
-        {{- $icons = merge $icons (dict $name (printf "/%s?v=%s" $name (substr (crypto.MD5 .) 0 12))) }}
-    {{- end }}
+{{- with readFile "static/favicon.ico" }}
+<link rel="icon" href="{{ printf "/favicon.ico?v=%s" (substr (crypto.MD5 .) 0 12) | absURL }}">
 {{- end }}
-{{- with index $icons (path.Base (site.Params.assets.favicon | default "favicon.ico")) }}
-<link rel="icon" href="{{ . | absURL }}">
-{{- end }}
-{{- range $s := $sizes }}
-    {{- with index $icons (printf "favicon-%dx%d.png" $s $s) }}
-<link rel="icon" type="image/png" sizes="{{ $s }}x{{ $s }}" href="{{ . | absURL }}">
-    {{- end }}
-{{- end }}
-{{- with index $icons (path.Base (site.Params.assets.apple_touch_icon | default "apple-touch-icon.png")) }}
-<link rel="apple-touch-icon" href="{{ . | absURL }}">
-{{- end }}
-{{- with index $icons (path.Base (site.Params.assets.safari_pinned_tab | default "safari-pinned-tab.svg")) }}
-<link rel="mask-icon" href="{{ . | absURL }}">
-{{- end }}
-<meta name="theme-color" content="{{ site.Params.assets.theme_color | default "#2e2e33" }}">
-<meta name="msapplication-TileColor" content="{{ site.Params.assets.msapplication_TileColor | default "#2e2e33" }}">
-
-{{- /* RSS */}}
-{{ range .AlternativeOutputFormats -}}
-<link rel="{{ .Rel }}" type="{{ .MediaType.Type | html }}" href="{{ .Permalink | safeURL }}" title="{{ .Name }}">
-{{ end -}}
-{{- range .AllTranslations -}}
-<link rel="alternate" hreflang="{{ .Lang }}" href="{{ .Permalink }}">
-{{ end -}}
-
-<noscript>
-    <style>
-        #theme-toggle,
-        .top-link {
-            display: none;
-        }
-
-    </style>
-    {{- if (and (ne site.Params.defaultTheme "light") (ne site.Params.defaultTheme "dark")) }}
-    <style>
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --theme: rgb(29, 30, 32);
-                --entry: rgb(46, 46, 51);
-                --primary: rgb(218, 218, 219);
-                --secondary: rgb(155, 156, 157);
-                --tertiary: rgb(65, 66, 68);
-                --content: rgb(196, 196, 197);
-                --code-block-bg: rgb(46, 46, 51);
-                --code-bg: rgb(55, 56, 62);
-                --border: rgb(51, 51, 51);
-                color-scheme: dark;
-            }
-
-            .list {
-                background: var(--theme);
-            }
-
-            .toc {
-                background: var(--entry);
-            }
-        }
-
-        @media (prefers-color-scheme: light) {
-            .list::-webkit-scrollbar-thumb {
-                border-color: var(--code-bg);
-            }
-        }
-
-    </style>
-    {{- end }}
-</noscript>
-
-{{- /* theme-toggle is enabled */}}
-{{- if (not site.Params.disableThemeToggle) }}
-{{- /* theme is light */}}
-{{- if (eq site.Params.defaultTheme "light") }}
-<script>
-    if (localStorage.getItem("pref-theme") === "dark") {
-        document.querySelector("html").dataset.theme = 'dark';
-    }
-
-</script>
-{{- /* theme is dark */}}
-{{- else if (eq site.Params.defaultTheme "dark") }}
-<script>
-    if (localStorage.getItem("pref-theme") === "light") {
-        document.querySelector("html").dataset.theme = 'light';
-    }
-
-</script>
-{{- else }}
-{{- /* theme is auto */}}
-<script>
-    if (localStorage.getItem("pref-theme") === "dark") {
-        document.querySelector("html").dataset.theme = 'dark';
-    } else if (localStorage.getItem("pref-theme") === "light") {
-       document.querySelector("html").dataset.theme = 'light';
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.querySelector("html").dataset.theme = 'dark';
-    } else {
-        document.querySelector("html").dataset.theme = 'light';
-    }
-
-</script>
-{{- end }}
-{{- /* theme-toggle is disabled and theme is auto */}}
-{{- else if (and (ne site.Params.defaultTheme "light") (ne site.Params.defaultTheme "dark"))}}
-<script>
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.querySelector("html").dataset.theme = 'dark';
-    } else {
-        document.querySelector("html").dataset.theme = 'light';
-    }
-
-</script>
+{{- with readFile "static/apple-touch-icon.png" }}
+<link rel="apple-touch-icon" href="{{ printf "/apple-touch-icon.png?v=%s" (substr (crypto.MD5 .) 0 12) | absURL }}">
 {{- end }}
 
-{{- partial "extend_head.html" . -}}
+<!-- RSS Feed -->
+{{- with .OutputFormats.Get "rss" }}
+<link rel="alternate" type="application/rss+xml" title="{{ site.Title }}" href="{{ .Permalink }}">
+{{- end }}
 
-{{- /* Misc */}}
-{{- if hugo.IsProduction | or (eq site.Params.env "production") }}
-{{- partial "google_analytics.html" . }}
-{{- partial "templates/opengraph.html" . }}
-{{- partial "templates/twitter_cards.html" . }}
-{{- partial "templates/schema_json.html" . }}
-{{- end -}}
+<!-- Early theme resolution to prevent FOUT -->
+{{ partial "head-theme-script.html" . }}
+
+<!-- CSS Bundle via Hugo Pipes -->
+{{- $base := resources.Get "css/base.css" -}}
+{{- $comp := resources.Get "css/components.css" -}}
+{{- $content := resources.Get "css/content.css" -}}
+{{- $syntax := resources.Get "css/syntax.css" -}}
+{{- $bundle := slice $base $comp $content $syntax | resources.Concat "css/bundle.css" | resources.Minify | resources.Fingerprint -}}
+<link rel="stylesheet" href="{{ $bundle.RelPermalink }}" integrity="{{ $bundle.Data.Integrity }}">
