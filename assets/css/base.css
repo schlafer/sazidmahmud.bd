@@ -4,6 +4,7 @@
 
 :root {
   /* Light Mode ("Warm Pressed Paper") */
+  color-scheme: light;
   --bg: #FBF9F4;
   --surface: #F4EFE6;
   --border: rgba(80, 65, 50, 0.12);
@@ -26,6 +27,7 @@
 
 html[data-theme="dark"] {
   /* Dark Mode ("Charcoal Night Paper") */
+  color-scheme: dark;
   --bg: #161615;
   --surface: #1F1E1D;
   --border: rgba(235, 225, 210, 0.09);

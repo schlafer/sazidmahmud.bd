@@ -252,8 +252,16 @@
   z-index: 5;
 }
 
-.highlight:hover .copy-code-btn {
+.highlight:hover .copy-code-btn,
+.copy-code-btn:focus,
+.copy-code-btn:focus-visible {
   opacity: 1;
+}
+
+@media (hover: none) {
+  .copy-code-btn {
+    opacity: 1;
+  }
 }
 
 .copy-code-btn:hover {

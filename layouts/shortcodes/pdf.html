@@ -10,5 +10,7 @@
       Download PDF
     </a>
   </div>
-  <iframe src="{{ $src | relURL }}" title="{{ $title }}" class="pdf-frame" loading="lazy"></iframe>
+  <iframe src="{{ $src | relURL }}" title="{{ $title }}" class="pdf-frame" loading="lazy">
+    <p>Your browser does not support inline PDF viewing. <a href="{{ $src | relURL }}" download>Download the PDF</a> instead.</p>
+  </iframe>
 </div>

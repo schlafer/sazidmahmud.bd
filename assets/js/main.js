@@ -39,7 +39,7 @@ function initCodeCopyButtons() {
   const highlightContainers = document.querySelectorAll('.highlight');
 
   highlightContainers.forEach((container) => {
-    const codeEl = container.querySelector('pre > code');
+    const codeEl = container.querySelector('.lntd:last-child pre > code') || container.querySelector('pre > code');
     if (!codeEl) return;
 
     // Check if button already exists

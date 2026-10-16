@@ -5,7 +5,11 @@
       <a href="{{ "/publications/" | relURL }}" class="back-link">&larr; Back to all publications</a>
       <h1 class="post-title">{{ .Title }}</h1>
       <div class="post-meta">
-        <span>{{ .Params.venue }} ({{ .Params.year | default (.Date.Format "2006") }})</span>
+        {{- with .Params.venue }}
+        <span>{{ . }} ({{ $.Params.year | default ($.Date.Format "2006") }})</span>
+        {{- else }}
+        <span>{{ .Params.year | default (.Date.Format "2006") }}</span>
+        {{- end }}
       </div>
       {{ with .Params.author }}
       <p class="pub-authors" style="margin-top: 0.5rem; font-size: 0.95rem; color: var(--text-muted);">{{ . }}</p>

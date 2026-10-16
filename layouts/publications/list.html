@@ -13,8 +13,9 @@
       {{ with .Params.author }}
       <p class="pub-authors">{{ . }}</p>
       {{ end }}
+      {{ $pubYear := .Params.year | default (.Date.Format "2006") }}
       {{ with .Params.venue }}
-      <p class="pub-venue">{{ . }} ({{ $.Params.year | default ($.Date.Format "2006") }})</p>
+      <p class="pub-venue">{{ . }} ({{ $pubYear }})</p>
       {{ end }}
       <div class="pub-links">
         {{ with .Params.doi }}
