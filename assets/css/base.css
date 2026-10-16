@@ -1,0 +1,104 @@
+/* ==========================================================================
+   Design Tokens & Base Typography
+   ========================================================================== */
+
+:root {
+  /* Light Mode ("Warm Pressed Paper") */
+  --bg: #FBF9F4;
+  --surface: #F4EFE6;
+  --border: rgba(80, 65, 50, 0.12);
+  --border-strong: rgba(80, 65, 50, 0.22);
+  --text: #242220;
+  --text-muted: #746D65;
+  --accent: #C4622D;
+  --accent-hover: #A84E1F;
+  --accent-soft: rgba(196, 98, 45, 0.12);
+  --code-bg: #F2ECE1;
+  --code-inline-bg: rgba(80, 65, 50, 0.08);
+  --shadow-subtle: 0 1px 3px rgba(80, 65, 50, 0.05);
+
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Inter", -apple-system-ui, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "Iosevka", "SF Mono", Monaco, Menlo, Consolas, monospace;
+
+  --container-width: 720px;
+  --header-height: 64px;
+}
+
+html[data-theme="dark"] {
+  /* Dark Mode ("Charcoal Night Paper") */
+  --bg: #161615;
+  --surface: #1F1E1D;
+  --border: rgba(235, 225, 210, 0.09);
+  --border-strong: rgba(235, 225, 210, 0.18);
+  --text: #E8E4DC;
+  --text-muted: #9A9488;
+  --accent: #E27A42;
+  --accent-hover: #F08E58;
+  --accent-soft: rgba(226, 122, 66, 0.16);
+  --code-bg: #1D1C1B;
+  --code-inline-bg: rgba(235, 225, 210, 0.08);
+  --shadow-subtle: 0 1px 3px rgba(0, 0, 0, 0.35);
+}
+
+/* Base Reset & Box Sizing */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: 1.0625rem;
+  line-height: 1.72;
+  letter-spacing: -0.011em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+/* Selection */
+::selection {
+  background-color: var(--accent-soft);
+  color: var(--text);
+}
+
+/* Links */
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+/* Accessible focus ring */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Layout Wrapper */
+.site-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.site-main {
+  flex: 1 0 auto;
+  width: 100%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 4rem;
+}
