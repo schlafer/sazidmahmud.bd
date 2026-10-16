@@ -117,20 +117,23 @@ html[data-theme="dark"] .site-header {
   fill: currentColor;
 }
 
-.icon-sun {
+.icon-sun,
+.icon-moon,
+.icon-auto {
   display: none;
 }
 
-.icon-moon {
+html[data-theme-setting="light"] .icon-sun {
   display: block;
 }
 
-html[data-theme="dark"] .icon-sun {
+html[data-theme-setting="dark"] .icon-moon {
   display: block;
 }
 
-html[data-theme="dark"] .icon-moon {
-  display: none;
+html[data-theme-setting="auto"] .icon-auto,
+html:not([data-theme-setting]) .icon-auto {
+  display: block;
 }
 
 /* Hero Section */

@@ -2,13 +2,24 @@
   (function() {
     try {
       var stored = localStorage.getItem('theme');
-      var isDark = stored === 'dark' || (!stored && window.matchMedia('(prefers-color-scheme: dark)').matches);
+      var setting = (stored === 'dark' || stored === 'light' || stored === 'auto') ? stored : 'auto';
+      var isDark = false;
+      if (setting === 'dark') {
+        isDark = true;
+      } else if (setting === 'light') {
+        isDark = false;
+      } else {
+        setting = 'auto';
+        isDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      }
       var theme = isDark ? 'dark' : 'light';
       document.documentElement.setAttribute('data-theme', theme);
       document.documentElement.dataset.theme = theme;
+      document.documentElement.setAttribute('data-theme-setting', setting);
     } catch (err) {
       document.documentElement.setAttribute('data-theme', 'light');
       document.documentElement.dataset.theme = 'light';
+      document.documentElement.setAttribute('data-theme-setting', 'auto');
     }
   })();
 </script>

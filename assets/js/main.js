@@ -11,26 +11,65 @@ function initThemeToggle() {
   const toggleBtn = document.getElementById('theme-toggle-btn');
   if (!toggleBtn) return;
 
-  toggleBtn.addEventListener('click', () => {
-    const currentTheme = document.documentElement.dataset.theme;
-    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-
-    document.documentElement.dataset.theme = newTheme;
-    try {
-      localStorage.setItem('theme', newTheme);
-    } catch (e) {
-      // localStorage may be disabled
+  function updateButtonLabel(setting) {
+    if (setting === 'light') {
+      toggleBtn.title = "Theme: Light (click for Dark)";
+      toggleBtn.setAttribute('aria-label', "Current theme is Light. Click to switch to Dark.");
+    } else if (setting === 'dark') {
+      toggleBtn.title = "Theme: Dark (click for System Auto)";
+      toggleBtn.setAttribute('aria-label', "Current theme is Dark. Click to switch to System Auto.");
+    } else {
+      toggleBtn.title = "Theme: Auto / System (click for Light)";
+      toggleBtn.setAttribute('aria-label', "Current theme is System Auto. Click to switch to Light.");
     }
+  }
+
+  // Set initial tooltip
+  const initialSetting = document.documentElement.getAttribute('data-theme-setting') || 'auto';
+  updateButtonLabel(initialSetting);
+
+  toggleBtn.addEventListener('click', () => {
+    const currentSetting = document.documentElement.getAttribute('data-theme-setting') || 'auto';
+    let nextSetting = 'auto';
+
+    if (currentSetting === 'auto') {
+      nextSetting = 'light';
+    } else if (currentSetting === 'light') {
+      nextSetting = 'dark';
+    } else {
+      nextSetting = 'auto';
+    }
+
+    let effectiveTheme = 'light';
+    if (nextSetting === 'dark') {
+      effectiveTheme = 'dark';
+    } else if (nextSetting === 'light') {
+      effectiveTheme = 'light';
+    } else {
+      const isDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      effectiveTheme = isDark ? 'dark' : 'light';
+    }
+
+    document.documentElement.setAttribute('data-theme', effectiveTheme);
+    document.documentElement.dataset.theme = effectiveTheme;
+    document.documentElement.setAttribute('data-theme-setting', nextSetting);
+
+    try {
+      localStorage.setItem('theme', nextSetting);
+    } catch (e) {}
+
+    updateButtonLabel(nextSetting);
   });
 
-  // Listen to system color scheme changes if user hasn't explicitly set a preference
+  // Listen to system color scheme changes when on auto
   if (window.matchMedia) {
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-      try {
-        if (!localStorage.getItem('theme')) {
-          document.documentElement.dataset.theme = e.matches ? 'dark' : 'light';
-        }
-      } catch (err) {}
+      const currentSetting = document.documentElement.getAttribute('data-theme-setting') || 'auto';
+      if (currentSetting === 'auto') {
+        const theme = e.matches ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', theme);
+        document.documentElement.dataset.theme = theme;
+      }
     });
   }
 }
