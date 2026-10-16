@@ -3,14 +3,12 @@ title: "Sazid Mahmud"
 locale: "en-US"
 defaultContentLanguage: "en"
 
+paginate: 10
 pagination:
   pagerSize: 10
 
 enableEmoji: true
 enableRobotsTXT: true
-
-ignoreLogs:
-  - "warning-goldmark-raw-html"
 
 minify:
   disableXML: false

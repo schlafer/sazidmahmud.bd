@@ -11,7 +11,7 @@
       {{- $src = printf "%s#%s" $src . -}}
     {{- end -}}
   {{- else -}}
-    {{- if not (hasPrefix $src "/") -}}
+    {{- if not (strings.HasPrefix $src "/") -}}
       {{- $src = printf "%s%s" .Page.RelPermalink $src -}}
     {{- end -}}
   {{- end -}}
