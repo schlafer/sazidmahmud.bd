@@ -1,120 +1,78 @@
 baseURL: "https://sazidmahmud.bd/"
 title: "Sazid Mahmud"
+locale: "en-US"
+defaultContentLanguage: "en"
+
 pagination:
   pagerSize: 10
-theme: PaperMod
 
 enableEmoji: true
 enableRobotsTXT: true
 
+ignoreLogs:
+  - "warning-goldmark-raw-html"
+
 minify:
-  disableXML: true
+  disableXML: false
   minifyOutput: true
 
-outputs:
-  home:
-    - HTML
-    - RSS
-    - JSON
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  highlight:
+    noClasses: false
+    guessSyntax: true
+    lineNos: false
 
 params:
-  env: production
-  title: "Sazid Mahmud"
-  description: "Backend Engineering, System Design, Web Security."
-  keywords: [Backend, Golang, System Design, Arch Linux, Programming]
   author: "Sazid Mahmud"
-  DateFormat: "Jan 2, 2006"
-  disableScrollToTop: false
-  defaultTheme: auto
-  disableThemeToggle: false
-  ShowRssButtonInSectionTermList: true
-  ShowReadingProgress: true
-  ShowShareButtons: true
-  assets:
-    favicon: "/favicon.ico"
-    favicon16x16: "/favicon-16x16.png"
-    favicon32x32: "/favicon-32x32.png"
-    apple_touch_icon: "/apple-touch-icon.png"
-    safari_pinned_tab: "/safari-pinned-tab.svg"
-
-  # Global UI
-  ShowReadingTime: true
-  ShowPostNavLinks: true
-  ShowBreadCrumbs: true
-  ShowWordCount: true
-  ShowCodeCopyButtons: true
-  comments: false
-
-  # Global post defaults (can be overridden per-post)
-  showAuthor: true
-  showDate: true
-  showReadingTime: true
-  showSummary: true
-  showComments: false
-
-  # --------
-  # LANDING PAGE (Profile Mode)
-  # --------
-  profileMode:
-    enabled: true
-    title: "Sazid Mahmud"
-    subtitle: "Tricking rocks into thinking"
-    imageUrl: "/images/myprofile.png"
-    imageWidth: 140
-    imageHeight: 140
-    imageTitle: "Profile picture"
-
-  # Disable home blog feed (landing page only)
-  homeInfoParams:
-    Title: ""
-    Content: ""
-
+  description: "Software Engineer specializing in backend architecture, system design, and web security."
+  keywords: ["Backend", "Golang", "System Design", "Distributed Systems", "Arch Linux", "Programming"]
+  headline: "Software Engineer & Systems Thinker"
+  tagline: "Tricking rocks into thinking"
+  pitch: "I design and build resilient backend systems, distributed services, and developer tooling—focusing on simplicity, performance, and security."
+  avatar: "/images/myprofile.png"
+  location: "Dhaka, Bangladesh"
+  email: "sazidm@proton.me"
+  dateFormat: "Jan 2, 2006"
+  
   socialIcons:
-    - name: mail
+    - name: email
+      title: "Email"
       url: "mailto:sazidm@proton.me"
     - name: github
+      title: "GitHub"
       url: "https://github.com/schlafer"
     - name: x
+      title: "X"
       url: "https://x.com/_schlafer"
     - name: linkedin
+      title: "LinkedIn"
       url: "https://linkedin.com/in/sazid-mahmud-eee"
     - name: mastodon
+      title: "Mastodon"
       url: "https://mastodon.social/@schlafer"
 
 menu:
   main:
     - identifier: blog
-      name: Blog
-      url: /posts/
+      name: "Blog"
+      url: "/posts/"
       weight: 10
     - identifier: projects
-      name: Projects
-      url: /projects/
+      name: "Projects"
+      url: "/projects/"
       weight: 20
     - identifier: publications
-      name: Publications
-      url: /publications/
+      name: "Publications"
+      url: "/publications/"
       weight: 30
     - identifier: resume
-      name: Resume
-      url: /resume/
+      name: "Resume"
+      url: "/resume/"
       weight: 40
     - identifier: about
-      name: About
-      url: /about/
+      name: "About"
+      url: "/about/"
       weight: 50
-
-    # - identifier: search
-    #   name: Search
-    #   url: /search/
-    #   weight: 60
-    # - identifier: archives
-    #   name: Archives
-    #   url: /archives/
-    #   weight: 70
-
-# Syntax highlighting
-pygmentsUseClasses: true
-markup:
-  highlight:
-    noClasses: false
