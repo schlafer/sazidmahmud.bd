@@ -12,6 +12,7 @@ resources/_gen/
 # Local testing & development scratch
 .superpowers/
 docs/
+tests/
 
 
 # OS metadata
