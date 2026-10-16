@@ -1,0 +1,44 @@
+{{ define "main" }}
+<div class="content-container">
+  <article>
+    <header class="post-header">
+      <a href="{{ "/posts/" | relURL }}" class="back-link">&larr; Back to all writing</a>
+      <h1 class="post-title">{{ .Title }}</h1>
+      <div class="post-meta">
+        <span class="meta-date">{{ .Date.Format "January 2, 2006" }}</span>
+        <span class="meta-separator">&middot;</span>
+        <span class="meta-reading-time">{{ .ReadingTime }} min read</span>
+        <span class="meta-separator">&middot;</span>
+        <span class="meta-words">{{ .WordCount }} words</span>
+      </div>
+      {{- with .Params.tags }}
+      <div class="post-tags">
+        {{- range . }}
+        <span class="post-tag">#{{ . }}</span>
+        {{- end }}
+      </div>
+      {{- end }}
+    </header>
+
+    <div class="post-body">
+      {{ .Content }}
+    </div>
+
+    <!-- Post pagination / navigation -->
+    <nav class="post-nav" aria-label="Post Navigation">
+      {{- with .PrevInSection }}
+      <div class="post-nav-item prev">
+        <span class="post-nav-label">&larr; Previous</span>
+        <a href="{{ .RelPermalink }}" class="post-nav-title">{{ .Title }}</a>
+      </div>
+      {{- end }}
+      {{- with .NextInSection }}
+      <div class="post-nav-item next">
+        <span class="post-nav-label">Next &rarr;</span>
+        <a href="{{ .RelPermalink }}" class="post-nav-title">{{ .Title }}</a>
+      </div>
+      {{- end }}
+    </nav>
+  </article>
+</div>
+{{ end }}
