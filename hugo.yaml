@@ -32,7 +32,7 @@ params:
   headline: "Software Engineer & Systems Thinker"
   tagline: "Tricking rocks into thinking"
   pitch: "I design and build resilient backend systems, distributed services, and developer tooling—focusing on simplicity, performance, and security."
-  avatar: "/images/myprofile.png"
+  avatar: "/images/myprofile.jpeg"
   location: "Dhaka, Bangladesh"
   email: "sazidm@proton.me"
   dateFormat: "Jan 2, 2006"
