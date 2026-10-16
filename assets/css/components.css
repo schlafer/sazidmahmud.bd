@@ -150,6 +150,7 @@ html[data-theme="dark"] .icon-moon {
   height: 110px;
   border-radius: 50%;
   object-fit: cover;
+  object-position: center top;
   border: 2px solid var(--border-strong);
   background-color: var(--surface);
   flex-shrink: 0;
