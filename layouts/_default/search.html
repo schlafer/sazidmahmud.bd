@@ -1,0 +1,36 @@
+{{ define "main" }}
+<div class="content-container">
+  <header class="section-header" style="margin-bottom: 2rem;">
+    <h1 class="section-title" style="font-size: 1.75rem;">Search</h1>
+  </header>
+  <div class="search-box" style="margin-bottom: 2rem;">
+    <input type="search" id="searchInput" placeholder="Search essays and projects..." style="width: 100%; padding: 0.75rem 1rem; font-size: 1rem; font-family: var(--font-sans); background-color: var(--surface); color: var(--text); border: 1px solid var(--border); border-radius: 6px;">
+  </div>
+  <div id="searchResults" class="post-list"></div>
+</div>
+<script>
+  (function() {
+    var searchInput = document.getElementById('searchInput');
+    var searchResults = document.getElementById('searchResults');
+    if (!searchInput || !searchResults) return;
+
+    var posts = [
+      {{- range where site.RegularPages "Section" "posts" }}
+      { title: {{ .Title }}, url: {{ .RelPermalink }}, date: {{ .Date.Format "Jan 2, 2006" }} },
+      {{- end }}
+    ];
+
+    searchInput.addEventListener('input', function(e) {
+      var q = e.target.value.toLowerCase().trim();
+      if (!q) { searchResults.innerHTML = ''; return; }
+      var matched = posts.filter(function(p) { return p.title.toLowerCase().indexOf(q) !== -1; });
+      searchResults.innerHTML = matched.map(function(p) {
+        return '<div class="post-row">' +
+          '<div class="post-row-left"><a class="post-row-title" href="' + p.url + '">' + p.title + '</a></div>' +
+          '<div class="post-row-meta">' + p.date + '</div>' +
+        '</div>';
+      }).join('');
+    });
+  })();
+</script>
+{{ end }}

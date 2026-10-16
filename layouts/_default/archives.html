@@ -1,0 +1,23 @@
+{{ define "main" }}
+<div class="content-container">
+  <header class="section-header" style="margin-bottom: 2rem;">
+    <h1 class="section-title" style="font-size: 1.75rem;">Archives</h1>
+  </header>
+
+  {{- range (where site.RegularPages "Section" "posts").GroupByDate "2006" }}
+  <div class="year-group" style="margin-bottom: 2.25rem;">
+    <h2 class="year-heading" style="font-family: var(--font-mono); font-size: 1rem; color: var(--text-muted); margin-bottom: 0.85rem; padding-bottom: 0.35rem; border-bottom: 1px solid var(--border);">{{ .Key }}</h2>
+    <div class="post-list">
+      {{- range .Pages }}
+      <div class="post-row">
+        <div class="post-row-left">
+          <a href="{{ .RelPermalink }}" class="post-row-title">{{ .Title }}</a>
+        </div>
+        <div class="post-row-meta">{{ .Date.Format "Jan 2" }} &middot; {{ .ReadingTime }} min</div>
+      </div>
+      {{- end }}
+    </div>
+  </div>
+  {{- end }}
+</div>
+{{ end }}
