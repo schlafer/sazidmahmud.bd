@@ -11,6 +11,8 @@ resources/_gen/
 
 # Local testing & development scratch
 .superpowers/
+docs/
+
 
 # OS metadata
 .DS_Store
