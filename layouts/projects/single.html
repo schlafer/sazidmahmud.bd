@@ -1,0 +1,25 @@
+{{ define "main" }}
+<div class="content-container">
+  <article>
+    <header class="post-header">
+      <a href="{{ "/projects/" | relURL }}" class="back-link">&larr; Back to all projects</a>
+      <h1 class="post-title">{{ .Title }}</h1>
+      <div class="post-meta">
+        <span class="meta-date">{{ .Date.Format "January 2006" }}</span>
+        {{- with .Params.tags }}
+        <span class="meta-separator">&middot;</span>
+        <div class="post-tags" style="display: inline-flex; margin-top: 0;">
+          {{- range . }}
+          <span class="post-tag">{{ . }}</span>
+          {{- end }}
+        </div>
+        {{- end }}
+      </div>
+    </header>
+
+    <div class="post-body">
+      {{ .Content }}
+    </div>
+  </article>
+</div>
+{{ end }}

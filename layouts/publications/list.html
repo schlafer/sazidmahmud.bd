@@ -1,0 +1,31 @@
+{{ define "main" }}
+<div class="content-container">
+  <header class="section-header" style="margin-bottom: 2rem;">
+    <h1 class="section-title" style="font-size: 1.75rem;">Publications</h1>
+  </header>
+
+  <div class="publications-list">
+    {{ range .Pages }}
+    <article class="pub-item">
+      <h2 class="pub-title">
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+      </h2>
+      {{ with .Params.author }}
+      <p class="pub-authors">{{ . }}</p>
+      {{ end }}
+      {{ with .Params.venue }}
+      <p class="pub-venue">{{ . }} ({{ $.Params.year | default ($.Date.Format "2006") }})</p>
+      {{ end }}
+      <div class="pub-links">
+        {{ with .Params.doi }}
+        <a href="https://doi.org/{{ . }}" class="pub-pill" target="_blank" rel="noopener noreferrer">DOI: {{ . }}</a>
+        {{ end }}
+        {{ with .Params.pdf }}
+        <a href="{{ . | relURL }}" class="pub-pill" target="_blank" rel="noopener noreferrer">PDF</a>
+        {{ end }}
+      </div>
+    </article>
+    {{ end }}
+  </div>
+</div>
+{{ end }}

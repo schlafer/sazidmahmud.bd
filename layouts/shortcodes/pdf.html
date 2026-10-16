@@ -1,6 +1,14 @@
 {{- $src := .Get "src" | default (.Get 0) -}}
-{{- $title := .Get "title" | default "PDF" -}}
-<figure class="pdf-embed">
-  <iframe src="{{ $src | relURL }}" title="{{ $title }}" loading="lazy"></iframe>
-  <figcaption><a href="{{ $src | relURL }}" download>Download {{ $title }}</a></figcaption>
-</figure>
+{{- $title := .Get "title" | default "Document" -}}
+<div class="pdf-container">
+  <div class="pdf-toolbar">
+    <span class="pdf-title">{{ $title }}</span>
+    <a href="{{ $src | relURL }}" class="pdf-download-btn" download>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+      </svg>
+      Download PDF
+    </a>
+  </div>
+  <iframe src="{{ $src | relURL }}" title="{{ $title }}" class="pdf-frame" loading="lazy"></iframe>
+</div>
