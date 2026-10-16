@@ -73,11 +73,7 @@ menu:
       name: "Publications"
       url: "/publications/"
       weight: 30
-    - identifier: resume
-      name: "Resume"
-      url: "/resume/"
-      weight: 40
     - identifier: about
       name: "About"
       url: "/about/"
-      weight: 50
+      weight: 40

@@ -34,7 +34,7 @@ Open `http://localhost:1313` in your browser.
 ```text
 .
 ├── assets/          # CSS and JS processed by Hugo Pipes
-├── content/         # Markdown content (posts, projects, publications, resume)
+├── content/         # Markdown content (posts, projects, publications, about)
 ├── layouts/         # Hugo HTML templates and partials
 ├── static/          # Static files (images, favicons, resume PDF)
 ├── hugo.yaml        # Site settings and navigation
