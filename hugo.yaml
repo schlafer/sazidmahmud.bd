@@ -3,7 +3,6 @@ title: "Sazid Mahmud"
 locale: "en-US"
 defaultContentLanguage: "en"
 
-paginate: 10
 pagination:
   pagerSize: 10
 
