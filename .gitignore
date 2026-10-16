@@ -1,3 +1,29 @@
-/public/
-
+# Hugo build outputs and caches
+public/
+resources/
+resources/_gen/
 .hugo_build.lock
+**/.hugo_build.lock
+
+# Cloudflare Pages & Wrangler local dev artifacts
+.wrangler/
+.cloudflare/
+
+# Local testing & development scratch
+.superpowers/
+
+# OS metadata
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Editor & IDE swap files and settings
+*~
+*.swp
+*.swo
+.vscode/
+.idea/
