@@ -13,6 +13,18 @@ minify:
   disableXML: false
   minifyOutput: true
 
+outputs:
+  home:
+    - html
+  page:
+    - html
+  section:
+    - html
+  taxonomy:
+    - html
+  term:
+    - html
+
 markup:
   goldmark:
     renderer:

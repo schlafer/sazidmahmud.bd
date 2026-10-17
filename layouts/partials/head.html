@@ -40,9 +40,7 @@
 {{- end }}
 
 <!-- RSS Feed -->
-{{- with .OutputFormats.Get "rss" }}
-<link rel="alternate" type="application/rss+xml" title="{{ site.Title }}" href="{{ .Permalink }}">
-{{- end }}
+<link rel="alternate" type="application/rss+xml" title="{{ site.Title }}" href="{{ "posts/index.xml" | absURL }}">
 
 <!-- Early theme resolution to prevent FOUT -->
 {{ partial "head-theme-script.html" . }}
