@@ -1,5 +1,5 @@
 ---
-title: "Blog"
+title: "Thoughts"
 ShowBreadCrumbs: false
 outputs:
   home:

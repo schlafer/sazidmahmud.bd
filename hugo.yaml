@@ -62,7 +62,7 @@ params:
 menu:
   main:
     - identifier: blog
-      name: "Blog"
+      name: "Thoughts"
       url: "/posts/"
       weight: 10
     - identifier: projects

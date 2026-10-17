@@ -6,28 +6,16 @@ ShowBreadCrumbs: false
 showtoc: false
 ---
 
-I'm Sazid, a Software Engineer based in [Dhaka, Bangladesh](https://maps.app.goo.gl/KDFTxoMJjRvDwsfKA).
+I’m Sazid, a Software Engineer based in [Dhaka, Bangladesh](https://maps.app.goo.gl/KDFTxoMJjRvDwsfKA).
 
-My [resume](/sazidmahmud.pdf) is available for download.
+Professionally, I trick rocks into thinking (or perhaps they trick me into thinking).
 
-Professionally I trick rocks into thinking (or perhaps they trick me into thinking?).
+I hold a degree in Electrical and Electronic Engineering, but spend most of my time working higher up the stack: designing backend systems, building lightweight CLI tools, and wrangling Linux environments. Having one foot in hardware and one foot in software keeps my engineering grounded in real constraints rather than unnecessary abstractions.
 
-I have a Bachelor's degree in Electrical and Electronic Engineering.
+I care about:
 
-Whether as part of my creative pastimes, or my work, everything is based in problem-solving.
+- **Pragmatic systems**: Reliable backends, clean APIs, and software that does what it says on the tin.
+- **Focused tooling**: Building keyboard-centric tools like [mini-fm](/projects/1-mini-fm/) and [ezpass](/projects/2-ezpass/) that respect terminal workflows.
+- **Thinking in public**: Writing long-form thoughts on engineering culture, dev environments, and craft outside the noise of algorithmic feeds.
 
-It could be a problem posed by a client, or it might be a problem I pose myself based on actual, or self-imposed limitations.
-
-The confidence of curiosity ensures I learn what I need to figure things out.
-
-Why I bothered myself with a personal website? Why not just write on social media?
-
-[This post explains it well.](https://matthiasott.com/notes/simple-truths-about-personal-websites)
-
-_For consultancy or discussing any of the [topics](/posts/) here, feel free to [reach](mailto:info@sazidmahmud.bd) out :heart:_
-
-<!-- ### About This Website -->
-
-<!-- <\!-- Fueled by random sparks of inspiration, a mixture of micro-blogs and long-form articles. -\-> -->
-
-<!-- Started out this blog to document my journey of giving life meaning. -->
+My [resume](/sazidmahmud.pdf) covers my past experience and projects. If you’d like to collaborate, discuss a project, or talk shop, feel free to reach out at [sazidm@proton.me](mailto:sazidm@proton.me).
