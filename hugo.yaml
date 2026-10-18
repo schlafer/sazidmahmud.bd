@@ -6,6 +6,8 @@ defaultContentLanguage: "en"
 pagination:
   pagerSize: 10
 
+buildFuture: true
+
 enableEmoji: true
 enableRobotsTXT: true
 
