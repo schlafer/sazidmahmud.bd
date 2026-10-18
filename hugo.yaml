@@ -36,17 +36,17 @@ markup:
 
 params:
   author: "Sazid Mahmud"
-  description: "Software Engineer specializing in backend architecture, system design, and web security."
+  description: "Software Consultant specializing in backend architecture, system design, and web security."
   keywords:
     [
       "Backend",
       "Golang",
       "System Design",
       "Distributed Systems",
-      "Arch Linux",
+      "Linux",
       "Programming",
     ]
-  headline: "Software Engineer & Systems Thinker"
+  headline: "Software Consultant"
   tagline: "Tricking rocks into thinking"
   pitch: "I design and build resilient backend systems, distributed services, and developer tooling."
   avatar: "/images/myprofile.jpeg"
