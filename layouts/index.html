@@ -59,4 +59,38 @@
     {{- end }}
   </div>
 </section>
+
+<hr class="section-divider">
+
+<!-- Publications Section -->
+<section class="home-section">
+  <div class="section-header">
+    <h2 class="section-title">Publications</h2>
+  </div>
+  <div class="publications-list">
+    {{- $publications := where site.RegularPages "Section" "publications" -}}
+    {{- range $publications }}
+    <article class="pub-item">
+      <h3 class="pub-title">
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+      </h3>
+      {{ with .Params.author }}
+      <p class="pub-authors">{{ . }}</p>
+      {{ end }}
+      {{ $pubYear := .Params.year | default (.Date.Format "2006") }}
+      {{ with .Params.venue }}
+      <p class="pub-venue">{{ . }} ({{ $pubYear }})</p>
+      {{ end }}
+      <div class="pub-links">
+        {{ with .Params.doi }}
+        <a href="https://doi.org/{{ . }}" class="pub-pill" target="_blank" rel="noopener noreferrer">DOI: {{ . }}</a>
+        {{ end }}
+        {{ with .Params.pdf }}
+        <a href="{{ . | relURL }}" class="pub-pill" target="_blank" rel="noopener noreferrer">PDF</a>
+        {{ end }}
+      </div>
+    </article>
+    {{- end }}
+  </div>
+</section>
 {{ end }}

@@ -374,8 +374,13 @@ html:not([data-theme-setting]) .icon-auto {
   border-bottom: 1px solid var(--border);
 }
 
+.pub-item:first-child {
+  padding-top: 0;
+}
+
 .pub-item:last-child {
   border-bottom: none;
+  padding-bottom: 0;
 }
 
 .pub-title {
@@ -384,6 +389,15 @@ html:not([data-theme-setting]) .icon-auto {
   line-height: 1.45;
   color: var(--text);
   margin-bottom: 0.4rem;
+}
+
+.pub-title a {
+  color: var(--text);
+  transition: color 0.15s ease;
+}
+
+.pub-title a:hover {
+  color: var(--accent);
 }
 
 .pub-authors {
