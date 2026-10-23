@@ -28,7 +28,7 @@ In 1967, computer architect Gene Amdahl presented a paper on the limits of paral
 
 Mathematically, Amdahl’s Law calculates overall system speedup ($S$) as:
 
-$$S = \frac{1}{(1 - p) + \frac{p}{s}}$$
+$$S = \frac{1}{(1 - p) + \cfrac{p}{s}}$$
 
 Where:
 
@@ -59,7 +59,7 @@ Let us use an illustrative scenario. Assume that writing code accounts for rough
 
 For greenfield tasks, coding might represent a larger share of the cycle. For enterprise maintenance on mature codebases, it is often much lower. But using 30% as a reasonable baseline, what happens if an AI tool makes the coding phase 10x faster ($s = 10, p = 0.30$)?
 
-$$S = \frac{1}{(1 - 0.30) + \frac{0.30}{10}} = \frac{1}{0.70 + 0.03} \approx 1.37\times$$
+$$S = \frac{1}{(1 - 0.30) + \cfrac{0.30}{10}} = \frac{1}{0.70 + 0.03} \approx 1.37\times$$
 
 A 10x boost in typing code yields about a **37% overall speedup** from concept to deployment.
 
