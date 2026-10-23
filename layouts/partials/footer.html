@@ -35,12 +35,30 @@
         let src = txt.value;
         if (isDark) {
           src = src
-            .replace(/fill:#d4edda/g, 'fill:#143520')
-            .replace(/stroke:#28a745/g, 'stroke:#34d399')
-            .replace(/fill:#f8d7da/g, 'fill:#3b181e')
-            .replace(/stroke:#dc3545/g, 'stroke:#f87171')
-            .replace(/fill:#fff3cd/g, 'fill:#382b10')
-            .replace(/stroke:#ffc107/g, 'stroke:#fbbf24');
+            // Green
+            .replace(/fill:#d4edda/gi, 'fill:#143520')
+            .replace(/stroke:#28a745/gi, 'stroke:#34d399')
+            .replace(/color:#155724/gi, 'color:#a7f3d0')
+            // Red
+            .replace(/fill:#f8d7da/gi, 'fill:#3b181e')
+            .replace(/stroke:#dc3545/gi, 'stroke:#f87171')
+            .replace(/color:#721c24/gi, 'color:#fecaca')
+            // Yellow
+            .replace(/fill:#fff3cd/gi, 'fill:#382b10')
+            .replace(/stroke:#ffc107/gi, 'stroke:#fbbf24')
+            .replace(/color:#856404/gi, 'color:#fde68a')
+            // Blue
+            .replace(/fill:#e7f1ff/gi, 'fill:#172554')
+            .replace(/stroke:#0d6efd/gi, 'stroke:#60a5fa')
+            .replace(/color:#084298/gi, 'color:#bfdbfe')
+            // Purple
+            .replace(/fill:#f3e8ff/gi, 'fill:#2e1065')
+            .replace(/stroke:#9333ea/gi, 'stroke:#c084fc')
+            .replace(/color:#581c87/gi, 'color:#e9d5ff')
+            // Reg / Neutral Slate
+            .replace(/fill:#f1f3f5/gi, 'fill:#1f2937')
+            .replace(/stroke:#495057/gi, 'stroke:#9ca3af')
+            .replace(/color:#212529/gi, 'color:#f3f4f6');
         }
         el.textContent = src;
         el.removeAttribute('data-processed');
@@ -50,20 +68,31 @@
     await mermaid.run();
 
     // Ensure high contrast text for styled stages in both themes
-    document.querySelectorAll('.mermaid svg').forEach((svg) => {
-      const b = svg.querySelector('[id*="-flowchart-B-"]');
-      const c = svg.querySelector('[id*="-flowchart-C-"]');
-      const d = svg.querySelector('[id*="-flowchart-D-"]');
+    const colorMap = isDark ? {
+      green: '#a7f3d0',
+      red: '#fecaca',
+      yellow: '#fde68a',
+      blue: '#bfdbfe',
+      purple: '#e9d5ff',
+      reg: '#f3f4f6'
+    } : {
+      green: '#155724',
+      red: '#721c24',
+      yellow: '#856404',
+      blue: '#084298',
+      purple: '#581c87',
+      reg: '#212529'
+    };
 
-      if (isDark) {
-        if (b) b.querySelectorAll('span, p').forEach(el => el.style.setProperty('color', '#a7f3d0', 'important'));
-        if (c) c.querySelectorAll('span, p').forEach(el => el.style.setProperty('color', '#fecaca', 'important'));
-        if (d) d.querySelectorAll('span, p').forEach(el => el.style.setProperty('color', '#fde68a', 'important'));
-      } else {
-        if (b) b.querySelectorAll('span, p').forEach(el => el.style.setProperty('color', '#155724', 'important'));
-        if (c) c.querySelectorAll('span, p').forEach(el => el.style.setProperty('color', '#721c24', 'important'));
-        if (d) d.querySelectorAll('span, p').forEach(el => el.style.setProperty('color', '#856404', 'important'));
-      }
+    document.querySelectorAll('.mermaid svg').forEach((svg) => {
+      Object.entries(colorMap).forEach(([cls, color]) => {
+        svg.querySelectorAll(`.node.${cls}, [class*="${cls}"]`).forEach(node => {
+          node.querySelectorAll('span, p, text').forEach(el => {
+            el.style.setProperty('color', color, 'important');
+            el.style.setProperty('fill', color, 'important');
+          });
+        });
+      });
     });
   }
 
