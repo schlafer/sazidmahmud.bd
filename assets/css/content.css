@@ -328,14 +328,23 @@
 /* ==========================================================================
    Mermaid Flowcharts & Diagrams
    ========================================================================== */
+/* ==========================================================================
+   Architectural Figure & Mermaid Diagram Styling
+   ========================================================================== */
 .mermaid-container {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   margin: 2.25rem 0;
+  padding: 1.5rem 1rem;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
+  box-shadow: var(--shadow-subtle);
+  transition: background-color 0.25s ease, border-color 0.25s ease;
 }
 
 .mermaid {
@@ -355,16 +364,40 @@
   margin: 0 auto;
   max-width: 100%;
   height: auto;
+  font-family: var(--font-sans) !important;
 }
 
-.mermaid .nodeLabel p,
-.mermaid .nodeLabel span {
-  margin: 0 !important;
-  line-height: 1.4 !important;
-  font-family: var(--font-mono);
-  font-size: 0.875rem;
+/* Nodes Base Shape */
+.mermaid .node rect,
+.mermaid .node polygon {
+  rx: 6px !important;
+  ry: 6px !important;
+  stroke-width: 1px !important;
 }
 
+.mermaid .node .nodeLabel {
+  display: inline-block;
+  font-family: var(--font-sans) !important;
+  font-size: 0.85rem !important;
+  line-height: 1.35 !important;
+  letter-spacing: -0.01em;
+  padding: 2px 4px;
+}
+
+.mermaid .node .nodeLabel b {
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.mermaid .node .nodeLabel small {
+  display: block;
+  font-family: var(--font-mono) !important;
+  font-size: 0.725rem !important;
+  opacity: 0.88;
+  margin-top: 2px;
+}
+
+/* Unprocessed Code Fallback */
 .mermaid:not([data-processed="true"]) {
   font-family: var(--font-mono);
   font-size: 0.85rem;
@@ -375,63 +408,99 @@
   text-align: left;
 }
 
-/* Custom Mermaid Node Classes (Light Mode) */
-.mermaid .node.green > :is(rect, circle, polygon, path) { fill: #d4edda !important; stroke: #28a745 !important; stroke-width: 2px !important; }
-.mermaid .node.green :is(span, p, .nodeLabel, text) { color: #155724 !important; fill: #155724 !important; }
+/* Fast / Accelerated node (Quiet Sage Green) */
+.mermaid .node.fast > :is(rect, circle, polygon, path) {
+  fill: rgba(74, 124, 89, 0.08) !important;
+  stroke: rgba(74, 124, 89, 0.45) !important;
+  stroke-width: 1px !important;
+}
+.mermaid .node.fast :is(span, p, .nodeLabel, text) {
+  color: #2B5338 !important;
+  fill: #2B5338 !important;
+}
 
-.mermaid .node.red > :is(rect, circle, polygon, path) { fill: #f8d7da !important; stroke: #dc3545 !important; stroke-width: 2px !important; }
-.mermaid .node.red :is(span, p, .nodeLabel, text) { color: #721c24 !important; fill: #721c24 !important; }
+[data-theme="dark"] .mermaid .node.fast > :is(rect, circle, polygon, path) {
+  fill: rgba(94, 156, 110, 0.12) !important;
+  stroke: rgba(94, 156, 110, 0.45) !important;
+}
+[data-theme="dark"] .mermaid .node.fast :is(span, p, .nodeLabel, text) {
+  color: #86C597 !important;
+  fill: #86C597 !important;
+}
 
-.mermaid .node.yellow > :is(rect, circle, polygon, path) { fill: #fff3cd !important; stroke: #ffc107 !important; stroke-width: 2px !important; }
-.mermaid .node.yellow :is(span, p, .nodeLabel, text) { color: #856404 !important; fill: #856404 !important; }
+/* Bottleneck / Critical Path node (Warm Terracotta Accent) */
+.mermaid .node.bottleneck > :is(rect, circle, polygon, path) {
+  fill: rgba(196, 98, 45, 0.08) !important;
+  stroke: rgba(196, 98, 45, 0.45) !important;
+  stroke-width: 1px !important;
+}
+.mermaid .node.bottleneck :is(span, p, .nodeLabel, text) {
+  color: #A84E1F !important;
+  fill: #A84E1F !important;
+}
 
-.mermaid .node.blue > :is(rect, circle, polygon, path) { fill: #e7f1ff !important; stroke: #0d6efd !important; stroke-width: 2px !important; }
-.mermaid .node.blue :is(span, p, .nodeLabel, text) { color: #084298 !important; fill: #084298 !important; }
+[data-theme="dark"] .mermaid .node.bottleneck > :is(rect, circle, polygon, path) {
+  fill: rgba(226, 122, 66, 0.14) !important;
+  stroke: rgba(226, 122, 66, 0.50) !important;
+}
+[data-theme="dark"] .mermaid .node.bottleneck :is(span, p, .nodeLabel, text) {
+  color: #F08E58 !important;
+  fill: #F08E58 !important;
+}
 
-.mermaid .node.purple > :is(rect, circle, polygon, path) { fill: #f3e8ff !important; stroke: #9333ea !important; stroke-width: 2px !important; }
-.mermaid .node.purple :is(span, p, .nodeLabel, text) { color: #581c87 !important; fill: #581c87 !important; }
+/* Neutral / Register node (Paper & Slate) */
+.mermaid .node.reg > :is(rect, circle, polygon, path) {
+  fill: rgba(80, 65, 50, 0.04) !important;
+  stroke: rgba(80, 65, 50, 0.22) !important;
+  stroke-width: 1px !important;
+}
+.mermaid .node.reg :is(span, p, .nodeLabel, text) {
+  color: #242220 !important;
+  fill: #242220 !important;
+}
 
-.mermaid .node.reg > :is(rect, circle, polygon, path) { fill: #f1f3f5 !important; stroke: #495057 !important; stroke-width: 2px !important; }
-.mermaid .node.reg :is(span, p, .nodeLabel, text) { color: #212529 !important; fill: #212529 !important; }
+[data-theme="dark"] .mermaid .node.reg > :is(rect, circle, polygon, path) {
+  fill: rgba(235, 225, 210, 0.04) !important;
+  stroke: rgba(235, 225, 210, 0.20) !important;
+}
+[data-theme="dark"] .mermaid .node.reg :is(span, p, .nodeLabel, text) {
+  color: #E8E4DC !important;
+  fill: #E8E4DC !important;
+}
 
-/* Custom Mermaid Node Classes (Dark Mode) */
-[data-theme="dark"] .mermaid .node.green > :is(rect, circle, polygon, path) { fill: #143520 !important; stroke: #34d399 !important; stroke-width: 2px !important; }
-[data-theme="dark"] .mermaid .node.green :is(span, p, .nodeLabel, text) { color: #a7f3d0 !important; fill: #a7f3d0 !important; }
-
-[data-theme="dark"] .mermaid .node.red > :is(rect, circle, polygon, path) { fill: #3b181e !important; stroke: #f87171 !important; stroke-width: 2px !important; }
-[data-theme="dark"] .mermaid .node.red :is(span, p, .nodeLabel, text) { color: #fecaca !important; fill: #fecaca !important; }
-
-[data-theme="dark"] .mermaid .node.yellow > :is(rect, circle, polygon, path) { fill: #382b10 !important; stroke: #fbbf24 !important; stroke-width: 2px !important; }
-[data-theme="dark"] .mermaid .node.yellow :is(span, p, .nodeLabel, text) { color: #fde68a !important; fill: #fde68a !important; }
-
-[data-theme="dark"] .mermaid .node.blue > :is(rect, circle, polygon, path) { fill: #172554 !important; stroke: #60a5fa !important; stroke-width: 2px !important; }
-[data-theme="dark"] .mermaid .node.blue :is(span, p, .nodeLabel, text) { color: #bfdbfe !important; fill: #bfdbfe !important; }
-
-[data-theme="dark"] .mermaid .node.purple > :is(rect, circle, polygon, path) { fill: #2e1065 !important; stroke: #c084fc !important; stroke-width: 2px !important; }
-[data-theme="dark"] .mermaid .node.purple :is(span, p, .nodeLabel, text) { color: #e9d5ff !important; fill: #e9d5ff !important; }
-
-[data-theme="dark"] .mermaid .node.reg > :is(rect, circle, polygon, path) { fill: #1f2937 !important; stroke: #9ca3af !important; stroke-width: 2px !important; }
-[data-theme="dark"] .mermaid .node.reg :is(span, p, .nodeLabel, text) { color: #f3f4f6 !important; fill: #f3f4f6 !important; }
-
-/* Cluster / Subgraph Styling */
+/* Clusters / Subgraphs */
 .mermaid .cluster rect {
-  fill: var(--surface) !important;
-  stroke: var(--border) !important;
-  stroke-width: 1.5px !important;
-  rx: 8px !important;
-  ry: 8px !important;
+  fill: transparent !important;
+  stroke: var(--border-strong) !important;
+  stroke-width: 1px !important;
+  stroke-dasharray: 4 4 !important;
+  rx: 6px !important;
+  ry: 6px !important;
 }
 
 .mermaid .cluster text,
-.mermaid .cluster span,
-.mermaid .cluster p {
-  font-family: var(--font-sans) !important;
-  font-weight: 600 !important;
-  color: var(--text) !important;
-  fill: var(--text) !important;
+.mermaid .cluster span {
+  font-family: var(--font-mono) !important;
+  font-size: 0.72rem !important;
+  font-weight: 500 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  color: var(--text-muted) !important;
+  fill: var(--text-muted) !important;
 }
 
-/* Edge Labels */
+/* Edge Lines & Arrows */
+.mermaid path.flowchart-link {
+  stroke: var(--border-strong) !important;
+  stroke-width: 1.25px !important;
+}
+
+.mermaid marker path {
+  fill: var(--border-strong) !important;
+  stroke: var(--border-strong) !important;
+}
+
+/* Edge Badges */
 .mermaid .edgeLabel,
 .mermaid .edgeLabel span {
   background: transparent !important;
@@ -439,19 +508,27 @@
 }
 
 .mermaid .edgeLabel .labelBkg {
-  background-color: var(--surface) !important;
-  color: var(--text) !important;
+  display: inline-block !important;
+  background-color: var(--bg) !important;
+  color: var(--text-muted) !important;
   font-family: var(--font-mono) !important;
-  font-size: 0.8125rem !important;
+  font-size: 0.72rem !important;
   border: 1px solid var(--border) !important;
   border-radius: 4px !important;
-  padding: 4px 8px !important;
+  padding: 2px 6px !important;
+  box-shadow: var(--shadow-subtle) !important;
 }
 
-.mermaid .edgeLabel p,
-.mermaid .edgeLabel span {
-  color: var(--text) !important;
+.mermaid .edgeLabel:empty,
+.mermaid .edgeLabel .labelBkg:empty {
+  display: none !important;
+  border: none !important;
+  padding: 0 !important;
+}
+
+.mermaid .edgeLabel p {
+  color: var(--text-muted) !important;
   font-family: var(--font-mono) !important;
-  font-size: 0.8125rem !important;
+  font-size: 0.72rem !important;
   margin: 0 !important;
 }

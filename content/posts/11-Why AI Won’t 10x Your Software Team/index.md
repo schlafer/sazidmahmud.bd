@@ -37,16 +37,8 @@ Where:
 - $(1 - p)$ is the unaccelerated portion.
 
 ```mermaid
-flowchart TD
-    subgraph Cycle["Total Delivery Cycle (100% of Lead Time)"]
-        direction TB
-        A["<b>Coding & Syntax Generation (30%)</b><br/>10x Acceleration via AI Tools"]:::green
-        B["<b>Non-Coding Phase (70%) — The Unaccelerated Path</b><br/>Requirements • Architecture • Reviews • CI/CD • Deploys • Incidents"]:::red
-        A --- B
-    end
-
-    classDef green fill:#d4edda,stroke:#28a745,stroke-width:2px,color:#155724;
-    classDef red fill:#f8d7da,stroke:#dc3545,stroke-width:2px,color:#721c24;
+flowchart LR
+    A["<b>Coding Phase</b><br/><small>30% · 10x Speedup with AI</small>"]:::fast --> B["<b>Unaccelerated Stages</b><br/><small>70% · Specs · Review · CI/CD · Incidents</small>"]:::bottleneck --> C["<b>Production Value</b><br/><small>Overall Speedup: 1.37x</small>"]:::reg
 ```
 
 Amdahl's Law assumes a fixed-work model: the total work remains constant, and we simply accelerate a portion of it. In real software teams, AI can also change the nature of the work itself, such as introducing subtle edge-case bugs or encouraging speculative features. But as a baseline model, it reveals why isolated speedups rarely transform end-to-end velocity.
@@ -86,22 +78,10 @@ Where $t_{\text{cq}}$ is clock-to-Q delay, $t_{\text{comb(max)}}$ is the maximum
 
 ```mermaid
 flowchart LR
-    subgraph FastPath["Fast Combinational Path"]
-        direction LR
-        RegA["Reg A"]:::reg --> Adder["<b>2ns Adder</b><br/>10x Speedup → 0.2ns"]:::green
-    end
-
-    subgraph CritPath["Critical Path (Bottleneck)"]
-        direction LR
-        RegB["Reg B"]:::reg --> Mult["<b>22ns Multiplier</b><br/>Limits Clock Period (Tclk)"]:::red
-    end
-
-    Adder --> RegC["<b>Reg C</b><br/><i>Waits for 22ns edge</i>"]:::reg
-    Mult --> RegC
-
-    classDef green fill:#d4edda,stroke:#28a745,stroke-width:2px,color:#155724;
-    classDef red fill:#f8d7da,stroke:#dc3545,stroke-width:2px,color:#721c24;
-    classDef reg fill:#f1f3f5,stroke:#495057,stroke-width:2px,color:#212529;
+    RegA["Reg A"]:::reg --> FastPath["<b>2ns Adder</b><br/><small>10x Speedup → 0.2ns</small>"]:::fast
+    RegB["Reg B"]:::reg --> CritPath["<b>22ns Multiplier</b><br/><small>Critical Path (Tclk bound)</small>"]:::bottleneck
+    FastPath --> RegC["Reg C<br/><small>Waits for 22ns edge</small>"]:::reg
+    CritPath --> RegC
 ```
 
 Consider two parallel paths feeding into a downstream register:
@@ -124,18 +104,9 @@ Digital systems handle mismatched throughput between stages using pipelines, buf
 In protocols like AXI, the `VALID`/`READY` handshake enforces flow control. A transfer occurs only when both `VALID` and `READY` are asserted on a clock edge. If the downstream consumer is busy or its buffer is full, it deasserts `READY`. This exerts backpressure on the producer, which must hold its data until the consumer can accept it.
 
 ```mermaid
-flowchart TD
-    Fast["<b>Fast Clock Domain (AI Coder)</b><br/>High PR Arrival Rate (λ)"]:::green
-    Queue["<b>PR Review Queue (FIFO Buffer)</b><br/>Work-in-Progress Backlog (Lq)"]:::yellow
-    Slow["<b>Slow Clock Domain (Human Review)</b><br/>Fixed Review Bandwidth (μ)"]:::blue
-
-    Fast -->|"VALID: Rapid PR Creation"| Queue
-    Queue -->|"PRs Awaiting Attention"| Slow
-    Slow -.->|"BACKPRESSURE: Deassert READY<br/><i>(Missing in typical software teams)</i>"| Fast
-
-    classDef green fill:#d4edda,stroke:#28a745,stroke-width:2px,color:#155724;
-    classDef yellow fill:#fff3cd,stroke:#ffc107,stroke-width:2px,color:#856404;
-    classDef blue fill:#e7f1ff,stroke:#0d6efd,stroke-width:2px,color:#084298;
+flowchart LR
+    Fast["<b>Fast Domain</b><br/><small>AI Coder (High λ)</small>"]:::fast -->|"VALID: PRs"| Queue["<b>PR Queue</b><br/><small>FIFO Buffer (Lq)</small>"]:::reg -->|"Review Load"| Slow["<b>Slow Domain</b><br/><small>Human Review (μ)</small>"]:::bottleneck
+    Slow -.->|"BACKPRESSURE: Deassert READY"| Fast
 ```
 
 If a system lacks flow control and provides inadequate buffering, a fast producer will overwhelm downstream capacity. Depending on the architecture, this leads to buffer overflow, dropped packets, or stalled execution.
@@ -157,17 +128,8 @@ Where:
 Little's Law applies to stable systems in long-run equilibrium. But when incoming code generation persistently outpaces review capacity ($\lambda_{\text{in}} > \mu$), the system becomes non-stationary. The queue grows without settling into a steady state, and waiting time increases rapidly.
 
 ```mermaid
-flowchart TD
-    A["<b>1. Idea & Specs</b><br/>Scope & Architecture"]:::blue --> B["<b>2. Code Generation</b><br/>10x Speedup via AI"]:::green
-    B --> C["<b>3. Review Queue</b><br/>Backlog Growth & Bottleneck"]:::red
-    C --> D["<b>4. CI / Automated Tests</b><br/>Wall-Clock Verification Delay"]:::yellow
-    D --> E["<b>5. Production Deploy</b><br/>Staging, Canary & Release"]:::purple
-
-    classDef green fill:#d4edda,stroke:#28a745,stroke-width:2px,color:#155724;
-    classDef red fill:#f8d7da,stroke:#dc3545,stroke-width:2px,color:#721c24;
-    classDef yellow fill:#fff3cd,stroke:#ffc107,stroke-width:2px,color:#856404;
-    classDef blue fill:#e7f1ff,stroke:#0d6efd,stroke-width:2px,color:#084298;
-    classDef purple fill:#f3e8ff,stroke:#9333ea,stroke-width:2px,color:#581c87;
+flowchart LR
+    A["<b>1. Specs</b><br/><small>Scope</small>"]:::reg --> B["<b>2. Code Gen</b><br/><small>10x AI Speed</small>"]:::fast --> C["<b>3. Review Queue</b><br/><small>Backlog Growth</small>"]:::bottleneck --> D["<b>4. CI / Tests</b><br/><small>Fixed Delay</small>"]:::reg --> E["<b>5. Deploy</b><br/><small>Staging & Canary</small>"]:::reg
 ```
 
 This dynamic introduces specific failure modes:
@@ -188,22 +150,9 @@ For decades, CPU computational capacity grew far faster than memory bus bandwidt
 A modern CPU core can execute arithmetic instructions in fractions of a nanosecond. But when a data load misses the on-chip caches and must fetch from DRAM, dependent instructions can stall for many tens or hundreds of processor cycles, depending on the system. During a memory stall, raw ALU throughput provides no advantage.
 
 ```mermaid
-flowchart TD
-    subgraph Compute["Fast Local Execution"]
-        direction TB
-        ALU["<b>CPU Core / ALU: Typing Syntax</b><br/>Mechanical code authoring • Nanosecond generation"]:::green
-    end
-
-    subgraph Memory["High-Latency Operation"]
-        direction TB
-        BUS["<b>Memory Bus / DRAM: Domain Context</b><br/>Messy business logic • Undocumented edge cases • API contracts"]:::blue
-    end
-
-    ALU -->|"Cache Miss: High-Latency Stall<br/><i>(Typing speed cannot bypass this)</i>"| BUS
-    BUS -.->|"Resolved Context"| ALU
-
-    classDef green fill:#d4edda,stroke:#28a745,stroke-width:2px,color:#155724;
-    classDef blue fill:#e7f1ff,stroke:#0d6efd,stroke-width:2px,color:#084298;
+flowchart LR
+    CPU["<b>CPU Core / ALU</b><br/><small>Typing Syntax · Fast Local Compute</small>"]:::fast -->|"Cache Miss: High-Latency Stall"| MEM["<b>Memory Bus / DRAM</b><br/><small>Domain Context · Edge Cases · Contracts</small>"]:::bottleneck
+    MEM -.->|"Resolved Context"| CPU
 ```
 
 The Memory Wall is a useful metaphor for software engineering bottlenecks.
@@ -237,21 +186,17 @@ In hardware, when a combinational path between two registers has a long delay (f
 
 ```mermaid
 flowchart TD
-    subgraph Before["Before Pipelining (Clock Period: 20ns)"]
+    subgraph Before["Before Pipelining · Monolithic 20ns Period"]
         direction LR
-        R1["Reg"]:::reg --> L1["<b>20ns Monolithic Logic</b><br/>Large Feature Branch"]:::red --> R2["Reg"]:::reg
+        R1["Reg"]:::reg --> L1["<b>20ns Monolithic Logic</b><br/><small>Large Feature Branch</small>"]:::bottleneck --> R2["Reg"]:::reg
     end
 
-    subgraph After["After Pipelining (Clock Period: ~10ns + overhead)"]
+    subgraph After["After Pipelining · Balanced ~10ns Period"]
         direction LR
-        R3["Reg"]:::reg --> L2A["<b>10ns Stage A</b><br/>Schema & Migration"]:::green --> RM["Pipeline Reg"]:::reg --> L2B["<b>10ns Stage B</b><br/>API & UI Integration"]:::green --> R4["Reg"]:::reg
+        R3["Reg"]:::reg --> L2A["<b>10ns Stage A</b><br/><small>Schema & Logic</small>"]:::fast --> RM["Pipeline Reg"]:::reg --> L2B["<b>10ns Stage B</b><br/><small>API & UI</small>"]:::fast --> R4["Reg"]:::reg
     end
 
-    Before -->|"Pipelining: Insert intermediate register"| After
-
-    classDef green fill:#d4edda,stroke:#28a745,stroke-width:2px,color:#155724;
-    classDef red fill:#f8d7da,stroke:#dc3545,stroke-width:2px,color:#721c24;
-    classDef reg fill:#f1f3f5,stroke:#495057,stroke-width:2px,color:#212529;
+    Before ~~~ After
 ```
 
 In an idealized circuit, this cuts the clock period nearly in half. In real hardware, the new register adds setup time ($t_{\text{setup}}$) and clock-to-Q delay ($t_{\text{cq}}$), plus potential clock skew. If register overhead is 1.5ns, the new clock period becomes roughly 11.5ns, not 10ns. The benefit is higher throughput; the tradeoff is added pipeline latency and control complexity.
