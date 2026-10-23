@@ -308,3 +308,19 @@
 .post-nav-title:hover {
   color: var(--accent);
 }
+
+/* ==========================================================================
+   Math & Equations (KaTeX)
+   ========================================================================== */
+.katex-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.75rem 0;
+  margin: 1.5rem 0;
+  -webkit-overflow-scrolling: touch;
+}
+
+.katex {
+  font-size: 1.05em;
+  text-rendering: auto;
+}

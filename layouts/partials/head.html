@@ -52,3 +52,8 @@
 {{- $syntax := resources.Get "css/syntax.css" -}}
 {{- $bundle := slice $base $comp $content $syntax | resources.Concat "css/bundle.css" | resources.Minify | resources.Fingerprint -}}
 <link rel="stylesheet" href="{{ $bundle.RelPermalink }}" integrity="{{ $bundle.Data.Integrity }}">
+
+{{- /* KaTeX Math Styling */ -}}
+{{- if or .Params.math (and .IsPage (findRE `\$\$` .RawContent)) }}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+{{- end }}
