@@ -13,16 +13,84 @@
 <link rel="me" href="https://mastodon.social/@schlafer">
 
 <!-- OpenGraph / Twitter -->
+{{- $img := "" -}}
+{{- $hasHero := false -}}
+
+{{- /* 1. Check frontmatter image parameters */ -}}
+{{- $fmImage := "" -}}
+{{- with .Params.hero -}}
+  {{- $fmImage = . -}}
+{{- else with .Params.image -}}
+  {{- $fmImage = . -}}
+{{- else with .Params.thumbnail -}}
+  {{- $fmImage = . -}}
+{{- else with .Params.cover -}}
+  {{- $fmImage = . -}}
+{{- else with .Params.featured_image -}}
+  {{- $fmImage = . -}}
+{{- else with .Params.images -}}
+  {{- if reflect.IsSlice . -}}
+    {{- with index . 0 }}{{ $fmImage = . }}{{ end -}}
+  {{- else -}}
+    {{- $fmImage = . -}}
+  {{- end -}}
+{{- end -}}
+
+{{- if $fmImage -}}
+  {{- $res := or (.Resources.Get $fmImage) (.Resources.Get (strings.TrimPrefix "./" $fmImage)) (resources.Get $fmImage) -}}
+  {{- if $res -}}
+    {{- $img = $res.Permalink -}}
+    {{- $hasHero = true -}}
+  {{- else if or (strings.HasPrefix $fmImage "http://") (strings.HasPrefix $fmImage "https://") -}}
+    {{- $img = $fmImage -}}
+    {{- $hasHero = true -}}
+  {{- else if strings.HasPrefix $fmImage "/" -}}
+    {{- $img = $fmImage | absURL -}}
+    {{- $hasHero = true -}}
+  {{- else -}}
+    {{- $img = printf "%s%s" .RelPermalink $fmImage | absURL -}}
+    {{- $hasHero = true -}}
+  {{- end -}}
+{{- end -}}
+
+{{- /* 2. Check first image in content */ -}}
+{{- if and (not $hasHero) .Content -}}
+  {{- with findRESubmatch `<img[^>]+src=["']?([^"'>\s]+)` .Content 1 -}}
+    {{- $src := index (index . 0) 1 -}}
+    {{- if or (strings.HasPrefix $src "http://") (strings.HasPrefix $src "https://") -}}
+      {{- $img = $src -}}
+      {{- $hasHero = true -}}
+    {{- else if strings.HasPrefix $src "/" -}}
+      {{- $img = $src | absURL -}}
+      {{- $hasHero = true -}}
+    {{- else -}}
+      {{- $res := or ($.Resources.Get $src) ($.Resources.Get (strings.TrimPrefix "./" $src)) (resources.Get $src) -}}
+      {{- if $res -}}
+        {{- $img = $res.Permalink -}}
+        {{- $hasHero = true -}}
+      {{- else -}}
+        {{- $img = printf "%s%s" $.RelPermalink $src | absURL -}}
+        {{- $hasHero = true -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- /* 3. Fallback to site avatar */ -}}
+{{- if not $hasHero -}}
+  {{- $img = site.Params.avatar | default "/images/myprofile.jpeg" | absURL -}}
+{{- end -}}
+
 <meta property="og:title" content="{{ .Title | default site.Title }}">
 <meta property="og:description" content="{{ .Description | default site.Params.description }}">
 <meta property="og:url" content="{{ .Permalink }}">
 <meta property="og:site_name" content="{{ site.Title }}">
 <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
-<meta property="og:image" content="{{ site.Params.avatar | default "/images/myprofile.jpeg" | absURL }}">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="{{ $img }}">
+<meta name="twitter:card" content="{{ if $hasHero }}summary_large_image{{ else }}summary{{ end }}">
 <meta name="twitter:title" content="{{ .Title | default site.Title }}">
 <meta name="twitter:description" content="{{ .Description | default site.Params.description }}">
-<meta name="twitter:image" content="{{ site.Params.avatar | default "/images/myprofile.jpeg" | absURL }}">
+<meta name="twitter:image" content="{{ $img }}">
 
 <!-- Favicons with content hashes -->
 {{- $sizes := slice 16 32 48 64 72 96 128 144 152 192 256 512 }}
