@@ -324,3 +324,52 @@
   font-size: 1.05em;
   text-rendering: auto;
 }
+
+/* ==========================================================================
+   Mermaid Flowcharts & Diagrams
+   ========================================================================== */
+.mermaid-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 2.25rem 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.mermaid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border: none;
+}
+
+.mermaid svg {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+}
+
+.mermaid .nodeLabel p {
+  margin: 0 !important;
+  line-height: 1.4 !important;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+}
+
+.mermaid:not([data-processed="true"]) {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1rem;
+  text-align: left;
+}
