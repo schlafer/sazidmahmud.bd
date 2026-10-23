@@ -10,6 +10,8 @@ math: true
 
 ---
 
+![Gene Amdahl](images/amdahl.jpeg)
+
 A few months ago, a software team got max subscriptions for AI coding tools. Within days, everyone was talking about how fast they were moving. Boilerplate that used to take an hour was done in minutes, unit tests practically wrote themselves, and generating code felt almost effortless. Management started wondering if they were about to see a massive leap in shipping velocity.
 
 Then a quarter passed.
