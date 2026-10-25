@@ -1,12 +1,75 @@
 /**
- * Client interactions: Theme toggle & code block copy buttons
+ * Client interactions: Theme toggle, mobile navigation & code block copy buttons
  */
 
 document.addEventListener('DOMContentLoaded', () => {
   initThemeToggle();
+  initMobileNav();
   initCodeCopyButtons();
   initRainAnimation();
 });
+
+function initMobileNav() {
+  const header = document.getElementById('site-header') || document.querySelector('.site-header');
+  const toggleBtn = document.getElementById('nav-toggle-btn');
+  const nav = document.getElementById('site-nav') || document.querySelector('.site-nav');
+  if (!header || !toggleBtn || !nav) return;
+
+  function openMenu() {
+    header.classList.add('nav-open');
+    toggleBtn.setAttribute('aria-expanded', 'true');
+    toggleBtn.setAttribute('aria-label', 'Close navigation menu');
+  }
+
+  function closeMenu() {
+    header.classList.remove('nav-open');
+    toggleBtn.setAttribute('aria-expanded', 'false');
+    toggleBtn.setAttribute('aria-label', 'Toggle navigation menu');
+  }
+
+  function toggleMenu() {
+    const isOpen = header.classList.contains('nav-open');
+    if (isOpen) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  }
+
+  toggleBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    toggleMenu();
+  });
+
+  // Close when clicking any nav link
+  nav.querySelectorAll('.nav-link').forEach((link) => {
+    link.addEventListener('click', () => {
+      closeMenu();
+    });
+  });
+
+  // Close when clicking outside header
+  document.addEventListener('click', (e) => {
+    if (header.classList.contains('nav-open') && !header.contains(e.target)) {
+      closeMenu();
+    }
+  });
+
+  // Close on Escape key press
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && header.classList.contains('nav-open')) {
+      closeMenu();
+      toggleBtn.focus();
+    }
+  });
+
+  // Close if resized back to desktop width
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 640 && header.classList.contains('nav-open')) {
+      closeMenu();
+    }
+  });
+}
 
 function initThemeToggle() {
   const toggleBtn = document.getElementById('theme-toggle-btn');
