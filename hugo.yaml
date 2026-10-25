@@ -52,7 +52,7 @@ markup:
 
 params:
   author: "Sazid Mahmud"
-  description: "Software Consultant specializing in backend architecture, system design, and web security."
+  description: "Software Consultant"
   keywords:
     [
       "Backend",
@@ -61,10 +61,11 @@ params:
       "Distributed Systems",
       "Linux",
       "Programming",
+      "Agentic Engineering",
     ]
   headline: "Software Consultant"
   tagline: "Tricking rocks into thinking"
-  pitch: "I design and build resilient backend systems, distributed services, and developer tooling."
+  pitch: "I design and build resilient backend systems, distributed services, developer tooling"
   avatar: "/images/myprofile.jpeg"
   location: "Dhaka, Bangladesh"
   email: "sazidm@proton.me"
@@ -93,10 +94,10 @@ menu:
       name: "Thoughts"
       url: "/posts/"
       weight: 10
-    - identifier: projects
-      name: "Projects"
-      url: "/projects/"
-      weight: 20
+    # - identifier: projects
+    #   name: "Projects"
+    #   url: "/projects/"
+    #   weight: 20
     - identifier: about
       name: "About"
       url: "/about/"
