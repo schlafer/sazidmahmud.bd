@@ -6,6 +6,7 @@ tags: [operating-systems, linux, computer-architecture, concurrency]
 math: true
 ---
 
+![htop](/images/htop.png)
 Have you ever opened Task Manager or Activity Monitor and stared at the sheer number of things your computer is doing? You might see 400 processes listed, yet your CPU only has 8 or perhaps 16 cores.
 
 How does a computer run hundreds of tasks when it only has a handful of physical execution units to do the work?
@@ -71,13 +72,14 @@ flowchart LR
 It is worth distinguishing application-level design from kernel-level scheduling. Creating more threads does not automatically make an application faster. In fact, creating an excessive number of threads introduces substantial memory overhead for thread stacks, increases lock contention, and wastes processor cycles on unnecessary context switching.
 
 Modern software architectures often separate logical units of work from physical threads:
+
 - Applications use thread pools, asynchronous event loops, and worker queues to manage concurrency within their own code.
-- The application decides *which piece of work* gets submitted to a thread.
-- The operating system scheduler decides *which runnable thread* gets access to a physical CPU core and for how long.
+- The application decides _which piece of work_ gets submitted to a thread.
+- The operating system scheduler decides _which runnable thread_ gets access to a physical CPU core and for how long.
 
 ### The PCB and TCB Conceptual Model
 
-Textbooks often explain that the operating system tracks each process with a **Process Control Block (PCB)**, and each thread with a **Thread Control Block (TCB)**. 
+Textbooks often explain that the operating system tracks each process with a **Process Control Block (PCB)**, and each thread with a **Thread Control Block (TCB)**.
 
 The classic analogy is a clipboard. When a chef leaves a kitchen station, they write down what they were doing on a clipboard: current recipe step, measured ingredients, and next actions. When they return, they pick up the clipboard and resume.
 
@@ -92,6 +94,7 @@ If your computer has 400 processes and thousands of threads, why does your CPU u
 Because the vast majority of those threads are not competing for CPU time. They are **blocked** or **sleeping**.
 
 At any typical moment:
+
 - Your music player thread is waiting for the audio buffer to request more samples.
 - Your word processor is waiting for you to strike a key.
 - A background backup service is waiting for an hourly system timer.
@@ -118,7 +121,7 @@ flowchart TD
 1. **New:** The operating system allocates memory, initializes control structures, and prepares the initial thread.
 2. **Ready:** The thread has satisfied all software execution prerequisites and is placed on a runqueue waiting for an available core. However, being ready does not guarantee that all of the thread's virtual memory pages are currently resident in physical RAM. Virtual memory relies on demand paging; if pages have not yet been loaded or were paged out, the thread will trigger page faults when it touches them.
 3. **Running:** The thread is actively executing instructions on a logical CPU.
-4. **Blocked (Waiting):** The thread cannot execute, even if cores sit idle, because it is waiting on an external event, a synchronization lock, or an operating system operation. 
+4. **Blocked (Waiting):** The thread cannot execute, even if cores sit idle, because it is waiting on an external event, a synchronization lock, or an operating system operation.
    - Not every wait is voluntary. A thread might voluntarily sleep, but it can also be blocked involuntarily when waiting on a contested mutex or during a major page fault that requires reading data from disk or network storage. (By contrast, minor page faults, such as allocating fresh zeroed pages or copy-on-write mappings, are resolved immediately in memory by the kernel without blocking the thread for disk I/O).
    - A blocked thread becomes runnable when its awaited event completes. While hardware interrupts signal external completions (such as a disk controller finishing a transfer or a network card receiving data), many wake-up events are internal kernel operations. For instance, another thread on a different core might release a lock, post to a semaphore, or write to a pipe. In all cases, the kernel updates the task's state descriptor and moves it back to the **Ready** queue, never directly into Running.
 5. **Terminated (Exited):** The thread has completed execution or was killed. In Unix-like systems, a terminated process remains as a "zombie" entry in the process table until its parent process reads its exit status using a system call such as `wait()` or `waitpid()`. Once the parent collects this status, the process's remaining kernel structures are freed.
@@ -130,6 +133,7 @@ flowchart TD
 How does the CPU actually transfer execution from one thread to another? It carries out a **context switch**.
 
 A context switch consists of two separate phases:
+
 1. **The Policy Decision:** The scheduler algorithm examines runnable tasks and selects the next thread to dispatch.
 2. **The Switch Mechanism:** The kernel saves the hardware register state (instruction pointer, stack pointer, general-purpose registers) of the outgoing thread, updates memory management pointers if switching across different processes, and restores the saved hardware registers of the incoming thread.
 
@@ -158,6 +162,7 @@ Early desktop operating systems relied on **cooperative multitasking**. A runnin
 Modern operating systems rely on **preemptive multitasking**, where the kernel retains the authority to interrupt and suspend running tasks.
 
 To achieve this, the kernel configures hardware timers. When a timer interrupt fires:
+
 1. The hardware pauses user execution and transfers control to the kernel interrupt handler.
 2. The kernel updates runtime accounting for the current task.
 3. The scheduler checks whether the task has exceeded its time slice or if a higher-priority task has become runnable, setting a rescheduling flag (such as `need_resched` in Linux).
@@ -186,6 +191,7 @@ Suppose a single CPU core receives three runnable tasks (A, B, and C) that all a
 - **Task C:** Requires 4 ms of CPU burst time.
 
 To keep the comparison transparent, we will use standard textbook assumptions:
+
 - One single-core CPU with one hardware execution context.
 - Burst lengths are fixed and known in advance.
 - No task performs any I/O or blocks during execution.
@@ -194,6 +200,7 @@ To keep the comparison transparent, we will use standard textbook assumptions:
 These are simplifying assumptions. In a production operating system, burst lengths cannot be known with certainty in advance, tasks interleave CPU work with I/O, and context switches take measurable time. Nonetheless, this baseline reveals how different policies behave.
 
 We will evaluate two standard metrics:
+
 - **Turnaround Time:** Total elapsed time from arrival to completion ($\text{Turnaround Time} = \text{Completion Time} - \text{Arrival Time}$).
 - **Waiting Time:** Total time a task spends sitting in the ready queue before finishing. Under our specific assumptions (arrival at $t = 0$ and no I/O blocking), this simplifies directly to $\text{Waiting Time} = \text{Turnaround Time} - \text{Burst Length}$.
 
@@ -208,14 +215,15 @@ flowchart LR
     A["<b>Task A</b><br/>0 → 6 ms · 6 ms burst"]:::bottleneck --> B["<b>Task B</b><br/>6 → 8 ms · 2 ms burst"]:::fast --> C["<b>Task C</b><br/>8 → 12 ms · 4 ms burst"]:::reg
 ```
 
-- **Task A:** Starts at $t = 0$, finishes at $t = 6$. 
+- **Task A:** Starts at $t = 0$, finishes at $t = 6$.
   - Turnaround: $6 - 0 = 6$ ms. Waiting: $6 - 6 = 0$ ms.
-- **Task B:** Starts at $t = 6$, finishes at $t = 8$. 
+- **Task B:** Starts at $t = 6$, finishes at $t = 8$.
   - Turnaround: $8 - 0 = 8$ ms. Waiting: $8 - 2 = 6$ ms.
-- **Task C:** Starts at $t = 8$, finishes at $t = 12$. 
+- **Task C:** Starts at $t = 8$, finishes at $t = 12$.
   - Turnaround: $12 - 0 = 12$ ms. Waiting: $12 - 4 = 8$ ms.
 
 **Averages:**
+
 - Average Waiting Time: $(0 + 6 + 8) / 3 = 4.67$ ms.
 - Average Turnaround Time: $(6 + 8 + 12) / 3 = 8.67$ ms.
 
@@ -240,6 +248,7 @@ flowchart LR
   - Turnaround: $12 - 0 = 12$ ms. Waiting: $12 - 6 = 6$ ms.
 
 **Averages:**
+
 - Average Waiting Time: $(0 + 2 + 6) / 3 = 2.67$ ms.
 - Average Turnaround Time: $(2 + 6 + 12) / 3 = 6.67$ ms.
 
@@ -252,6 +261,7 @@ Under these conditions, SJF provides the mathematically minimal average waiting 
 Round Robin gives each task a fixed time slice (quantum) of 2 ms before preempting it and placing it at the back of the queue.
 
 The execution sequence proceeds as follows:
+
 1. $t = 0$ to $2$: Task A runs 2 ms (4 ms remaining).
 2. $t = 2$ to $4$: Task B runs 2 ms (**Task B completes**).
 3. $t = 4$ to $6$: Task C runs 2 ms (2 ms remaining).
@@ -282,20 +292,21 @@ flowchart TD
   - Turnaround: $12 - 0 = 12$ ms. Waiting: $12 - 6 = 6$ ms.
 
 **Averages:**
+
 - Average Waiting Time: $(6 + 2 + 6) / 3 = 4.67$ ms.
 - Average Turnaround Time: $(12 + 4 + 10) / 3 = 8.67$ ms.
 
 ### Comparison Summary
 
-| Metric | FCFS | Shortest Job First | Round Robin ($q = 2\text{ ms}$) |
-| :--- | :---: | :---: | :---: |
-| **Task A Waiting Time** | 0 ms | 6 ms | 6 ms |
-| **Task B Waiting Time** | 6 ms | 0 ms | 2 ms |
-| **Task C Waiting Time** | 8 ms | 2 ms | 6 ms |
-| **Average Waiting Time** | **4.67 ms** | **2.67 ms** | **4.67 ms** |
-| **Average Turnaround Time** | **8.67 ms** | **6.67 ms** | **8.67 ms** |
+| Metric                      |    FCFS     | Shortest Job First | Round Robin ($q = 2\text{ ms}$) |
+| :-------------------------- | :---------: | :----------------: | :-----------------------------: |
+| **Task A Waiting Time**     |    0 ms     |        6 ms        |              6 ms               |
+| **Task B Waiting Time**     |    6 ms     |        0 ms        |              2 ms               |
+| **Task C Waiting Time**     |    8 ms     |        2 ms        |              6 ms               |
+| **Average Waiting Time**    | **4.67 ms** |    **2.67 ms**     |           **4.67 ms**           |
+| **Average Turnaround Time** | **8.67 ms** |    **6.67 ms**     |           **8.67 ms**           |
 
-While Round Robin produces the same average waiting time as FCFS in this idealized case, look at Task B: under FCFS, Task B sat stalled for 6 ms before taking its first step. Under Round Robin, Task B started at $t = 2$ and was completely finished at $t = 4$. 
+While Round Robin produces the same average waiting time as FCFS in this idealized case, look at Task B: under FCFS, Task B sat stalled for 6 ms before taking its first step. Under Round Robin, Task B started at $t = 2$ and was completely finished at $t = 4$.
 
 Round Robin prioritizes **responsiveness** and bounded delay over raw throughput.
 
@@ -306,20 +317,24 @@ Round Robin prioritizes **responsiveness** and bounded delay over raw throughput
 Operating systems researchers built upon these foundations to address real-world workloads. Beyond the idealized numerical examples above, each algorithm embodies specific operational trade-offs:
 
 ### 1. First-Come, First-Served (FCFS)
+
 - **Selection Rule:** Tasks run strictly in arrival order from a FIFO queue until they voluntarily yield, block on I/O, or terminate.
 - **Practical Use and Trade-offs:** FCFS requires minimal code and negligible scheduler bookkeeping. However, the convoy effect makes it unsuitable for interactive desktop environments. In modern operating systems, pure FCFS is typically reserved for specialized batch processing or simple embedded microcontrollers.
 
 ### 2. Round Robin (RR)
+
 - **Selection Rule:** Runnable tasks cycle through a FIFO queue, each granted up to a fixed maximum time slice before being preempted to the back of the line.
 - **Practical Use and Trade-offs:** Round Robin aims to share CPU time evenly among runnable tasks, but practical fairness is nuanced. Real applications mix short CPU bursts with frequent I/O blocks, meaning tasks that yield before their slice expires receive less continuous CPU time than purely compute-bound threads. The policy is sensitive to quantum sizing:
   - If the quantum is **too large**, the policy degenerates into FCFS, delaying interactive response.
   - If the quantum is **too small**, context switching overhead increases. While a small slice does not automatically waste most CPU cycles, excessive switching consumes processor time in the kernel and increases cache misses, reducing overall throughput.
 
 ### 3. Shortest Job First (SJF) and Shortest Remaining Time First (SRTF)
+
 - **Selection Rule:** Non-preemptive SJF picks the task with the smallest CPU burst. Preemptive Shortest Remaining Time First (SRTF) will preempt a running task if a newly arrived task has a shorter remaining burst time.
 - **Practical Use and Trade-offs:** Under the assumption of known burst durations, SJF provably minimizes average waiting time. However, general-purpose operating systems cannot know an arbitrary thread's future execution length in advance. Batch schedulers sometimes estimate future burst lengths using exponential smoothing over historical execution, but this remains an approximation. Furthermore, both SJF and SRTF suffer from **starvation**: if short tasks arrive continuously, long tasks may wait indefinitely.
 
 ### 4. Multi-Level Feedback Queue (MLFQ)
+
 - **Selection Rule:** The scheduler maintains multiple distinct priority queues. Tasks in higher-priority queues are serviced first. Within a single queue, tasks are typically scheduled using Round Robin.
 - **Dynamic Adaptation:** MLFQ accommodates mixed workloads without advance knowledge of burst lengths:
   - New tasks enter at the highest-priority queue with a short time quantum.
@@ -340,6 +355,7 @@ Modern operating systems adapt these classical principles to handle multi-gigaby
 For over fifteen years (from Linux 2.6.23 in 2007 through kernel 6.5 in 2023), the default scheduler for standard Linux tasks was the **Completely Fair Scheduler (CFS)**.
 
 CFS did not use fixed time slices. Instead, it modeled an ideal multi-tasking CPU where every runnable task makes continuous, proportional progress. CFS tracked this using **virtual runtime** (`vruntime`):
+
 - A task's `vruntime` increases as it spends physical time running on a core.
 - Tasks with higher priority (lower "nice" values) accumulate `vruntime` more slowly than lower-priority tasks.
 - CFS stored all runnable tasks in a time-ordered red-black tree, always picking the task with the smallest `vruntime`.
@@ -371,6 +387,7 @@ As documented in Apple Developer guidelines, QoS classes express the relative im
 - **`Background`:** Low-priority maintenance, database indexing, and synchronization activities where energy efficiency is prioritized over completion time.
 
 Crucially, QoS classes communicate operational intent rather than strict core-placement contracts. Core allocation remains dynamic:
+
 - The XNU kernel scheduler treats QoS levels as strong inputs to its placement heuristics, but it continuously balances them against broader system telemetry.
 - Core selection factors in overall system workload, the balance between throughput and energy consumption, current thermal headroom, and whether the device is operating on battery power or connected to an external power supply.
 - Work from any QoS category may execute on performance or efficiency cores as the kernel continuously adjusts its allocation policies to maintain both interactive responsiveness and overall energy efficiency.
@@ -392,15 +409,15 @@ The illusion of seamless multi-tasking is not magic. It is the result of continu
 
 ## References and Further Reading
 
-- **Linux Kernel Documentation: Scheduler Overview**  
+- **Linux Kernel Documentation: Scheduler Overview**\
   [https://docs.kernel.org/scheduler/](https://docs.kernel.org/scheduler/)
-- **Linux Kernel Documentation: CFS Scheduler Design**  
+- **Linux Kernel Documentation: CFS Scheduler Design**\
   [https://docs.kernel.org/scheduler/sched-design-CFS.html](https://docs.kernel.org/scheduler/sched-design-CFS.html)
-- **Linux Kernel Documentation: EEVDF Scheduler**  
+- **Linux Kernel Documentation: EEVDF Scheduler**\
   [https://docs.kernel.org/scheduler/sched-eevdf.html](https://docs.kernel.org/scheduler/sched-eevdf.html)
-- **Linux Kernel Documentation: NO_HZ Reducing Scheduling-Clock Ticks**  
+- **Linux Kernel Documentation: NO_HZ Reducing Scheduling-Clock Ticks**\
   [https://docs.kernel.org/timers/no_hz.html](https://docs.kernel.org/timers/no_hz.html)
-- **Apple Developer Documentation: Tuning Your Code's Performance for Apple Silicon**  
+- **Apple Developer Documentation: Tuning Your Code's Performance for Apple Silicon**\
   [https://developer.apple.com/documentation/apple-silicon/tuning-your-code-s-performance-for-apple-silicon/](https://developer.apple.com/documentation/apple-silicon/tuning-your-code-s-performance-for-apple-silicon/)
-- **Apple Developer Documentation: Prioritizing Work with Quality of Service Classes**  
+- **Apple Developer Documentation: Prioritizing Work with Quality of Service Classes**\
   [https://developer.apple.com/documentation/dispatch/dispatchqos](https://developer.apple.com/documentation/dispatch/dispatchqos)
