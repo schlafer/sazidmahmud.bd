@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "How your CPU juggles hundreds of tasks at once"
-date: 2026-10-28
+date: 2026-10-29
 tags: [operating-systems, linux, computer-architecture, concurrency]
 math: true
 ---
