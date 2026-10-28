@@ -378,7 +378,7 @@
 .mermaid .node .nodeLabel {
   display: inline-block;
   font-family: var(--font-sans) !important;
-  font-size: 0.85rem !important;
+  font-size: 0.925rem !important;
   line-height: 1.35 !important;
   letter-spacing: -0.01em;
   padding: 2px 4px;
@@ -392,7 +392,7 @@
 .mermaid .node .nodeLabel small {
   display: block;
   font-family: var(--font-mono) !important;
-  font-size: 0.725rem !important;
+  font-size: 0.8125rem !important;
   opacity: 0.88;
   margin-top: 2px;
 }
@@ -512,7 +512,7 @@
   background-color: var(--bg) !important;
   color: var(--text-muted) !important;
   font-family: var(--font-mono) !important;
-  font-size: 0.72rem !important;
+  font-size: 0.8125rem !important;
   border: 1px solid var(--border) !important;
   border-radius: 4px !important;
   padding: 2px 6px !important;
