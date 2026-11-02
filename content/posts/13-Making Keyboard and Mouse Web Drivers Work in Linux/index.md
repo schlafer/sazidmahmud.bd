@@ -12,7 +12,7 @@ On Linux, however, these web drivers almost always fail to detect your hardware 
 
 To let your user session interface with your peripherals without running your browser as root, you need to add custom `udev` rules.
 
-> **Note:** While this guide uses the **Mchose G75 v2** as a concrete walkthrough, this workaround is universal. The exact same mechanism works for most keyboards and mice using web configurators—including the **Aula F75** variants, **Ajazz AK820** variants, and others. All you need are the device's Vendor and Product IDs.
+> **Note:** While this guide uses the **Mchose G75 v2** as a concrete walkthrough, this workaround is universal. The exact same mechanism works for most keyboards and mice using web configurators; including the **Aula F75** variants, **Ajazz AK820** variants, and others. All you need are the device's Vendor and Product IDs.
 
 ## ![](images/mchose-web-driver-ui.png)
 
