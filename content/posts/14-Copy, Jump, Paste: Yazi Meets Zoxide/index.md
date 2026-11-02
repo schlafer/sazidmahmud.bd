@@ -11,7 +11,7 @@ Moving files across distant directories is one of the few places terminal file m
 
 If you use [Yazi](https://github.com/sxyazi/yazi) and [Zoxide](https://github.com/ajeetdsouza/zoxide), you can eliminate that traversal entirely. By wiring Zoxide's directory history directly into Yazi with an interactive fuzzy picker, you can yank files, jump immediately to any tracked directory with a quick search query, and paste.
 
-![copy-jump-paste](/images/copy-jump-paste.gif)
+![yazi](/images/yazi.png)
 
 Here is how to set up the workflow on Arch Linux.
 
@@ -94,6 +94,8 @@ Yazi opens an interactive directory picker powered by Zoxide. Type a few letters
 ### Step 3: Paste
 
 Once you arrive in the destination folder, press `p`. Yazi pastes the yanked items directly into the current directory.
+
+![copy-jump-paste](/images/copy-jump-paste.gif)
 
 ## Quick key reference
 
