@@ -52,7 +52,7 @@ markup:
 
 params:
   author: "Sazid Mahmud"
-  description: "Software Consultant"
+  description: "Technology Consultant"
   keywords:
     [
       "Backend",
@@ -63,7 +63,7 @@ params:
       "Programming",
       "Agentic Engineering",
     ]
-  headline: "Software Consultant"
+  headline: "Technology Consultant"
   tagline: "Tricking rocks into thinking"
   pitch: "I design and build resilient backend systems, distributed services, developer tooling"
   avatar: "/images/myprofile.jpeg"
