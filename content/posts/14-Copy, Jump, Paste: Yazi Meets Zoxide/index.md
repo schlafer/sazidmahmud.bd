@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Copy, Jump, Paste"
+title: "Copy, Jump, Paste: Yazi Meets Zoxide"
 date: 2026-11-02
 description: "Copy files in Yazi, jump to any Zoxide directory with an interactive picker, and paste without leaving your terminal."
 summary: "A faster way to move files across directories using Yazi, Zoxide, and fzf."
