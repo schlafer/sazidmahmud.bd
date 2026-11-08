@@ -78,15 +78,12 @@ params:
     - name: github
       title: "GitHub"
       url: "https://github.com/schlafer"
-    - name: x
-      title: "X"
-      url: "https://x.com/_schlafer"
     - name: linkedin
       title: "LinkedIn"
       url: "https://linkedin.com/in/sazid-mahmud-eee"
-    - name: mastodon
-      title: "Mastodon"
-      url: "https://mastodon.social/@schlafer"
+    - name: resume
+      title: "Resume"
+      url: "/resume/"
 
 menu:
   main:

@@ -8,8 +8,6 @@ showtoc: false
 
 I’m Sazid, a Technology Consultant.
 
-I trick rocks into thinking, or perhaps they trick me into thinking!
-
 ### Services I provide
 
 - **Technical specifications & roadmaps**: Translating business objectives into concrete technical specifications and phased implementation roadmaps.

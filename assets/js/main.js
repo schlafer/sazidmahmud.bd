@@ -256,7 +256,7 @@ function initRainAnimation() {
     const layer = rand < 0.55 ? 0 : (rand < 0.85 ? 1 : 2);
 
     const speed = layer === 0 ? 7 + Math.random() * 3 : (layer === 1 ? 12 + Math.random() * 4 : 18 + Math.random() * 5);
-    const length = layer === 0 ? 12 + Math.random() * 5 : (layer === 1 ? 18 + Math.random() * 6 : 26 + Math.random() * 8);
+    const length = layer === 0 ? 14 + Math.random() * 6 : (layer === 1 ? 20 + Math.random() * 7 : 30 + Math.random() * 10);
     const slant = 0.16; // Gentle diagonal breeze
 
     // Distribute drops: favor side margins where they are fully visible
@@ -264,7 +264,7 @@ function initRainAnimation() {
     const centerWidth = 720;
     if (width > 850) {
       const margin = (width - centerWidth) / 2;
-      if (Math.random() < 0.72) {
+      if (Math.random() < 0.65) {
         x = Math.random() < 0.5 ? Math.random() * margin : (width - margin) + Math.random() * margin;
       } else {
         x = margin + Math.random() * centerWidth;
@@ -284,8 +284,8 @@ function initRainAnimation() {
   }
 
   function initDrops() {
-    // Gentle drizzle density: roughly 50-75 drops on desktop, 30 on mobile
-    const count = Math.max(30, Math.min(75, Math.floor(width * 0.05)));
+    // Visible rain density: roughly 80-120 drops on desktop, 45 on mobile
+    const count = Math.max(45, Math.min(120, Math.floor(width * 0.08)));
     drops = [];
     for (let i = 0; i < count; i++) {
       drops.push(createDrop(true));
@@ -296,17 +296,17 @@ function initRainAnimation() {
     ctx.clearRect(0, 0, width, height);
 
     // Color palette based on theme:
-    // Light mode: soft warm slate-gray
-    // Dark mode: faint luminous cool white-blue
-    const r = isDark ? 210 : 80;
-    const g = isDark ? 225 : 75;
-    const b = isDark ? 240 : 70;
+    // Light mode: deeper warm slate-gray for contrast on warm paper
+    // Dark mode: bright luminous cool white-blue for contrast on charcoal
+    const r = isDark ? 205 : 56;
+    const g = isDark ? 225 : 50;
+    const b = isDark ? 250 : 43;
 
-    // Batch draw calls by layer (only 3 stroke calls per frame instead of 80)
+    // Batch draw calls by layer (only 3 stroke calls per frame instead of 120)
     for (let layer = 0; layer < 3; layer++) {
       ctx.beginPath();
-      ctx.lineWidth = layer === 0 ? 0.75 : (layer === 1 ? 1.05 : 1.35);
-      const opacity = layer === 0 ? 0.09 : (layer === 1 ? 0.14 : 0.20);
+      ctx.lineWidth = layer === 0 ? 1 : (layer === 1 ? 1.4 : 1.8);
+      const opacity = layer === 0 ? 0.22 : (layer === 1 ? 0.32 : 0.45);
       ctx.strokeStyle = `rgba(${r}, ${g}, ${b}, ${opacity})`;
       ctx.lineCap = 'round';
 

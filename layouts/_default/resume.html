@@ -1,0 +1,19 @@
+{{ define "main" }}
+<div class="content-container">
+  <article>
+    <header class="post-header" style="margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+      <h1 class="post-title" style="margin: 0;">{{ .Title }}</h1>
+      <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+        <a href="{{ "/sazid-mahmud-resume.pdf" | relURL }}" class="social-pill" style="display: inline-flex; font-size: 0.9rem; padding: 0.5rem 1rem;" download>Download PDF</a>
+        <a href="{{ "/sazid-mahmud-resume.pdf" | relURL }}" class="social-pill" style="display: inline-flex; font-size: 0.9rem; padding: 0.5rem 1rem;" target="_blank" rel="noopener">Open in new tab</a>
+      </div>
+    </header>
+    <div class="post-body">
+      <iframe src="{{ "/sazid-mahmud-resume.pdf" | relURL }}" title="Sazid Mahmud Resume" width="100%" height="800" style="border: 1px solid var(--border); border-radius: 8px; min-height: 70vh;" loading="lazy">
+        <p>Your browser does not support iframes. Please <a href="{{ "/sazid-mahmud-resume.pdf" | relURL }}">download the resume PDF</a>.</p>
+      </iframe>
+    </div>
+    {{ .Content }}
+  </article>
+</div>
+{{ end }}

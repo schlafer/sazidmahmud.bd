@@ -25,7 +25,7 @@
   --header-height: 64px;
 
   /* Glass Pane Tokens (High performance, no continuous GPU blur) */
-  --glass-bg: rgba(251, 249, 244, 0.94);
+  --glass-bg: rgba(251, 249, 244, 0.85);
   --glass-border: rgba(80, 65, 50, 0.12);
   --glass-shadow: 0 0 40px rgba(80, 65, 50, 0.05);
 }
@@ -47,7 +47,7 @@ html[data-theme="dark"] {
   --shadow-subtle: 0 1px 3px rgba(0, 0, 0, 0.35);
 
   /* Glass Pane Tokens (High performance, no continuous GPU blur) */
-  --glass-bg: rgba(22, 22, 21, 0.94);
+  --glass-bg: rgba(22, 22, 21, 0.85);
   --glass-border: rgba(235, 225, 210, 0.10);
   --glass-shadow: 0 0 50px rgba(0, 0, 0, 0.45);
 }
@@ -126,7 +126,8 @@ a {
   max-width: var(--container-width);
   margin: 0 auto;
   padding: 2.5rem 1.25rem 4rem;
-  background-color: var(--glass-bg);
+  /* Solid background so the rain animation does not show through the content */
+  background-color: var(--bg);
   transition: background-color 0.25s ease, border-color 0.25s ease;
 }
 
