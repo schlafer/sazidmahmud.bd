@@ -23,7 +23,7 @@ At around ৳6,000, the G75 V2 seemed to offer the most features for the price. 
 
 ## The transition from TKL to 75%
 
-![Mchose G75 V2 Side View](images/g75v2-side.png)
+![Ganss GS3087T-Li and MCHOSE G75 V2 tilted view](images/gs3087t-li-with-g75-v2-tilted.png)
 
 The biggest adjustment has been the layout. My Ganss had 87 keys in a traditional TKL arrangement, with comfortable spacing around the navigation cluster. Everything felt familiar, and I rarely had to think about where my fingers were going.
 
