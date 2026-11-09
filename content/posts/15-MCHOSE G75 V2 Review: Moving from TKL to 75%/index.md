@@ -67,7 +67,7 @@ The web driver itself is good and provides pretty much everything I expect from 
 
 My Ganss was a great keyboard. It was my first mechanical keyboard, and I had no major complaints about its typing experience. Occasionally, dust would get underneath switches and cause them to stop registering. Moving those switches to different positions on the board usually fixed the problem. Eventually, though, the PCB gave up.
 
-<!-- TODO: side-by-side photo coming tomorrow — drop image as images/g75v2-vs-ganss.png and replace this line with: ![Ganss GS3087T-Li and MCHOSE G75 V2 side by side](images/g75v2-vs-ganss.png) -->
+![Ganss GS3087T-Li and MCHOSE G75 V2 side by side](images/gs3087t-li-with-g75-v2.png)
 
 Considering that I used it for around 10 hours a day, it served me well for a budget mechanical keyboard. The G75 V2 feels like a step forward in most hardware aspects: a more refined build, better keycaps, more features and wireless connectivity.
 
